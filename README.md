@@ -173,9 +173,9 @@ If you use AmpDiff code, model checkpoints, processed data, or generated designs
 
 ```bibtex
 @article{ampdiff,
-  title = {AmpDiff: Diffusion-Based Antimicrobial Peptide Design and Optimization},
-  author = {To be updated},
-  journal = {To be updated},
+  title = {Pushing adaptive autoregressive diffusion to its limits from antibody humanization to antimicrobial peptide design},
+  author = {Wu, Chuya},
+  journal = {Nat. Mach. Intell.},
   year = {2026}
 }
 ```
