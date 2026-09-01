@@ -1,4 +1,4 @@
-name: hudiff
+name: AmpDiff
 channels:
   - pytorch
   - nvidia

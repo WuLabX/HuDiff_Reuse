@@ -30,20 +30,30 @@ Create the conda environment from the provided file:
 
 ```bash
 conda env create -f environment.yaml
-conda activate infilling
+conda activate AmpDiff
 ```
 
-The evaluation and guidance code can call the following external predictors when they are available locally:
+Install the external activity and hemolysis predictors under the same parent directory as `AmpDiff`:
 
 ```text
-/mnt/wucy/WUCHUYA/PepNet
-/mnt/wucy/WUCHUYA/AMPpred-MFA
-/mnt/wucy/WUCHUYA/iAMP-Attenpred
-/mnt/wucy/WUCHUYA/UniDL4BioPep
-/mnt/wucy/WUCHUYA/hemopi2
+WUCHUYA/
+  AmpDiff/
+  PepNet/
+  AMPpred-MFA/
+  iAMP-Attenpred/
+  UniDL4BioPep/
+  hemopi2/
 ```
 
-All predictor paths can be overridden with CLI flags in the evaluation and sampling scripts.
+Download links:
+
+- PepNet: [https://github.com/Harkool/PepNet](https://github.com/Harkool/PepNet)
+- AMPpred-MFA: [https://github.com/Jiangle525/AMPpred-MFA](https://github.com/Jiangle525/AMPpred-MFA)
+- iAMP-Attenpred: [https://github.com/xingwxzz/iAMP-Attenpred](https://github.com/xingwxzz/iAMP-Attenpred)
+- UniDL4BioPep: [https://github.com/dzjxzyd/UniDL4BioPep](https://github.com/dzjxzyd/UniDL4BioPep)
+- HemoPI2: [https://github.com/raghavagps/hemopi2](https://github.com/raghavagps/hemopi2)
+
+The default local layout used by the scripts is `/mnt/wucy/WUCHUYA/<predictor-name>`. All predictor paths can also be overridden with CLI flags in the evaluation and sampling scripts.
 
 ## Data Preparation
 
