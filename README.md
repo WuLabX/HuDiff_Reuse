@@ -4,6 +4,9 @@ AmpDiff is a diffusion-based workflow for antimicrobial peptide (AMP) design and
 
 ![pipeline](doc/process.svg)
 
+## Overview
+This repository contains AmpDiff, the cross-domain generalizability component of a Reusability Report on HuDiff. AmpDiff transfers the HuDiff-Nb diffusion framework from nanobody humanization to antimicrobial peptide design to evaluate the architectural reusability of HuDiff beyond its original biological domain.
+
 ## Repository Layout
 
 ```text
