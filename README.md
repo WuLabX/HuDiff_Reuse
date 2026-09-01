@@ -1,6 +1,6 @@
 # AmpDiff
-
 AmpDiff is a diffusion-based workflow for antimicrobial peptide (AMP) design and optimization. The repository contains the code used to prepare AMP datasets, train motif-aware pretraining and finetuning models, sample DE/INP peptide variants, and evaluate generated peptides with external AMP activity and hemolysis predictors.
+
 
 ![pipeline](doc/process.svg)
 
