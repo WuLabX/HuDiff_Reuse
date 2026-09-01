@@ -1,0 +1,416 @@
+{
+  "parameters": {
+    "raw_dir": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/raw_data",
+    "out_dir": "/mnt/wucy/WUCHUYA/AmpDiff/data",
+    "work_dir": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/work",
+    "v1_script": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/processing/prepare_ampdiff_datasets.py",
+    "min_len": 5,
+    "max_len": 100,
+    "identity": 0.8,
+    "test_frac": 0.1,
+    "seed": 2026,
+    "motif_dir": "/mnt/wucy/WUCHUYA/AmpDiff/data/motif",
+    "motif_type": "prosite,regular,merci"
+  },
+  "policy": {
+    "pretrain": "broad AMP-like sequence-only pool; no active-motif requirement",
+    "pretrain_motif": "active motif hit and >=1 optimizable residue",
+    "finetune_de": "activity-supervised; active motif hit and >=1 optimizable residue",
+    "finetune_inp": "activity-supervised; active motif + hom_neg motif hits; known hemolysis; >=1 optimizable residue",
+    "test_de": "held-out de-valid clusters",
+    "test_inp": "held-out inp-valid clusters"
+  },
+  "motifs": {
+    "enabled_types": [
+      "merci",
+      "prosite",
+      "regular"
+    ],
+    "active_exact": 1257,
+    "active_prosite": 77,
+    "hom_neg": 812
+  },
+  "raw_valid_master_sequences": 69011,
+  "activity_supervised_sequences": 8035,
+  "candidate_counts": {
+    "de": 3650,
+    "de_test_known_hemolysis": 2467,
+    "inp": 236
+  },
+  "outputs": {
+    "pretrain_all": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_all.csv",
+    "pretrain": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain.csv",
+    "pretrain_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain.fasta",
+    "pretrain_motif": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_motif.csv",
+    "pretrain_motif_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_motif.fasta",
+    "finetune_de": "/mnt/wucy/WUCHUYA/AmpDiff/data/finetune/ampdiff_finetune_de.csv",
+    "finetune_inp": "/mnt/wucy/WUCHUYA/AmpDiff/data/finetune/ampdiff_finetune_inp.csv",
+    "test_de": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_de.csv",
+    "test_de_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_de.fasta",
+    "test_inp": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_inp.csv",
+    "test_inp_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_inp.fasta",
+    "report_json": "/mnt/wucy/WUCHUYA/AmpDiff/data/dataset_report.json",
+    "report_md": "/mnt/wucy/WUCHUYA/AmpDiff/data/dataset_report.md"
+  },
+  "splits": {
+    "pretrain_all": {
+      "length": {
+        "n": 57305,
+        "min": 5,
+        "p25": 13,
+        "median": 21,
+        "p75": 51,
+        "p95": 88,
+        "max": 100
+      },
+      "motif": {
+        "n": 57305,
+        "seq_with_active_motif": 18867,
+        "seq_without_active_motif": 38438,
+        "seq_with_hom_neg_motif": 1152,
+        "active_positions_total": 150093,
+        "hom_neg_positions_total": 8376,
+        "inp_fixed_positions_total": 156314,
+        "active_fixed_fraction": {
+          "p25": 0.0,
+          "median": 0.0,
+          "p75": 0.07317073170731707,
+          "p95": 0.5142857142857142,
+          "max": 1.0
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.0,
+          "median": 0.0,
+          "p75": 0.08333333333333333,
+          "p95": 0.5454545454545454,
+          "max": 1.0
+        },
+        "optimizable_de_positions": {
+          "min": 0,
+          "p25": 12,
+          "median": 20,
+          "p75": 47,
+          "p95": 85,
+          "max": 100
+        },
+        "optimizable_inp_positions": {
+          "min": 0,
+          "p25": 12,
+          "median": 20,
+          "p75": 47,
+          "p95": 85,
+          "max": 100
+        }
+      },
+      "hemolysis_summary": {
+        "mixed": 1612,
+        "unknown": 1190,
+        "hemolytic": 1501
+      },
+      "combo_class": {
+        "continuous__mixed": 530,
+        "continuous__unknown": 1190,
+        "continuous__continuous": 2470,
+        "continuous__hemolytic": 113
+      }
+    },
+    "pretrain_motif": {
+      "length": {
+        "n": 18536,
+        "min": 5,
+        "p25": 18,
+        "median": 37,
+        "p75": 71,
+        "p95": 93,
+        "max": 100
+      },
+      "motif": {
+        "n": 18536,
+        "seq_with_active_motif": 18536,
+        "seq_without_active_motif": 0,
+        "seq_with_hom_neg_motif": 538,
+        "active_positions_total": 144743,
+        "hom_neg_positions_total": 3930,
+        "inp_fixed_positions_total": 146528,
+        "active_fixed_fraction": {
+          "p25": 0.07462686567164178,
+          "median": 0.18181818181818182,
+          "p75": 0.36363636363636365,
+          "p95": 0.75,
+          "max": 0.9736842105263158
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.075,
+          "median": 0.18518518518518517,
+          "p75": 0.375,
+          "p95": 0.7647058823529411,
+          "max": 1.0
+        },
+        "optimizable_de_positions": {
+          "min": 1,
+          "p25": 10,
+          "median": 28,
+          "p75": 62,
+          "p95": 87,
+          "max": 97
+        },
+        "optimizable_inp_positions": {
+          "min": 0,
+          "p25": 10,
+          "median": 28,
+          "p75": 62,
+          "p95": 87,
+          "max": 97
+        }
+      },
+      "hemolysis_summary": {},
+      "combo_class": {}
+    },
+    "finetune_de": {
+      "length": {
+        "n": 3351,
+        "min": 5,
+        "p25": 13,
+        "median": 18,
+        "p75": 25,
+        "p95": 44,
+        "max": 100
+      },
+      "motif": {
+        "n": 3351,
+        "seq_with_active_motif": 3351,
+        "seq_without_active_motif": 0,
+        "seq_with_hom_neg_motif": 230,
+        "active_positions_total": 28558,
+        "hom_neg_positions_total": 2244,
+        "inp_fixed_positions_total": 29642,
+        "active_fixed_fraction": {
+          "p25": 0.23076923076923078,
+          "median": 0.4166666666666667,
+          "p75": 0.6666666666666666,
+          "p95": 0.918918918918919,
+          "max": 0.9791666666666666
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.25,
+          "median": 0.4444444444444444,
+          "p75": 0.6923076923076923,
+          "p95": 0.9285714285714286,
+          "max": 1.0
+        },
+        "optimizable_de_positions": {
+          "min": 1,
+          "p25": 5,
+          "median": 9,
+          "p75": 16,
+          "p95": 37,
+          "max": 95
+        },
+        "optimizable_inp_positions": {
+          "min": 0,
+          "p25": 4,
+          "median": 8,
+          "p75": 16,
+          "p95": 37,
+          "max": 95
+        }
+      },
+      "hemolysis_summary": {
+        "mixed": 1061,
+        "hemolytic": 1159,
+        "unknown": 1131
+      },
+      "combo_class": {
+        "continuous__mixed": 389,
+        "continuous__continuous": 1797,
+        "continuous__unknown": 1131,
+        "continuous__hemolytic": 34
+      }
+    },
+    "finetune_inp": {
+      "length": {
+        "n": 208,
+        "min": 7,
+        "p25": 13,
+        "median": 17,
+        "p75": 25,
+        "p95": 34,
+        "max": 42
+      },
+      "motif": {
+        "n": 208,
+        "seq_with_active_motif": 208,
+        "seq_without_active_motif": 0,
+        "seq_with_hom_neg_motif": 208,
+        "active_positions_total": 1773,
+        "hom_neg_positions_total": 1871,
+        "inp_fixed_positions_total": 2612,
+        "active_fixed_fraction": {
+          "p25": 0.25,
+          "median": 0.375,
+          "p75": 0.5384615384615384,
+          "p95": 0.8571428571428571,
+          "max": 0.9259259259259259
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.4722222222222222,
+          "median": 0.6875,
+          "p75": 0.8125,
+          "p95": 0.9230769230769231,
+          "max": 0.9565217391304348
+        },
+        "optimizable_de_positions": {
+          "min": 1,
+          "p25": 7,
+          "median": 9,
+          "p75": 13,
+          "p95": 25,
+          "max": 38
+        },
+        "optimizable_inp_positions": {
+          "min": 1,
+          "p25": 3,
+          "median": 6,
+          "p75": 9,
+          "p95": 19,
+          "max": 37
+        }
+      },
+      "hemolysis_summary": {
+        "mixed": 153,
+        "hemolytic": 55
+      },
+      "combo_class": {
+        "continuous__continuous": 186,
+        "continuous__hemolytic": 3,
+        "continuous__mixed": 19
+      }
+    },
+    "test_de": {
+      "length": {
+        "n": 247,
+        "min": 6,
+        "p25": 13,
+        "median": 18,
+        "p75": 25,
+        "p95": 42,
+        "max": 84
+      },
+      "motif": {
+        "n": 247,
+        "seq_with_active_motif": 247,
+        "seq_without_active_motif": 0,
+        "seq_with_hom_neg_motif": 41,
+        "active_positions_total": 1918,
+        "hom_neg_positions_total": 373,
+        "inp_fixed_positions_total": 2126,
+        "active_fixed_fraction": {
+          "p25": 0.20833333333333334,
+          "median": 0.35294117647058826,
+          "p75": 0.6,
+          "p95": 0.8571428571428571,
+          "max": 0.9285714285714286
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.23529411764705882,
+          "median": 0.42105263157894735,
+          "p75": 0.65625,
+          "p95": 0.8888888888888888,
+          "max": 0.9565217391304348
+        },
+        "optimizable_de_positions": {
+          "min": 1,
+          "p25": 6,
+          "median": 10,
+          "p75": 17,
+          "p95": 36,
+          "max": 80
+        },
+        "optimizable_inp_positions": {
+          "min": 1,
+          "p25": 5,
+          "median": 9,
+          "p75": 16,
+          "p95": 36,
+          "max": 80
+        }
+      },
+      "hemolysis_summary": {
+        "mixed": 140,
+        "hemolytic": 107
+      },
+      "combo_class": {
+        "continuous__continuous": 200,
+        "continuous__mixed": 44,
+        "continuous__hemolytic": 3
+      }
+    },
+    "test_inp": {
+      "length": {
+        "n": 28,
+        "min": 15,
+        "p25": 18,
+        "median": 24,
+        "p75": 24,
+        "p95": 24,
+        "max": 24
+      },
+      "motif": {
+        "n": 28,
+        "seq_with_active_motif": 28,
+        "seq_without_active_motif": 0,
+        "seq_with_hom_neg_motif": 28,
+        "active_positions_total": 159,
+        "hom_neg_positions_total": 467,
+        "inp_fixed_positions_total": 500,
+        "active_fixed_fraction": {
+          "p25": 0.16666666666666666,
+          "median": 0.16666666666666666,
+          "p75": 0.2222222222222222,
+          "p95": 0.5625,
+          "max": 0.9166666666666666
+        },
+        "inp_fixed_fraction": {
+          "p25": 0.625,
+          "median": 0.8888888888888888,
+          "p75": 0.9583333333333334,
+          "p95": 0.9583333333333334,
+          "max": 0.9583333333333334
+        },
+        "optimizable_de_positions": {
+          "min": 2,
+          "p25": 11,
+          "median": 20,
+          "p75": 20,
+          "p95": 20,
+          "max": 20
+        },
+        "optimizable_inp_positions": {
+          "min": 1,
+          "p25": 1,
+          "median": 2,
+          "p75": 6,
+          "p95": 9,
+          "max": 18
+        }
+      },
+      "hemolysis_summary": {
+        "hemolytic": 13,
+        "mixed": 15
+      },
+      "combo_class": {
+        "continuous__continuous": 28
+      }
+    }
+  },
+  "cluster_summary": {
+    "identity": 0.8,
+    "test_de_vs_finetune_de_overlap": 0,
+    "test_inp_vs_finetune_inp_overlap": 0,
+    "test_de_vs_pretrain_overlap": 0,
+    "test_inp_vs_pretrain_overlap": 0,
+    "test_de_clusters": 144,
+    "test_inp_clusters": 3,
+    "heldout_cluster_union": 146
+  }
+}

@@ -1,13 +1,9 @@
-from model.encoder.model import ByteNetLMTime, AntiTFNet, AntiFrameWork
-from model.nanoencoder.model import NanoAntiTFNet, NanoInfillingFramework
-from dataset.oas_unpair_dataset_new import OasUnPairDataset
-from dataset.oas_pair_dataset_new import OasPairDataset
+from model.nanoencoder.model import NanoAntiTFNet
 from utils.warmup import GradualWarmupScheduler
 
-from torch.utils.data import Dataset
 from torch.utils.data import Subset
 from torch.optim import Adam, AdamW
-from torch.optim.lr_scheduler import ReduceLROnPlateau, CosineAnnealingLR, LambdaLR
+from torch.optim.lr_scheduler import ReduceLROnPlateau, CosineAnnealingLR
 from torch.optim.lr_scheduler import _LRScheduler
 
 import torch
@@ -40,19 +36,11 @@ def warmup(n_warmup_steps):
     return get_lr
 
 
-def model_selected(config, pretrained_model=None, tokenizer=None):
-    if config.name == 'evo_oadm':
-        return ByteNetLMTime(**config.model)
-    elif config.name == 'trans_oadm':
-        return AntiTFNet(**config.model)
-    elif config.name == 'antibody_finetune':
-        return AntiFrameWork(config.model, pretrained_model, tokenizer)
-    elif config.name == 'nano':
+def model_selected(config):
+    if config.name == 'nano':
         return NanoAntiTFNet(**config.model)
-    elif config.name == 'infilling':
-        return NanoInfillingFramework(config.model, pretrained_model, tokenizer)
     else:
-        pass
+        raise NotImplementedError(f'Unknown model config name: {config.name}')
 
 
 def optimizer_selected(optimizer, model):
@@ -69,7 +57,7 @@ def optimizer_selected(optimizer, model):
             weight_decay=optimizer.weight_decay
         )
     else:
-        pass
+        raise NotImplementedError(f'Unknown optimizer type: {optimizer.type}')
 
 
 def scheduler_selected(scheduler, optimizer):
@@ -94,60 +82,4 @@ def scheduler_selected(scheduler, optimizer):
             min_lr=scheduler.min_lr
         )
     else:
-        pass
-
-def split_data(path, dataset):
-    split = torch.load(path)
-    subsets = {k: Subset(dataset, indices=v) for k, v in split.items()}
-    return subsets
-
-
-def get_dataset(root, name, version, split=True):
-    if name == 'pair':
-        dataset = OasPairDataset(root, version=version)
-        split_path = dataset.index_path
-        if split:
-            return split_data(split_path, dataset)
-        else:
-            return dataset
-
-    elif name == 'unpair':
-        h_dataset = OasUnPairDataset(data_dpath=root, chaintype='heavy')
-        l_dataset = OasUnPairDataset(data_dpath=root, chaintype='light')
-        h_split_path = h_dataset.index_path
-        l_split_path = l_dataset.index_path
-        if split:
-            h_subsets = split_data(h_split_path, h_dataset)
-            l_subsets = split_data(l_split_path, l_dataset)
-            return h_subsets, l_subsets
-        else:
-            return h_dataset, l_dataset
-    
-    elif name == 'mouse':
-        dataset = OasPairDataset(root, version=version, mouse=True)
-        split_path = dataset.index_path
-        if split:
-            return split_data(split_path, dataset)
-        else:
-            return dataset
-
-    elif name == 'heavy':
-        h_dataset = OasUnPairDataset(data_dpath=root, chaintype='heavy')
-        h_split_path = h_dataset.index_path
-        if split:
-            h_subsets = split_data(h_split_path, h_dataset)
-            return h_subsets
-        else:
-            return h_dataset
-
-    elif name == 'vhh':
-        vhh_dataset = OasUnPairDataset(data_dpath=root, chaintype='vhh')
-        vhh_split_path = vhh_dataset.index_path
-        if split:
-            vhh_subsets = split_data(vhh_split_path, vhh_dataset)
-            return vhh_subsets
-        else:
-            return vhh_dataset
-
-    else:
-        raise NotImplementedError('Unknown dataset: %s' % name)
+        raise NotImplementedError(f'Unknown scheduler type: {scheduler.type}')

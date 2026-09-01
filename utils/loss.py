@@ -223,7 +223,7 @@ class OasMaskedHeavyCrossEntropyLoss(CrossEntropyLoss):
         self.tokenizer = tokenizer
         super().__init__(weight=weight, reduction=reduction)
 
-    def forward(self, H_pred, H_tgt, H_mask, H_cdr_mask, H_timesteps):
+    def forward(self, H_pred, H_tgt, H_mask, H_cdr_mask, H_timesteps, seq_lengths=None):
         # Make sure we have that empty last dimension
         if len(H_mask.shape) == len(H_pred.shape) - 1:
             H_mask = H_mask.unsqueeze(-1)
@@ -238,25 +238,44 @@ class OasMaskedHeavyCrossEntropyLoss(CrossEntropyLoss):
         # H_nonpad_tokens, L_nonpad_tokens = H_input_mask.sum(dim=1), L_input_mask.sum(dim=1) # nonpad tokens
 
         # Cal H loss.
-        H_p = torch.masked_select(H_pred, H_mask).view(H_mask_tokens, -1)  # [T x K] predictions for each mask char
-        H_t = torch.masked_select(H_tgt, H_mask.squeeze())  # [ T ] true mask char
-        H_loss = super().forward(H_p, H_t.long()) # [ T ] loss per mask char
-        H_nll_losses = H_loss.mean()
+        if H_mask_tokens.item() == 0:
+            zero = H_pred.sum() * 0.0
+            H_loss = zero.new_empty((0,))
+            H_nll_losses = zero
+            H_ce_losses = zero
+        else:
+            H_p = torch.masked_select(H_pred, H_mask).view(H_mask_tokens, -1)  # [T x K] predictions for each mask char
+            H_t = torch.masked_select(H_tgt, H_mask.squeeze())  # [ T ] true mask char
+            H_loss = super().forward(H_p, H_t.long()) # [ T ] loss per mask char
+            H_nll_losses = H_loss.mean()
 
         # Cal H cdr loss.
         H_cdr_mask = H_cdr_mask.bool()
-        H_cdr_p = torch.masked_select(H_pred, H_cdr_mask.unsqueeze(-1)).view(H_cdr_mask_tokens, -1)
-        H_cdr_t = torch.masked_select(H_tgt, H_cdr_mask)
-        H_cdr_loss = super().forward(H_cdr_p, H_cdr_t.long())
-        H_cdr_losses = H_cdr_loss.mean()
+        if H_cdr_mask_tokens.item() == 0:
+            H_cdr_losses = H_pred.sum() * 0.0
+        else:
+            H_cdr_p = torch.masked_select(H_pred, H_cdr_mask.unsqueeze(-1)).view(H_cdr_mask_tokens, -1)
+            H_cdr_t = torch.masked_select(H_tgt, H_cdr_mask)
+            H_cdr_loss = super().forward(H_cdr_p, H_cdr_t.long())
+            H_cdr_losses = H_cdr_loss.mean()
 
-        if self.reweight: # Uses Hoogeboom OARDM reweighting term
-            H_rwt_term = 1. / H_timesteps
-
-            no_pad_number = torch.tensor([H_pred.size(1)]).repeat(H_pred.size(0)).to(H_rwt_term.device)
-            H_rwt_term = H_rwt_term.repeat_interleave(H_timesteps)
-            H_n_tokens = no_pad_number.repeat_interleave(H_timesteps)
-            H_ce_loss = H_n_tokens * H_rwt_term * H_loss
+        if H_mask_tokens.item() == 0:
+            pass
+        elif self.reweight: # Uses Hoogeboom OARDM reweighting term
+            # Use actual sequence lengths when provided; fall back to max_len.
+            # AMP sequences (mean 37 AA) are much shorter than max_len=100,
+            # so using max_len inflates the weight ~9x and causes gradient instability.
+            if seq_lengths is not None:
+                no_pad_number = seq_lengths.float().to(H_pred.device)
+            else:
+                no_pad_number = torch.full(
+                    (H_pred.size(0),), H_pred.size(1), dtype=torch.float32, device=H_pred.device
+                )
+            per_seq_weight = no_pad_number / H_timesteps.float().to(H_pred.device).clamp_min(1)
+            H_token_weights = torch.masked_select(
+                per_seq_weight.unsqueeze(1).expand_as(H_tgt), H_mask.squeeze(-1)
+            )
+            H_ce_loss = H_token_weights * H_loss
             H_ce_losses = H_ce_loss.mean()  # reduce mean
 
         else:
@@ -297,4 +316,3 @@ class OasMaskedNanoCrossEntropyLoss(CrossEntropyLoss):
             H_ce_losses = H_ce_loss.mean()
 
             return H_cdr_losses, H_ce_losses
-

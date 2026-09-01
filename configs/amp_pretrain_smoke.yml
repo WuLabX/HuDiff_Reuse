@@ -1,0 +1,45 @@
+name: nano
+model:
+  n_tokens: 23
+  d_embedding: 64
+  d_model: 64
+  n_encoder_layers: 2
+  aa_kernel_size: 5
+  r: 32
+  n_region: 3
+  r_embedding: 4
+  r_model: 64
+  n_pos_model: 64
+  max_len: 100
+  sum_d_model: 128
+  dual_layers: 2
+  att_model: 128
+  dim_feedforward: 128
+  nhead: 4
+  cs_layers: 2
+  dropout: 0.1
+  activation: gelu
+train:
+  seed: 2023
+  max_iter: 1
+  batch_acc: 1
+  valid_step: 1
+  split_ratio: 0.95
+  batch_size: 4
+  num_workers: 0
+  clip_norm: 10
+  optimizer:
+    type: Adam
+    lr: 0.0001
+    weight_decay: 0.0
+    beta1: 0.95
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.7
+    patience: 2
+    min_lr: 1.0e-05
+amp:
+  motif_active_file: data/motif/AMP_act_Motifs.csv
+  motif_hemolytic_file: data/motif/AMP_hom_negMotifs.csv
+  mode: de

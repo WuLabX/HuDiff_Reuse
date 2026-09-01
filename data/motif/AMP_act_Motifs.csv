@@ -1,0 +1,1335 @@
+pattern,type
+"A-x(0,1)-K-x(2,3)-P-[HR]-V-[AIV]-P-[AIV]-[IV]-[AT]-E-[HK]",PROSITE Pattern: Caerin (CAMPCaeP)
+A-x-[FI]-[ENT]-[FIV]-x-N-x(2)-[PQST]-x-T-[IV]-W-[AP],PROSITE Pattern: Thaumatin (CAMPThaP)
+C-T-S-Y-[WY]-C-[GS]-K-F-C-G-[ST]-A-[GS]-C-[ST]-x-Y-[GL]-C-x(2)-L-H-x-G-K-[ILM]-C-x-C-[LV]-H-C-S-R,PROSITE Pattern: Myticin (CAMPMytP)
+C-x(4)-C-x(4)-R-[QR]-x-G-T-C-[FIL],PROSITE Pattern: Defensin (CAMPDefP30)
+D-[ASTV]-x-K-[DGN]-x-A-x-[DNT]-[ILV]-x-[AGV]-x(2)-L-[DEN]-x-[IL]-[KR]-C-[KR]-[FIMV]-[ST]-x-C,PROSITE Pattern: Ranateurin (CAMPRanP28)
+"F-x(0,1)-L-x(2,3)-I-[GI]-x(2)-[IV]-x-[GN]-[FI]-[GV]-[HY]-[GL]-[FV]-x-H-[IV]",PROSITE Pattern: Clavanin (CAMPClaP)
+G-F-G-[AS]-L-F-K-F-L-A-K-K-V-A-K-T-V-A-K-Q-A-A-K-Q-G-A-K-Y-[IV]-[AV]-N-K-x(2)-[EQ],PROSITE Pattern: Cupiennin (CAMPCupP)
+G-F-[KR]-D-x-[IL]-K-G-A-A-K-x-[FL]-[IV]-K-T-V-[AL],PROSITE Pattern: Ascaphin (CAMPAscP)
+G-R-P-N-P-V-N-[NT]-K-P-T-P-[HY]-P-R-L,PROSITE Pattern: Formaecin (CAMPForP)
+"G-V-[GL]-[DS]-x-[FI]-[HR]-K-x(1,3)-V-x(1,3)-K-N-[IV]-[AV]",PROSITE Pattern: Uperin (CAMPUpeP)
+"G-x(0,1)-N-T-x-[AGT]-[DQT]-I-[DEN]-[AIV]-Q-x-[HK]-[GT]-[DEK]-[DNR]-x-D-[FV]-x-[AG]-[GT]-W-[GST]-K-V-[IV]-[DR]-G-P-[GN]-[KR]-[AS]-K-P-[NT]-[FW]-x-[IV]-G-G-[ST]-[HY]-R",PROSITE Pattern: Coleoptericin (CAMPColP)
+"G-[HY]-T-x-P-x(1,3)-P-x(0,1)-R-P-[ILP]-x(4)-[IP]-[GILP]-x(3)-[CPV]-x-[CGNT]",PROSITE Pattern: Penaeidin (CAMPPenP)
+G-[IL]-N-[AT]-L-K-K-V-[FI]-Q-G-[IL]-H-E-[AV]-I-K-L-[IV]-[NS]-N-H,PROSITE Pattern: Pseudin (CAMPPseP)
+"G-[IL]-x-[DE]-x-[IL]-K-[NQ]-x-[AG]-K-x(3,5)-L-x(0,2)-L-x(2)-[AIL]-x-C-K-[ILV]-[AGS]-G-[GQ]-[CG]",PROSITE Pattern: Brevinin (CAMPBreP29)
+I-G-x(3)-L-[GS]-[AGV]-[GLV]-[KR]-x(2)-[FL]-K-G-[AL]-x(3)-L-A-x(2)-[FY]-[ALV],PROSITE Pattern: Maximin (CAMPMaxP27)
+K-F-H-E-K-H-H-S-H-R-[EG]-[FY],PROSITE Pattern: Histatin (CAMPHisP)
+K-S-C-C-x-[DNS]-T-x-[AG]-R-N-x-Y-N-x-C-R-x(2)-G-[AGT],PROSITE Pattern: Thionin (CAMPThiP)
+"K-x(0,1)-G-x(0,2)-K-[DNT]-[FLV]-A-[AGV]-x-[LM]-L-[DE]-x-[FIL]-K-C-x-[IM]-[GT]-[GT]-C",PROSITE Pattern: Ranateurin (CAMPRanP32)
+K-x(2)-[AGT]-[KR]-x-G-x(3)-[ILMV]-[AGS]-C-K-[AIV]-x(2)-[EQ]-C,PROSITE Pattern: Esculentin (CAMPEscP37)
+"K-x-[GNP]-[AGIV]-x-[AI]-I-K-x(1,2)-G-x(1,3)-G-x-[AGILV]-x(2)-[AGIV]-[GI]-[NST]-[AGI]-x-[EGQS]-[TV]-x(2)-[DH]-[IV]-x-[ENS]",PROSITE Pattern: Moricin (CAMPMorP)
+"K-[ADQT]-x-A-x(2)-[ILV]-[AG]-K-x(4,5)-G-[AIV]-x(2)-[AGT]-[ALV]",PROSITE Pattern: Rugosin (CAMPRugP)
+K-[DNST]-[ILMV]-[GL]-K-[EGN]-[AIV]-[AG]-x-[AL]-A-G-x-A-[AV]-L-[GN]-[AST]-[LV]-x-[DET],PROSITE Pattern: Dermaseptin (CAMPDerP28)
+"K-[ILV]-x-K-K-I-E-x(2)-G-x(0,1)-R-[NV]-[FIV]-[KR]-[ADN]-[AG]-x(3)-[AL]-[AGP]-[PV]-[AV]-[AIV]-[AEG]-V-x-[AG]-x-[AG]",PROSITE Pattern: Cecropin (CAMPCecP35)
+L-[ES]-K-[TV]-x-[KR]-x-[IL]-[ER]-N-[GS]-[AI]-x-[KR]-x(2)-[GS]-[EP]-[AG]-[IV]-A-[IV]-[AI]-[GI]-x-[AG],PROSITE Pattern: Cecropin (CAMPCecP31)
+"L-[FW]-K-[NT]-[ILM]-[IL]-K-G-[AI]-G-K-[LMV]-x-G-x(1,2)-A-x(1,3)-L-G-[AS]-x(3)-[LP]-x-[GS]",PROSITE Pattern: Dermaseptin (CAMPDerP30)
+"L-[GS]-[LM]-[IL]-P-x(1,2)-I-x(1,3)-S-[AGT]-[AILV]-[ASV]",PROSITE Pattern: Phylloseptin (CAMPPhyP)
+"M-T-P-F-W-R-G-V-S-L-R-P-[IV]-G-A-S-C-R-D-[DN]-S-E-C-I-T-x-L-C-R-K-x(0,1)-R-x(0,1)-C-x-L-[RS]-[TV]-A-[QS]-E",PROSITE Pattern: LEAP-2 (CAMPLEAP)
+R-[HR]-Q-G-P-I-F-D-T-R-P-S-P-F-N-P-N-Q-P-R-P-G-P-I-Y,PROSITE Pattern: Metchnikowin (CAMPMetP)
+T-x-[GPTV]-x-[STV]-T-[CGS]-x(3)-[CST]-x(2)-[AL]-[GQ]-[NTV]-x-[GTV]-x(2)-[CS]-x(2)-[PST],PROSITE Pattern: Bacteriocin (CAMPBacP32)
+"T-[FH]-[IL]-S-x(0,2)-E-x-[IM]-[AI]-[DV]-x-N-x-[AI]",PROSITE Pattern: Cystatin (CAMPCysP)
+"W-Q-x(0,1)-R-x(0,1)-M-[KR]-K-[LV]",PROSITE Pattern: Transferrin (CAMPTraP)
+"W-x-[LPV]-F-K-x(0,2)-E-x(2)-G-[QR]-[NR]-[IV]-R-[DN]-[AG]-[IV]-[IV]-x-A-[AG]-[AP]-[AV]-[AIV]-[AET]-[TV]-[GLV]-[GQ]-[AEQS]-A-x(2)-[AIL]",PROSITE Pattern: Cecropin (CAMPCecP37)
+A-L-L-H-H-G-L-N-C-A-K-G-V-L-A,PROSITE Pattern: Halocidin | Halocidin (CAMPHalP)
+C-T-C-T-T-I-I-S-S-S-S-T-F,PROSITE Pattern: Plantazolicin | Plantazolicin (CAMPPlaP)
+"G-L-x-S-x-I-K-x(3)-K-x-A-x(2,3)-A-x-G",PROSITE Pattern: Dermaseptin (异构体1) | Dermaseptin (CAMPDerP25)
+K-[FLV]-[FILV]-C-[AL]-[FIV]-x-K-K-C,PROSITE Pattern: Brevinin (异构体1) | Brevinin (CAMPBreP20)
+-PPXR- (repeating),Literature / DB Motif: Bac5 repeat motif
+-PRPX- (repeating),Literature / DB Motif: Bac7 repeat motif
+C-terminal cyclic heptapeptide (C...CKXXKXC) with conserved disulfide,Literature / DB Motif: Rana box
+C-X(3-9)-CXG-X(1-3),Literature / DB Motif: γ-core (levomeric isoform 1)
+C-X(3-9)-GXC-X(1-3),Literature / DB Motif: γ-core (levomeric isoform 2)
+C..C...C...C...CC (6-Cys scaffold),Literature / DB Motif: CSαβ motif (Cysteine-stabilized αβ)
+"C1-C4, C2-C5, C3-C6 (Cys linkage: 1-4, 2-5, 3-6)",Literature / DB Motif: Insect defensin disulfide pattern
+"C1-C5, C2-C4, C3-C6 (Cys linkage: 1-5, 2-4, 3-6)",Literature / DB Motif: β-defensin disulfide pattern
+"C1-C6, C2-C4, C3-C5 (Cys linkage: 1-6, 2-4, 3-5)",Literature / DB Motif: α-defensin disulfide pattern
+Cyclic backbone (head-to-tail) with 3 disulfide bonds,Literature / DB Motif: θ-defensin cyclic backbone
+cyclo(VOL-DPhe-PLeu)2,Literature / DB Motif: Gramicidin S
+DAB-THR-DAB-cyclo[DAB-DAB-D-PHE-LEU-DAB-DAB-THR],Literature / DB Motif: Polymyxin B nonapeptide core
+DCLSGRYKGPCAVWDNETCRRVCKEEGRSSGHCSPSLKCWCEGC,Literature / DB Motif: Drosomycin
+DTHFPICIFCCGCCHRSKCGMCCKT,Literature / DB Motif: Hepcidin (HAMP)
+FKCRRWQWRMKKLGAPSITCVRRAF,"Literature / DB Motif: Lactoferricin B (LfcinB, full)"
+FLPLIGRVLSGIL-NH2,Literature / DB Motif: Temporin A
+FLPVLAGIAAKVVPALFCKITKKC,Literature / DB Motif: Brevinin-1
+G-WKRKRF-G,Literature / DB Motif: LPS-binding motif (temporin)
+"GGG[^G]{1,}GGG",Literature / DB Motif: Werner0 pipeline — Batch 1 motif
+GGLRSLGRKILRAWKKYGPIIVPIIRI-NH2,Literature / DB Motif: BMAP-28 (bovine)
+GIFSKLAGKKIKNLLISGLKG-NH2,Literature / DB Motif: Esculentin-1a
+GIGAVLKVLTTGLPALISWIKRKRQQ-NH2,Literature / DB Motif: Melittin
+GIGKFLHSAKKFGKAFVGEIMNS,Literature / DB Motif: Magainin 2 (Xenopus laevis)
+GKCYKKDNIC,Literature / DB Motif: Antifungal γ-core (example: GKCYKKDNIC)
+GLFDVIKKVASVIGGL-NH2,Literature / DB Motif: Citropin 1.1
+GLLRKGGEKIGEKLKKIGQKIKNFFQKLVPQPE,Literature / DB Motif: CRAMP (mouse)
+GRFKRFRKKFKKLFKKLSPVIPLLHL-NH2,Literature / DB Motif: BMAP-27 (bovine)
+GWGSFFKKAAHVGKHVGKAALTHYL-NH2,Literature / DB Motif: Pleurocidin
+GXC(X3-5)C,Literature / DB Motif: α-core motif (defensins)
+GXC(X3-9)C,Literature / DB Motif: γ-core motif (dextromeric)
+GXCX3-9C (realized as γ33-41PvD1++),Literature / DB Motif: PvD1 γ-core (Phaseolus vulgaris)
+"HXXHHXXHHX (binary code: H=hydrophobic, X=other)",Literature / DB Motif: Werner0 pipeline — Batch 3 binary hydrophobicity
+ILPWKWPWWPWRR-NH2,Literature / DB Motif: Indolicidin
+ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK,Literature / DB Motif: Nisin (lantibiotic)
+KLAKLAKKLAKLAK,Literature / DB Motif: (KLAKLAK)₂ — Mitochondria-disrupting
+KWCFRVCYRGICYRRCR-NH2,Literature / DB Motif: Tachyplesin-1
+KWKLFKKIEKVGQNIRDGIIKAGPAVAVVGQATQIAK-NH2,Literature / DB Motif: Cecropin A (insect)
+KWKLFKKIGAVLKVL,Literature / DB Motif: Cecropin A–Melittin hybrid (CA-M)
+KWRWIW-NH2,Literature / DB Motif: KCM12
+KWWWRW-NH2,Literature / DB Motif: KCM21
+LLGDFFRKSKEKIGKEFKRIVQR,Literature / DB Motif: LL-37 N-terminal fragment (LL-23)
+LLGDFFRKSKEKIGKEFKRIVQRIKDFLRNLVPRTES,Literature / DB Motif: LL-37 (Human cathelicidin)
+"Position-weight matrices with conserved R, N, G at critical sites","Literature / DB Motif: KPPepGen E. coli motifs (conservation at R, N, G position"
+QCRRLCYKQRCVTYCRGR,Literature / DB Motif: Gomesin
+RAWVAWR,Literature / DB Motif: RAWVAWR — Lysozyme fragment
+RGGRLCYCRRRFCVCVGR-NH2,Literature / DB Motif: Protegrin-1 (PG-1)
+RGLRRLGRKIAHGVKKYGPTVLRIIRIAG-NH2,Literature / DB Motif: SMAP-29 (ovine)
+RKKWFW,Literature / DB Motif: PAF26 — Antifungal hexapeptide
+RLLR,Literature / DB Motif: BFII(32-35) — Buforin II active core
+RLLRLLR,Literature / DB Motif: Palindromic BFII motif
+RQWQFHFNARGWKR-NH2,Literature / DB Motif: Guavanin 2 (GA-designed)
+RRWQWR,Literature / DB Motif: LfcinB(20-25) — Lactoferricin B active core
+RRWWRF,Literature / DB Motif: RRWWRF — Combinatorial library hit
+RWCVYAYVRVRGVLVRYRRCW,Literature / DB Motif: Arenicin-1
+RWKRWWRRKK (D-amino acid variant),Literature / DB Motif: CONGA/d-CONGA lineage
+RWQWRWQWR,Literature / DB Motif: Palindromic LfcinB motif
+SSLLEKGLDGAKKAVGGLGKLGKDAVEDLESVGKGAVHDVKDVLDSV,Literature / DB Motif: Dermcidin (DCD-1L)
+TRSSRAGLQFPVGRVHRLLRK,Literature / DB Motif: Buforin II
+TWWRWW-NH2,Literature / DB Motif: KCM11
+VFQFLGKIIHHVGNFVHGFSHVF-NH2,Literature / DB Motif: Clavanin A
+WRWFIH-NH2,Literature / DB Motif: KCM22
+WRWYCR,Literature / DB Motif: WRWYCR — Holliday junction binder
+X(1-3)-GXC-X(3-9)-C,Literature / DB Motif: γ-core (dextromeric isoform)
+[M]..*[G].[G].[G]..*[R]..*[G]..*[P]..*[G]..*[RK]..*[EQ],Literature / DB Motif: Werner0 pipeline — Batch 7 MSA motif
+~40% R content in 4-7 aa R/W peptides + adjacent WW/WWW duplets/triplets,Literature / DB Motif: R/W shortest active window (Clark et al.)
+GSKKPVPIIYCNRRTGKCQRM,Literature / DB Motif | γ-Core Motif / Variant: Thanatin | Thanatin (昆虫)
+KK[ILV]x(3)[AILV],PROSITE Pattern: Joker α-helix pattern
+[C]-[X3-9]-[CXG]-[X1-3],PROSITE Pattern: γ-Core Levomeric
+[X1-3]-[GXC]-[X3-9]-[C],PROSITE Pattern: γ-Core Dextromeric
+GGH,N-terminal Motif: ATCUN tripeptide
+VIH,N-terminal Motif: ATCUN variant
+GLLSGILGAGKKIVF,Full Sequence: Nigrocin-HL analog (F-amide)
+GLLSGILGAGKKIVCGLSGLC,Full Sequence: Nigrocin-HL
+CGLSGLC,Structural Motif: Rana Box conserved
+CGLXGLC,Structural Motif: Rana Box
+"A-x(0,1)-K-x(2,3)-P--V-[AIV]-P-[AIV]-[IV]--E-[HK]",PROSITE Pattern: Caerin
+A-x-[FI]--[FIV]-x-N-x(2)--x-T-[IV]-W-[AP],PROSITE Pattern: Thaumatin
+C-T-S-Y--C--K-F-C-G--A--C--x-Y-[GL]-C-x(2)-L-H-x-G-K-[ILM]-C-x-C-[LV]-H-C-S-R,PROSITE Pattern: Myticin
+C-x(4)-C-x(4)-R--x-G-T-C-[FIL],PROSITE Pattern: Defensin
+D--x-K--x-A-x--[ILV]-x-[AGV]-x(2)-L--x-[IL]--C--[FIMV]--x-C,PROSITE Pattern: Ranateurin (异构体1)
+"F-x(0,1)-L-x(2,3)-I-[GI]-x(2)-[IV]-x-[GN]-[FI]-[GV]--[GL]-[FV]-x-H-[IV]",PROSITE Pattern: Clavanin
+"G--T-x-P-x(1,3)-P-x(0,1)-R-P-[ILP]-x(4)-[IP]-[GILP]-x(3)-[CPV]-x-",PROSITE Pattern: Penaeidin
+G-F--D-x-[IL]-K-G-A-A-K-x-[FL]-[IV]-K-T-V-[AL],PROSITE Pattern: Ascaphin
+G-F-G--L-F-K-F-L-A-K-K-V-A-K-T-V-A-K-Q-A-A-K-Q-G-A-K-Y-[IV]-[AV]-N-K-x(2)-[EQ],PROSITE Pattern: Cupiennin
+G-R-P-N-P-V-N--K-P-T-P--P-R-L,PROSITE Pattern: Formaecin
+"G-V-[GL]--x-[FI]--K-x(1,3)-V-x(1,3)-K-N-[IV]-[AV]",PROSITE Pattern: Uperin
+"G-x(0,1)-N-T-x---I--[AIV]-Q-x-[HK]----x-D-[FV]-x-[AG]--W--K-V-[IV]--G-P-[GN]---K-P---x-[IV]-G-G---R",PROSITE Pattern: Coleoptericin
+G-[IL]-N--L-K-K-V-[FI]-Q-G-[IL]-H-E-[AV]-I-K-L-[IV]--N-H,PROSITE Pattern: Pseudin
+"G-[IL]-x--x-[IL]-K-[NQ]-x-[AG]-K-x(3,5)-L-x(0,2)-L-x(2)-[AIL]-x-C-K-[ILV]--G-[GQ]-[CG]",PROSITE Pattern: Brevinin (异构体2)
+I-G-x(3)-L--[AGV]-[GLV]--x(2)-[FL]-K-G-[AL]-x(3)-L-A-x(2)--[ALV],PROSITE Pattern: Maximin
+"K--x-A-x(2)-[ILV]-[AG]-K-x(4,5)-G-[AIV]-x(2)--[ALV]",PROSITE Pattern: Rugosin
+K--[ILMV]-[GL]-K-[EGN]-[AIV]-[AG]-x-[AL]-A-G-x-A-[AV]-L-[GN]--[LV]-x-,PROSITE Pattern: Dermaseptin (异构体2)
+K-F-H-E-K-H-H-S-H-R-[EG]-,PROSITE Pattern: Histatin
+K-S-C-C-x--T-x-[AG]-R-N-x-Y-N-x-C-R-x(2)-G-,PROSITE Pattern: Thionin
+"K-x(0,1)-G-x(0,2)-K--[FLV]-A-[AGV]-x-[LM]-L--x-[FIL]-K-C-x-[IM]---C",PROSITE Pattern: Ranateurin (异构体2)
+K-x(2)---x-G-x(3)-[ILMV]--C-K-[AIV]-x(2)-[EQ]-C,PROSITE Pattern: Esculentin
+"K-x-[GNP]-[AGIV]-x-[AI]-I-K-x(1,2)-G-x(1,3)-G-x-[AGILV]-x(2)-[AGIV]-[GI]--[AGI]-x---x(2)--[IV]-x-",PROSITE Pattern: Moricin
+"K-[ILV]-x-K-K-I-E-x(2)-G-x(0,1)-R-[NV]-[FIV]---[AG]-x(3)-[AL]-[AGP]-[PV]-[AV]-[AIV]-[AEG]-V-x-[AG]-x-[AG]",PROSITE Pattern: Cecropin (异构体2)
+L--K--x--x-[IL]--N--[AI]-x--x(2)--[EP]-[AG]-[IV]-A-[IV]-[AI]-[GI]-x-[AG],PROSITE Pattern: Cecropin (异构体1)
+"L--K--[ILM]-[IL]-K-G-[AI]-G-K-[LMV]-x-G-x(1,2)-A-x(1,3)-L-G--x(3)-[LP]-x-",PROSITE Pattern: Dermaseptin (异构体3)
+"L--[LM]-[IL]-P-x(1,2)-I-x(1,3)-S--[AILV]-",PROSITE Pattern: Phylloseptin
+"M-T-P-F-W-R-G-V-S-L-R-P-[IV]-G-A-S-C-R-D--S-E-C-I-T-x-L-C-R-K-x(0,1)-R-x(0,1)-C-x-L---A--E",PROSITE Pattern: LEAP-2
+R--Q-G-P-I-F-D-T-R-P-S-P-F-N-P-N-Q-P-R-P-G-P-I-Y,PROSITE Pattern: Metchnikowin
+T-x--x--T--x(3)--x(2)-[AL]-[GQ]--x--x(2)--x(2)-,PROSITE Pattern: Bacteriocin
+"T-[FH]-[IL]-S-x(0,2)-E-x-[IM]-[AI]--x-N-x-[AI]",PROSITE Pattern: Cystatin
+"W-Q-x(0,1)-R-x(0,1)-M--K-[LV]",PROSITE Pattern: Transferrin
+"W-x-[LPV]-F-K-x(0,2)-E-x(2)-G---[IV]-R--[AG]-[IV]-[IV]-x-A-[AG]-[AP]-[AV]-[AIV]---[GLV]-[GQ]--A-x(2)-[AIL]",PROSITE Pattern: Cecropin (异构体3)
+IIKKLLGKLAKFVL,Full Sequence: RBWH15
+IIKLLGKKLAKFVL,Full Sequence: RBWH16
+IIKLLGKLAKFVL,Full Sequence: RBWH11
+IIKLLKKGVLAKFVL,Full Sequence: RBWH17
+IIKLLKKGVLAKKFVL,Full Sequence: RBWH18
+IKGVLAKLLFVL,Full Sequence: RBWH12
+IKLLGKLAKFVL,Full Sequence: RBWH13
+IKLLGKLAKKFVL,Full Sequence: RBWH14
+INIKDILAKLVKVLGHV,Full Sequence: AP00069
+EEER,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+EERR,K-mer Motif: 4-mer (混合交叉最高频)
+FFLG,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+FLGT,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+FTMK,K-mer Motif: 4-mer (混合交叉最高频)
+GLSG,K-mer Motif: 4-mer (混合交叉最高频)
+KKLG,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+KKLL,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+KKSL,K-mer Motif: 4-mer (混合交叉最高频)
+KPLL,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+KSLL,K-mer Motif: 4-mer (基于高频统计 (Freq-based)) | 4-mer (混合交叉最高频)
+LFFL,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+LGTI,K-mer Motif: 4-mer (基于高频统计 (Freq-based)) | 4-mer (混合交叉最高频)
+LKKI,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+LKKL,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+LLFF,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+LLLF,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+LLSG,K-mer Motif: 4-mer (混合交叉最高频)
+LSGL,K-mer Motif: 4-mer (混合交叉最高频)
+LSLC,K-mer Motif: 4-mer (基于高频统计 (Freq-based))
+NAEE,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+PRPP,K-mer Motif: 4-mer (基于主题模型 (LDA-derived))
+RPRP,K-mer Motif: 4-mer (混合交叉最高频)
+TLKK,K-mer Motif: 4-mer (基于主题模型 (LDA-derived)) | 4-mer (混合交叉最高频)
+KLLK,K-mer Motif: 4-mer (基于主题模型 (LDA-derived)) | Gram-negative AMP motif
+LLKK,K-mer Motif: 4-mer (基于主题模型 (LDA-derived)) | Gram-negative AMP motif
+LLLL,K-mer Motif: 4-mer (基于高频统计 (Freq-based)) | Gram-positive AMP motif
+FTLKKSLLLLFFLG,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+GILGAGKHIVCGLS,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+GLLSGILGAGKHIV,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+ILGAGKHIVCGLSG,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+KKSLLLLFFLGTIN,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+KSLLLLFFLGTINL,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+LKKSLLLLFFLGTI,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+LLLFFLGTINLSLC,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+LLLLFFLGTINLSL,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+LLSGILGAGKHIVC,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+LSGILGAGKHIVCG,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+MFTLKKSLLLLFFL,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+SGILGAGKHIVCGL,K-mer Motif: 14-mer (基于主题模型 (LDA-derived))
+SLLLLFFLGTINLS,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+TLKKSLLLLFFLGT,K-mer Motif: 14-mer (基于高频统计 (Freq-based))
+EVGMDVIRTGIDVAGCKI,K-mer Motif: 18-mer (基于主题模型 (LDA-derived))
+GKEVGMDVIRTGIDVAGC,K-mer Motif: 18-mer (基于主题模型 (LDA-derived))
+KEVGMDVIRTGIDVAGCK,K-mer Motif: 18-mer (基于主题模型 (LDA-derived))
+MDVIRTGIDVAGCKIKGE,K-mer Motif: 18-mer (基于主题模型 (LDA-derived))
+ASCNGVCSPFEMPPCGTSACRCIPVGLVIGYCRNPSG,γ-Core Motif / Variant: PA1b (植物)
+CAGTGENKC,γ-Core Motif / Variant: Kdp9
+FFSASCVPGADKGQFPNLCRLCAGTGENKCA,γ-Core Motif / Variant: Kaliocin-1
+GACIARCRLSSRPNLCKR,γ-Core Motif / Variant: γ48-67FuSN6
+GKCSHILRRCFCTTHC,γ-Core Motif / Variant: FuD0
+GKCSHILRRCQCLKSC,γ-Core Motif / Variant: γ61-76FuDEFL1-7
+GKCSHILRRCRCSKSC,γ-Core Motif / Variant: γ59-74FuDEFL1-1
+GLCKYRCSLHSRPNVCFR,γ-Core Motif / Variant: γ89-106SlSN9
+GRCKLSSRPKLCKR,γ-Core Motif / Variant: γ54-69FuSN5
+GSCYTDMTTHGNRLKCP,γ-Core Motif / Variant: γ88-104FuSN3
+HCKNKEHLRSGRCRDDFRCWCT,γ-Core Motif / Variant: PvD1 (植物)
+HCKSVGYRGGYCKLRTVCTCY,γ-Core Motif / Variant: afnA (细菌)
+NLCRLCAGTGENKCA,γ-Core Motif / Variant: Kdp15
+NLCRLCAGTGENKGA,γ-Core Motif / Variant: Kdp15-G14
+NLCRLGAGTGENKCA,γ-Core Motif / Variant: Kdp15-G6
+NLGRLCAGTGENKCA,γ-Core Motif / Variant: Kdp15-G3
+VCETERFSGGNCRGFRRRCFCT,γ-Core Motif / Variant: SolyC (植物)
+EWGMAVLWERNRKLKKDLKVLKMLRT,CRAC/CARC Motif: Mut1 (乱序对照Scramble)
+LEEYSKRFKK,CRAC/CARC Motif: LtxA短片段-CRAC336
+RTKLSEMLVELGNMDKAVKLSRKLKR,CRAC/CARC Motif: Mut3 (色氨酸W被替换变体)
+RTKLWEMLVELGNMDKAVKLWRKLKR,CRAC/CARC Motif: P4 原始双CRAC序列
+STKLSEMLSELGNMDKASKLSRKLSR,CRAC/CARC Motif: Mut2 芳香族及碱性氨基酸变体
+STKLWEMLVELGNMDKAVKLWRKLSR,CRAC/CARC Motif: Mut4 (阳离子R/K被替换变体)
+VDYLKK,CRAC/CARC Motif: LtxA短片段-CRAC503
+CSTNTFSLSDYWGNNGAWCTLTHECMAWCK,Full Sequence: Lacticin 3147
+GICACRRRFCLNFEQFSGYCRVNGARYVRCCSRR,Full Sequence: Corticostatin VI
+GICACRRRFCPNSERFSGYCRVNGARYVRCCSRR,Full Sequence: NP-3a
+ICACRRRFCPNSERFSGYCRVNGARYVRCCSRR,Full Sequence: CORTICOSTATIN I
+KYYGNGVTCGKHSCSVDWGKATTCIINNGAMAWATGGHQGNHKC,Full Sequence: Pediocin PA-1/AcH
+RRWWRWWR,Full Sequence: Octa 2 (经典模型)
+AKAL,MERCI Motif: Gram-negative AMP motif
+AKPP,MERCI Motif: Gram-negative AMP motif
+ALALK,MERCI Motif: Gram-negative AMP motif
+ALKAI,MERCI Motif: Gram-negative AMP motif
+ALKAIS,MERCI Motif: Gram-negative AMP motif
+ALKK,MERCI Motif: Gram-negative AMP motif
+ALKKA,MERCI Motif: Gram-negative AMP motif
+APRT,MERCI Motif: Gram-negative AMP motif
+APRTD,MERCI Motif: Gram-negative AMP motif
+APRTDY,MERCI Motif: Gram-negative AMP motif
+APSI,MERCI Motif: Gram-negative AMP motif
+APSIT,MERCI Motif: Gram-negative AMP motif
+ARRAL,MERCI Motif: Gram-negative AMP motif
+CLR,MERCI Motif: Gram-negative AMP motif
+CRRRF,MERCI Motif: Gram-negative AMP motif
+CRRRFC,MERCI Motif: Gram-negative AMP motif
+CRRRFCV,MERCI Motif: Gram-negative AMP motif
+CRRRFCVC,MERCI Motif: Gram-negative AMP motif
+CYCR,MERCI Motif: Gram-negative AMP motif
+CYCRR,MERCI Motif: Gram-negative AMP motif
+CYCRRR,MERCI Motif: Gram-negative AMP motif
+CYCRRRF,MERCI Motif: Gram-negative AMP motif
+CYCRRRFC,MERCI Motif: Gram-negative AMP motif
+CYCRRRFCV,MERCI Motif: Gram-negative AMP motif
+CYCRRRFCVC,MERCI Motif: Gram-negative AMP motif
+DFF,MERCI Motif: Gram-negative AMP motif
+DFFR,MERCI Motif: Gram-negative AMP motif
+DFFRK,MERCI Motif: Gram-negative AMP motif
+DKPP,MERCI Motif: Gram-negative AMP motif
+DKPPY,MERCI Motif: Gram-negative AMP motif
+DKPPYL,MERCI Motif: Gram-negative AMP motif
+DKPPYLP,MERCI Motif: Gram-negative AMP motif
+DKPPYLPR,MERCI Motif: Gram-negative AMP motif
+DKPPYLPRP,MERCI Motif: Gram-negative AMP motif
+DKPPYLPRPR,MERCI Motif: Gram-negative AMP motif
+EFKR,MERCI Motif: Gram-negative AMP motif
+EFKRI,MERCI Motif: Gram-negative AMP motif
+EFKRIV,MERCI Motif: Gram-negative AMP motif
+EKIG,MERCI Motif: Gram-negative AMP motif
+EKIGK,MERCI Motif: Gram-negative AMP motif
+EKIGKE,MERCI Motif: Gram-negative AMP motif
+EKIGKEF,MERCI Motif: Gram-negative AMP motif
+EKIGKEFK,MERCI Motif: Gram-negative AMP motif
+EKIGKEFKR,MERCI Motif: Gram-negative AMP motif
+EKLKK,MERCI Motif: Gram-negative AMP motif
+EKLKKI,MERCI Motif: Gram-negative AMP motif
+EKLKKIG,MERCI Motif: Gram-negative AMP motif
+EKLKKIGQ,MERCI Motif: Gram-negative AMP motif
+EKLKKIGQK,MERCI Motif: Gram-negative AMP motif
+EKLKKIGQKI,MERCI Motif: Gram-negative AMP motif
+FFPI,MERCI Motif: Gram-negative AMP motif
+FFPIV,MERCI Motif: Gram-negative AMP motif
+FFPIVK,MERCI Motif: Gram-negative AMP motif
+FFPIVKK,MERCI Motif: Gram-negative AMP motif
+FFRK,MERCI Motif: Gram-negative AMP motif
+FGRR,MERCI Motif: Gram-negative AMP motif
+FIKKL,MERCI Motif: Gram-negative AMP motif
+FIKKLT,MERCI Motif: Gram-negative AMP motif
+FIKKLTS,MERCI Motif: Gram-negative AMP motif
+FIKKLTSK,MERCI Motif: Gram-negative AMP motif
+FKKILKY,MERCI Motif: Gram-negative AMP motif
+FKKILKYL,MERCI Motif: Gram-negative AMP motif
+FKKILKYLA,MERCI Motif: Gram-negative AMP motif
+FKKILKYLAG,MERCI Motif: Gram-negative AMP motif
+FKKK,MERCI Motif: Gram-negative AMP motif
+FKKL,MERCI Motif: Gram-negative AMP motif
+FKLK,MERCI Motif: Gram-negative AMP motif
+FKLKQ,MERCI Motif: Gram-negative AMP motif
+FKRI,MERCI Motif: Gram-negative AMP motif
+FKRIV,MERCI Motif: Gram-negative AMP motif
+FKRIVQ,MERCI Motif: Gram-negative AMP motif
+FKRIVQR,MERCI Motif: Gram-negative AMP motif
+FKRIVQRI,MERCI Motif: Gram-negative AMP motif
+FKRIVQRIK,MERCI Motif: Gram-negative AMP motif
+FLKK,MERCI Motif: Gram-negative AMP motif
+FLKT,MERCI Motif: Gram-negative AMP motif
+FLKTF,MERCI Motif: Gram-negative AMP motif
+FLKTFK,MERCI Motif: Gram-negative AMP motif
+FPIV,MERCI Motif: Gram-negative AMP motif
+FPIVK,MERCI Motif: Gram-negative AMP motif
+FPIVKK,MERCI Motif: Gram-negative AMP motif
+FRN,MERCI Motif: Gram-negative AMP motif
+FRNK,MERCI Motif: Gram-negative AMP motif
+FRNKI,MERCI Motif: Gram-negative AMP motif
+FRNKIK,MERCI Motif: Gram-negative AMP motif
+FRNKIKE,MERCI Motif: Gram-negative AMP motif
+FRNKIKEK,MERCI Motif: Gram-negative AMP motif
+FRNKIKEKL,MERCI Motif: Gram-negative AMP motif
+FRPP,MERCI Motif: Gram-negative AMP motif
+FWQR,MERCI Motif: Gram-negative AMP motif
+FWQRN,MERCI Motif: Gram-negative AMP motif
+FWQRNI,MERCI Motif: Gram-negative AMP motif
+FWQRNIR,MERCI Motif: Gram-negative AMP motif
+FWQRNIRK,MERCI Motif: Gram-negative AMP motif
+FWR,MERCI Motif: Gram-negative AMP motif
+GAPS,MERCI Motif: Gram-negative AMP motif
+GAPSI,MERCI Motif: Gram-negative AMP motif
+GAPSIT,MERCI Motif: Gram-negative AMP motif
+GDFF,MERCI Motif: Gram-negative AMP motif
+GDFFR,MERCI Motif: Gram-negative AMP motif
+GDFFRK,MERCI Motif: Gram-negative AMP motif
+GIGAV,MERCI Motif: Gram-negative AMP motif
+GIGAVL,MERCI Motif: Gram-negative AMP motif
+GKEFK,MERCI Motif: Gram-negative AMP motif
+GKEFKR,MERCI Motif: Gram-negative AMP motif
+GKEFKRI,MERCI Motif: Gram-negative AMP motif
+GKEFKRIV,MERCI Motif: Gram-negative AMP motif
+GLKLL,MERCI Motif: Gram-negative AMP motif
+GLLPK,MERCI Motif: Gram-negative AMP motif
+GLLPKL,MERCI Motif: Gram-negative AMP motif
+GLLPKLA,MERCI Motif: Gram-negative AMP motif
+GLLPKLAP,MERCI Motif: Gram-negative AMP motif
+GLLPKLAPR,MERCI Motif: Gram-negative AMP motif
+GLLPKLAPRT,MERCI Motif: Gram-negative AMP motif
+GLRK,MERCI Motif: Gram-negative AMP motif
+GLRKR,MERCI Motif: Gram-negative AMP motif
+GLRKRL,MERCI Motif: Gram-negative AMP motif
+GLRKRLR,MERCI Motif: Gram-negative AMP motif
+GLRKRLRK,MERCI Motif: Gram-negative AMP motif
+GLRKRLRKF,MERCI Motif: Gram-negative AMP motif
+GLRKRLRKFR,MERCI Motif: Gram-negative AMP motif
+GNNRP,MERCI Motif: Gram-negative AMP motif
+GNNRPV,MERCI Motif: Gram-negative AMP motif
+GNNRPVY,MERCI Motif: Gram-negative AMP motif
+GQKI,MERCI Motif: Gram-negative AMP motif
+GQKIQ,MERCI Motif: Gram-negative AMP motif
+GQKIQG,MERCI Motif: Gram-negative AMP motif
+GQKIQGL,MERCI Motif: Gram-negative AMP motif
+GQKIQGLL,MERCI Motif: Gram-negative AMP motif
+GQKIQGLLP,MERCI Motif: Gram-negative AMP motif
+GQKIQGLLPK,MERCI Motif: Gram-negative AMP motif
+HTAL,MERCI Motif: Gram-negative AMP motif
+HTALK,MERCI Motif: Gram-negative AMP motif
+IARRA,MERCI Motif: Gram-negative AMP motif
+IARRAL,MERCI Motif: Gram-negative AMP motif
+IGKEF,MERCI Motif: Gram-negative AMP motif
+IGKEFK,MERCI Motif: Gram-negative AMP motif
+IGKEFKR,MERCI Motif: Gram-negative AMP motif
+IGKEFKRI,MERCI Motif: Gram-negative AMP motif
+IGKEFKRIV,MERCI Motif: Gram-negative AMP motif
+IGQK,MERCI Motif: Gram-negative AMP motif
+IGQKI,MERCI Motif: Gram-negative AMP motif
+IGQKIQ,MERCI Motif: Gram-negative AMP motif
+IGQKIQG,MERCI Motif: Gram-negative AMP motif
+IGQKIQGL,MERCI Motif: Gram-negative AMP motif
+IGQKIQGLL,MERCI Motif: Gram-negative AMP motif
+IGQKIQGLLP,MERCI Motif: Gram-negative AMP motif
+IKDF,MERCI Motif: Gram-negative AMP motif
+IKKL,MERCI Motif: Gram-negative AMP motif
+IKKLT,MERCI Motif: Gram-negative AMP motif
+IKKLTS,MERCI Motif: Gram-negative AMP motif
+IKKLTSK,MERCI Motif: Gram-negative AMP motif
+ILKYLA,MERCI Motif: Gram-negative AMP motif
+ILKYLAG,MERCI Motif: Gram-negative AMP motif
+ILKYLAGP,MERCI Motif: Gram-negative AMP motif
+ILKYLAGPA,MERCI Motif: Gram-negative AMP motif
+IQGL,MERCI Motif: Gram-negative AMP motif
+IQGLL,MERCI Motif: Gram-negative AMP motif
+IQGLLP,MERCI Motif: Gram-negative AMP motif
+IQGLLPK,MERCI Motif: Gram-negative AMP motif
+IQGLLPKL,MERCI Motif: Gram-negative AMP motif
+IQGLLPKLA,MERCI Motif: Gram-negative AMP motif
+IQGLLPKLAP,MERCI Motif: Gram-negative AMP motif
+IRIRR,MERCI Motif: Gram-negative AMP motif
+IRKV,MERCI Motif: Gram-negative AMP motif
+IRKVR,MERCI Motif: Gram-negative AMP motif
+IRPP,MERCI Motif: Gram-negative AMP motif
+IRPPF,MERCI Motif: Gram-negative AMP motif
+IRPPFY,MERCI Motif: Gram-negative AMP motif
+IRPR,MERCI Motif: Gram-negative AMP motif
+IRRP,MERCI Motif: Gram-negative AMP motif
+IRRPP,MERCI Motif: Gram-negative AMP motif
+IRRPPI,MERCI Motif: Gram-negative AMP motif
+IRRPPIR,MERCI Motif: Gram-negative AMP motif
+IRRPPIRP,MERCI Motif: Gram-negative AMP motif
+IRRPPIRPP,MERCI Motif: Gram-negative AMP motif
+IRRPPIRPPF,MERCI Motif: Gram-negative AMP motif
+IRRRP,MERCI Motif: Gram-negative AMP motif
+IRRRPI,MERCI Motif: Gram-negative AMP motif
+IRRRPIR,MERCI Motif: Gram-negative AMP motif
+IRRRPIRP,MERCI Motif: Gram-negative AMP motif
+IRRRPIRPP,MERCI Motif: Gram-negative AMP motif
+IVKK,MERCI Motif: Gram-negative AMP motif
+IVKKL,MERCI Motif: Gram-negative AMP motif
+IVKKLL,MERCI Motif: Gram-negative AMP motif
+IVQR,MERCI Motif: Gram-negative AMP motif
+IVQRI,MERCI Motif: Gram-negative AMP motif
+IVQRIK,MERCI Motif: Gram-negative AMP motif
+IYN,MERCI Motif: Gram-negative AMP motif
+IYNR,MERCI Motif: Gram-negative AMP motif
+IYNRG,MERCI Motif: Gram-negative AMP motif
+KAISS,MERCI Motif: Gram-negative AMP motif
+KAKP,MERCI Motif: Gram-negative AMP motif
+KAKPP,MERCI Motif: Gram-negative AMP motif
+KALKK,MERCI Motif: Gram-negative AMP motif
+KALQ,MERCI Motif: Gram-negative AMP motif
+KEFK,MERCI Motif: Gram-negative AMP motif
+KEFKR,MERCI Motif: Gram-negative AMP motif
+KEFKRI,MERCI Motif: Gram-negative AMP motif
+KEFKRIV,MERCI Motif: Gram-negative AMP motif
+KEKIG,MERCI Motif: Gram-negative AMP motif
+KEKIGK,MERCI Motif: Gram-negative AMP motif
+KEKIGKE,MERCI Motif: Gram-negative AMP motif
+KEKIGKEF,MERCI Motif: Gram-negative AMP motif
+KEKIGKEFK,MERCI Motif: Gram-negative AMP motif
+KEKIGKEFKR,MERCI Motif: Gram-negative AMP motif
+KEKLKK,MERCI Motif: Gram-negative AMP motif
+KEKLKKI,MERCI Motif: Gram-negative AMP motif
+KEKLKKIG,MERCI Motif: Gram-negative AMP motif
+KEKLKKIGQ,MERCI Motif: Gram-negative AMP motif
+KEKLKKIGQK,MERCI Motif: Gram-negative AMP motif
+KFGR,MERCI Motif: Gram-negative AMP motif
+KFGRR,MERCI Motif: Gram-negative AMP motif
+KFLK,MERCI Motif: Gram-negative AMP motif
+KFRN,MERCI Motif: Gram-negative AMP motif
+KFRNK,MERCI Motif: Gram-negative AMP motif
+KFRNKI,MERCI Motif: Gram-negative AMP motif
+KFRNKIK,MERCI Motif: Gram-negative AMP motif
+KFRNKIKE,MERCI Motif: Gram-negative AMP motif
+KFRNKIKEK,MERCI Motif: Gram-negative AMP motif
+KFRNKIKEKL,MERCI Motif: Gram-negative AMP motif
+KIGK,MERCI Motif: Gram-negative AMP motif
+KIGKE,MERCI Motif: Gram-negative AMP motif
+KIGKEF,MERCI Motif: Gram-negative AMP motif
+KIGKEFK,MERCI Motif: Gram-negative AMP motif
+KIGKEFKR,MERCI Motif: Gram-negative AMP motif
+KIGQK,MERCI Motif: Gram-negative AMP motif
+KIGQKI,MERCI Motif: Gram-negative AMP motif
+KIGQKIQ,MERCI Motif: Gram-negative AMP motif
+KIGQKIQG,MERCI Motif: Gram-negative AMP motif
+KIGQKIQGL,MERCI Motif: Gram-negative AMP motif
+KIGQKIQGLL,MERCI Motif: Gram-negative AMP motif
+KIKEK,MERCI Motif: Gram-negative AMP motif
+KIKEKL,MERCI Motif: Gram-negative AMP motif
+KILKY,MERCI Motif: Gram-negative AMP motif
+KILKYL,MERCI Motif: Gram-negative AMP motif
+KILKYLA,MERCI Motif: Gram-negative AMP motif
+KILKYLAG,MERCI Motif: Gram-negative AMP motif
+KILKYLAGP,MERCI Motif: Gram-negative AMP motif
+KILKYLAGPA,MERCI Motif: Gram-negative AMP motif
+KIQGL,MERCI Motif: Gram-negative AMP motif
+KIQGLL,MERCI Motif: Gram-negative AMP motif
+KIQGLLP,MERCI Motif: Gram-negative AMP motif
+KIQGLLPK,MERCI Motif: Gram-negative AMP motif
+KIQGLLPKL,MERCI Motif: Gram-negative AMP motif
+KIQGLLPKLA,MERCI Motif: Gram-negative AMP motif
+KKAKP,MERCI Motif: Gram-negative AMP motif
+KKAKPP,MERCI Motif: Gram-negative AMP motif
+KKALQ,MERCI Motif: Gram-negative AMP motif
+KKFGR,MERCI Motif: Gram-negative AMP motif
+KKFGRR,MERCI Motif: Gram-negative AMP motif
+KKFL,MERCI Motif: Gram-negative AMP motif
+KKFLK,MERCI Motif: Gram-negative AMP motif
+KKIGQ,MERCI Motif: Gram-negative AMP motif
+KKIGQK,MERCI Motif: Gram-negative AMP motif
+KKIGQKI,MERCI Motif: Gram-negative AMP motif
+KKIGQKIQ,MERCI Motif: Gram-negative AMP motif
+KKIGQKIQG,MERCI Motif: Gram-negative AMP motif
+KKIGQKIQGL,MERCI Motif: Gram-negative AMP motif
+KKILKY,MERCI Motif: Gram-negative AMP motif
+KKILKYL,MERCI Motif: Gram-negative AMP motif
+KKILKYLA,MERCI Motif: Gram-negative AMP motif
+KKILKYLAG,MERCI Motif: Gram-negative AMP motif
+KKILKYLAGP,MERCI Motif: Gram-negative AMP motif
+KKKF,MERCI Motif: Gram-negative AMP motif
+KKKKA,MERCI Motif: Gram-negative AMP motif
+KKKKKA,MERCI Motif: Gram-negative AMP motif
+KKKKKKA,MERCI Motif: Gram-negative AMP motif
+KKKKL,MERCI Motif: Gram-negative AMP motif
+KKLFKKILKY,MERCI Motif: Gram-negative AMP motif
+KKLKK,MERCI Motif: Gram-negative AMP motif
+KKLLK,MERCI Motif: Gram-negative AMP motif
+KKLQ,MERCI Motif: Gram-negative AMP motif
+KKLT,MERCI Motif: Gram-negative AMP motif
+KKLTS,MERCI Motif: Gram-negative AMP motif
+KKLTSK,MERCI Motif: Gram-negative AMP motif
+KKRRW,MERCI Motif: Gram-negative AMP motif
+KLAP,MERCI Motif: Gram-negative AMP motif
+KLAPR,MERCI Motif: Gram-negative AMP motif
+KLAPRT,MERCI Motif: Gram-negative AMP motif
+KLAPRTD,MERCI Motif: Gram-negative AMP motif
+KLAPRTDY,MERCI Motif: Gram-negative AMP motif
+KLFKKILKY,MERCI Motif: Gram-negative AMP motif
+KLFKKILKYL,MERCI Motif: Gram-negative AMP motif
+KLGA,MERCI Motif: Gram-negative AMP motif
+KLGAP,MERCI Motif: Gram-negative AMP motif
+KLGAPS,MERCI Motif: Gram-negative AMP motif
+KLGAPSI,MERCI Motif: Gram-negative AMP motif
+KLGAPSIT,MERCI Motif: Gram-negative AMP motif
+KLKF,MERCI Motif: Gram-negative AMP motif
+KLKKI,MERCI Motif: Gram-negative AMP motif
+KLKKIG,MERCI Motif: Gram-negative AMP motif
+KLKKIGQ,MERCI Motif: Gram-negative AMP motif
+KLKKIGQK,MERCI Motif: Gram-negative AMP motif
+KLKKIGQKI,MERCI Motif: Gram-negative AMP motif
+KLLA,MERCI Motif: Gram-negative AMP motif
+KLTS,MERCI Motif: Gram-negative AMP motif
+KLTSK,MERCI Motif: Gram-negative AMP motif
+KLTSKF,MERCI Motif: Gram-negative AMP motif
+KLTSKFL,MERCI Motif: Gram-negative AMP motif
+KLTSKFLH,MERCI Motif: Gram-negative AMP motif
+KMKK,MERCI Motif: Gram-negative AMP motif
+KPPY,MERCI Motif: Gram-negative AMP motif
+KPPYL,MERCI Motif: Gram-negative AMP motif
+KPPYLP,MERCI Motif: Gram-negative AMP motif
+KPPYLPR,MERCI Motif: Gram-negative AMP motif
+KPPYLPRP,MERCI Motif: Gram-negative AMP motif
+KPPYLPRPR,MERCI Motif: Gram-negative AMP motif
+KPPYLPRPRP,MERCI Motif: Gram-negative AMP motif
+KPRP,MERCI Motif: Gram-negative AMP motif
+KQLK,MERCI Motif: Gram-negative AMP motif
+KRIV,MERCI Motif: Gram-negative AMP motif
+KRIVQ,MERCI Motif: Gram-negative AMP motif
+KRIVQR,MERCI Motif: Gram-negative AMP motif
+KRIVQRI,MERCI Motif: Gram-negative AMP motif
+KRIVQRIK,MERCI Motif: Gram-negative AMP motif
+KRLR,MERCI Motif: Gram-negative AMP motif
+KRLRK,MERCI Motif: Gram-negative AMP motif
+KRLRKF,MERCI Motif: Gram-negative AMP motif
+KRLRKFR,MERCI Motif: Gram-negative AMP motif
+KRLRKFRN,MERCI Motif: Gram-negative AMP motif
+KRLRKFRNK,MERCI Motif: Gram-negative AMP motif
+KRLRKFRNKI,MERCI Motif: Gram-negative AMP motif
+KRPP,MERCI Motif: Gram-negative AMP motif
+KRPPR,MERCI Motif: Gram-negative AMP motif
+KRRW,MERCI Motif: Gram-negative AMP motif
+KRRWK,MERCI Motif: Gram-negative AMP motif
+KSAKK,MERCI Motif: Gram-negative AMP motif
+KSF,MERCI Motif: Gram-negative AMP motif
+KSFI,MERCI Motif: Gram-negative AMP motif
+KSFIK,MERCI Motif: Gram-negative AMP motif
+KSFIKK,MERCI Motif: Gram-negative AMP motif
+KSFIKKL,MERCI Motif: Gram-negative AMP motif
+KSFIKKLT,MERCI Motif: Gram-negative AMP motif
+KSFIKKLTS,MERCI Motif: Gram-negative AMP motif
+KSFL,MERCI Motif: Gram-negative AMP motif
+KSFLK,MERCI Motif: Gram-negative AMP motif
+KSFLKT,MERCI Motif: Gram-negative AMP motif
+KSFLKTF,MERCI Motif: Gram-negative AMP motif
+KSKE,MERCI Motif: Gram-negative AMP motif
+KSKEK,MERCI Motif: Gram-negative AMP motif
+KTFK,MERCI Motif: Gram-negative AMP motif
+KTFKS,MERCI Motif: Gram-negative AMP motif
+KWKS,MERCI Motif: Gram-negative AMP motif
+KWKSF,MERCI Motif: Gram-negative AMP motif
+KWKSFI,MERCI Motif: Gram-negative AMP motif
+KWKSFIK,MERCI Motif: Gram-negative AMP motif
+KWKSFIKK,MERCI Motif: Gram-negative AMP motif
+KWKSFIKKL,MERCI Motif: Gram-negative AMP motif
+KWKSFIKKLT,MERCI Motif: Gram-negative AMP motif
+KWKSFL,MERCI Motif: Gram-negative AMP motif
+KWKSFLK,MERCI Motif: Gram-negative AMP motif
+KWKSFLKT,MERCI Motif: Gram-negative AMP motif
+KWKSFLKTF,MERCI Motif: Gram-negative AMP motif
+KYLA,MERCI Motif: Gram-negative AMP motif
+KYLAG,MERCI Motif: Gram-negative AMP motif
+KYLAGP,MERCI Motif: Gram-negative AMP motif
+KYLAGPA,MERCI Motif: Gram-negative AMP motif
+LAGP,MERCI Motif: Gram-negative AMP motif
+LAGPA,MERCI Motif: Gram-negative AMP motif
+LALK,MERCI Motif: Gram-negative AMP motif
+LAPR,MERCI Motif: Gram-negative AMP motif
+LAPRT,MERCI Motif: Gram-negative AMP motif
+LAPRTD,MERCI Motif: Gram-negative AMP motif
+LAPRTDY,MERCI Motif: Gram-negative AMP motif
+LFKKILKY,MERCI Motif: Gram-negative AMP motif
+LFKKILKYL,MERCI Motif: Gram-negative AMP motif
+LFKKILKYLA,MERCI Motif: Gram-negative AMP motif
+LGAP,MERCI Motif: Gram-negative AMP motif
+LGAPS,MERCI Motif: Gram-negative AMP motif
+LGAPSI,MERCI Motif: Gram-negative AMP motif
+LGAPSIT,MERCI Motif: Gram-negative AMP motif
+LGDF,MERCI Motif: Gram-negative AMP motif
+LGDFF,MERCI Motif: Gram-negative AMP motif
+LGDFFR,MERCI Motif: Gram-negative AMP motif
+LGDFFRK,MERCI Motif: Gram-negative AMP motif
+LHTA,MERCI Motif: Gram-negative AMP motif
+LHTAL,MERCI Motif: Gram-negative AMP motif
+LHTALK,MERCI Motif: Gram-negative AMP motif
+LKAI,MERCI Motif: Gram-negative AMP motif
+LKAIS,MERCI Motif: Gram-negative AMP motif
+LKFK,MERCI Motif: Gram-negative AMP motif
+LKKA,MERCI Motif: Gram-negative AMP motif
+LKKIGQ,MERCI Motif: Gram-negative AMP motif
+LKKIGQK,MERCI Motif: Gram-negative AMP motif
+LKKIGQKI,MERCI Motif: Gram-negative AMP motif
+LKKIGQKIQ,MERCI Motif: Gram-negative AMP motif
+LKKIGQKIQG,MERCI Motif: Gram-negative AMP motif
+LKKK,MERCI Motif: Gram-negative AMP motif
+LKKRR,MERCI Motif: Gram-negative AMP motif
+LKLLK,MERCI Motif: Gram-negative AMP motif
+LKTF,MERCI Motif: Gram-negative AMP motif
+LKTFK,MERCI Motif: Gram-negative AMP motif
+LKYLA,MERCI Motif: Gram-negative AMP motif
+LKYLAG,MERCI Motif: Gram-negative AMP motif
+LKYLAGP,MERCI Motif: Gram-negative AMP motif
+LKYLAGPA,MERCI Motif: Gram-negative AMP motif
+LLGDF,MERCI Motif: Gram-negative AMP motif
+LLGDFF,MERCI Motif: Gram-negative AMP motif
+LLGDFFR,MERCI Motif: Gram-negative AMP motif
+LLGDFFRK,MERCI Motif: Gram-negative AMP motif
+LLKGL,MERCI Motif: Gram-negative AMP motif
+LLKKV,MERCI Motif: Gram-negative AMP motif
+LLPK,MERCI Motif: Gram-negative AMP motif
+LLPKL,MERCI Motif: Gram-negative AMP motif
+LLPKLA,MERCI Motif: Gram-negative AMP motif
+LLPKLAP,MERCI Motif: Gram-negative AMP motif
+LLPKLAPR,MERCI Motif: Gram-negative AMP motif
+LLPKLAPRT,MERCI Motif: Gram-negative AMP motif
+LLPKLAPRTD,MERCI Motif: Gram-negative AMP motif
+LLRG,MERCI Motif: Gram-negative AMP motif
+LPIVK,MERCI Motif: Gram-negative AMP motif
+LPIVKK,MERCI Motif: Gram-negative AMP motif
+LPKLA,MERCI Motif: Gram-negative AMP motif
+LPKLAP,MERCI Motif: Gram-negative AMP motif
+LPKLAPR,MERCI Motif: Gram-negative AMP motif
+LPKLAPRT,MERCI Motif: Gram-negative AMP motif
+LPKLAPRTD,MERCI Motif: Gram-negative AMP motif
+LPKLAPRTDY,MERCI Motif: Gram-negative AMP motif
+LPRP,MERCI Motif: Gram-negative AMP motif
+LPRPR,MERCI Motif: Gram-negative AMP motif
+LPRPRP,MERCI Motif: Gram-negative AMP motif
+LPRPRPP,MERCI Motif: Gram-negative AMP motif
+LPRPRPPR,MERCI Motif: Gram-negative AMP motif
+LPRPRPPRR,MERCI Motif: Gram-negative AMP motif
+LPRPRPPRRI,MERCI Motif: Gram-negative AMP motif
+LPRPRPR,MERCI Motif: Gram-negative AMP motif
+LRKFR,MERCI Motif: Gram-negative AMP motif
+LRKFRN,MERCI Motif: Gram-negative AMP motif
+LRKFRNK,MERCI Motif: Gram-negative AMP motif
+LRKFRNKI,MERCI Motif: Gram-negative AMP motif
+LRKFRNKIK,MERCI Motif: Gram-negative AMP motif
+LRKFRNKIKE,MERCI Motif: Gram-negative AMP motif
+LRKRL,MERCI Motif: Gram-negative AMP motif
+LRKRLR,MERCI Motif: Gram-negative AMP motif
+LRKRLRK,MERCI Motif: Gram-negative AMP motif
+LRKRLRKF,MERCI Motif: Gram-negative AMP motif
+LRKRLRKFR,MERCI Motif: Gram-negative AMP motif
+LRKRLRKFRN,MERCI Motif: Gram-negative AMP motif
+LTSKF,MERCI Motif: Gram-negative AMP motif
+LTSKFL,MERCI Motif: Gram-negative AMP motif
+LTSKFLH,MERCI Motif: Gram-negative AMP motif
+MKKA,MERCI Motif: Gram-negative AMP motif
+NIRK,MERCI Motif: Gram-negative AMP motif
+NIRKV,MERCI Motif: Gram-negative AMP motif
+NIRKVR,MERCI Motif: Gram-negative AMP motif
+NKIK,MERCI Motif: Gram-negative AMP motif
+NKIKE,MERCI Motif: Gram-negative AMP motif
+NKIKEK,MERCI Motif: Gram-negative AMP motif
+NKIKEKL,MERCI Motif: Gram-negative AMP motif
+NNRP,MERCI Motif: Gram-negative AMP motif
+NNRPV,MERCI Motif: Gram-negative AMP motif
+NNRPVY,MERCI Motif: Gram-negative AMP motif
+NRPVY,MERCI Motif: Gram-negative AMP motif
+PFLR,MERCI Motif: Gram-negative AMP motif
+PFLRR,MERCI Motif: Gram-negative AMP motif
+PIR,MERCI Motif: Gram-negative AMP motif
+PIRP,MERCI Motif: Gram-negative AMP motif
+PIRPP,MERCI Motif: Gram-negative AMP motif
+PIRPPF,MERCI Motif: Gram-negative AMP motif
+PIRPPFY,MERCI Motif: Gram-negative AMP motif
+PIRR,MERCI Motif: Gram-negative AMP motif
+PIRRP,MERCI Motif: Gram-negative AMP motif
+PIRRPP,MERCI Motif: Gram-negative AMP motif
+PIRRPPI,MERCI Motif: Gram-negative AMP motif
+PIRRPPIR,MERCI Motif: Gram-negative AMP motif
+PIRRPPIRP,MERCI Motif: Gram-negative AMP motif
+PIRRPPIRPP,MERCI Motif: Gram-negative AMP motif
+PIRRR,MERCI Motif: Gram-negative AMP motif
+PIRRRP,MERCI Motif: Gram-negative AMP motif
+PIRRRPI,MERCI Motif: Gram-negative AMP motif
+PIRRRPIR,MERCI Motif: Gram-negative AMP motif
+PIRRRPIRP,MERCI Motif: Gram-negative AMP motif
+PIRRRPIRPP,MERCI Motif: Gram-negative AMP motif
+PIVK,MERCI Motif: Gram-negative AMP motif
+PIVKK,MERCI Motif: Gram-negative AMP motif
+PIVKKL,MERCI Motif: Gram-negative AMP motif
+PIVKKLL,MERCI Motif: Gram-negative AMP motif
+PKLA,MERCI Motif: Gram-negative AMP motif
+PKLAP,MERCI Motif: Gram-negative AMP motif
+PKLAPR,MERCI Motif: Gram-negative AMP motif
+PKLAPRT,MERCI Motif: Gram-negative AMP motif
+PKLAPRTD,MERCI Motif: Gram-negative AMP motif
+PKLAPRTDY,MERCI Motif: Gram-negative AMP motif
+PPFY,MERCI Motif: Gram-negative AMP motif
+PPIR,MERCI Motif: Gram-negative AMP motif
+PPIRP,MERCI Motif: Gram-negative AMP motif
+PPIRPP,MERCI Motif: Gram-negative AMP motif
+PPIRPPF,MERCI Motif: Gram-negative AMP motif
+PPIRPPFY,MERCI Motif: Gram-negative AMP motif
+PPRL,MERCI Motif: Gram-negative AMP motif
+PPRLP,MERCI Motif: Gram-negative AMP motif
+PPRLPR,MERCI Motif: Gram-negative AMP motif
+PPRLPRP,MERCI Motif: Gram-negative AMP motif
+PPRLPRPR,MERCI Motif: Gram-negative AMP motif
+PPRLPRPRP,MERCI Motif: Gram-negative AMP motif
+PPRP,MERCI Motif: Gram-negative AMP motif
+PPRRI,MERCI Motif: Gram-negative AMP motif
+PPRRIY,MERCI Motif: Gram-negative AMP motif
+PPRRIYN,MERCI Motif: Gram-negative AMP motif
+PPRRIYNR,MERCI Motif: Gram-negative AMP motif
+PPW,MERCI Motif: Gram-negative AMP motif
+PPYL,MERCI Motif: Gram-negative AMP motif
+PPYLP,MERCI Motif: Gram-negative AMP motif
+PPYLPR,MERCI Motif: Gram-negative AMP motif
+PPYLPRP,MERCI Motif: Gram-negative AMP motif
+PPYLPRPR,MERCI Motif: Gram-negative AMP motif
+PPYLPRPRP,MERCI Motif: Gram-negative AMP motif
+PPYLPRPRPP,MERCI Motif: Gram-negative AMP motif
+PQPR,MERCI Motif: Gram-negative AMP motif
+PQPRP,MERCI Motif: Gram-negative AMP motif
+PQPRPP,MERCI Motif: Gram-negative AMP motif
+PRLP,MERCI Motif: Gram-negative AMP motif
+PRLPR,MERCI Motif: Gram-negative AMP motif
+PRLPRP,MERCI Motif: Gram-negative AMP motif
+PRLPRPR,MERCI Motif: Gram-negative AMP motif
+PRLPRPRP,MERCI Motif: Gram-negative AMP motif
+PRPPR,MERCI Motif: Gram-negative AMP motif
+PRPPRR,MERCI Motif: Gram-negative AMP motif
+PRPPRRI,MERCI Motif: Gram-negative AMP motif
+PRPPRRIY,MERCI Motif: Gram-negative AMP motif
+PRPPRRIYN,MERCI Motif: Gram-negative AMP motif
+PRPPRRIYNR,MERCI Motif: Gram-negative AMP motif
+PRPR,MERCI Motif: Gram-negative AMP motif
+PRPRP,MERCI Motif: Gram-negative AMP motif
+PRPRPP,MERCI Motif: Gram-negative AMP motif
+PRPRPPR,MERCI Motif: Gram-negative AMP motif
+PRPRPPRR,MERCI Motif: Gram-negative AMP motif
+PRPRPPRRI,MERCI Motif: Gram-negative AMP motif
+PRPRPPRRIY,MERCI Motif: Gram-negative AMP motif
+PRPRPR,MERCI Motif: Gram-negative AMP motif
+PRRI,MERCI Motif: Gram-negative AMP motif
+PRRIY,MERCI Motif: Gram-negative AMP motif
+PRRIYN,MERCI Motif: Gram-negative AMP motif
+PRRIYNR,MERCI Motif: Gram-negative AMP motif
+PRRIYNRG,MERCI Motif: Gram-negative AMP motif
+PRTD,MERCI Motif: Gram-negative AMP motif
+PRTDY,MERCI Motif: Gram-negative AMP motif
+PYL,MERCI Motif: Gram-negative AMP motif
+PYLP,MERCI Motif: Gram-negative AMP motif
+PYLPR,MERCI Motif: Gram-negative AMP motif
+PYLPRP,MERCI Motif: Gram-negative AMP motif
+PYLPRPR,MERCI Motif: Gram-negative AMP motif
+PYLPRPRP,MERCI Motif: Gram-negative AMP motif
+PYLPRPRPP,MERCI Motif: Gram-negative AMP motif
+PYLPRPRPPR,MERCI Motif: Gram-negative AMP motif
+QGLLP,MERCI Motif: Gram-negative AMP motif
+QGLLPK,MERCI Motif: Gram-negative AMP motif
+QGLLPKL,MERCI Motif: Gram-negative AMP motif
+QGLLPKLA,MERCI Motif: Gram-negative AMP motif
+QGLLPKLAP,MERCI Motif: Gram-negative AMP motif
+QGLLPKLAPR,MERCI Motif: Gram-negative AMP motif
+QKIQ,MERCI Motif: Gram-negative AMP motif
+QKIQG,MERCI Motif: Gram-negative AMP motif
+QKIQGL,MERCI Motif: Gram-negative AMP motif
+QKIQGLL,MERCI Motif: Gram-negative AMP motif
+QKIQGLLP,MERCI Motif: Gram-negative AMP motif
+QKIQGLLPK,MERCI Motif: Gram-negative AMP motif
+QKIQGLLPKL,MERCI Motif: Gram-negative AMP motif
+QRIK,MERCI Motif: Gram-negative AMP motif
+QRNI,MERCI Motif: Gram-negative AMP motif
+QRNIR,MERCI Motif: Gram-negative AMP motif
+QRNIRK,MERCI Motif: Gram-negative AMP motif
+QRNIRKV,MERCI Motif: Gram-negative AMP motif
+QRNIRKVR,MERCI Motif: Gram-negative AMP motif
+QWQ,MERCI Motif: Gram-negative AMP motif
+QWQR,MERCI Motif: Gram-negative AMP motif
+QWR,MERCI Motif: Gram-negative AMP motif
+RFRPP,MERCI Motif: Gram-negative AMP motif
+RIRP,MERCI Motif: Gram-negative AMP motif
+RIVQ,MERCI Motif: Gram-negative AMP motif
+RIVQR,MERCI Motif: Gram-negative AMP motif
+RIVQRI,MERCI Motif: Gram-negative AMP motif
+RIVQRIK,MERCI Motif: Gram-negative AMP motif
+RIYN,MERCI Motif: Gram-negative AMP motif
+RIYNR,MERCI Motif: Gram-negative AMP motif
+RIYNRG,MERCI Motif: Gram-negative AMP motif
+RKFR,MERCI Motif: Gram-negative AMP motif
+RKFRN,MERCI Motif: Gram-negative AMP motif
+RKFRNK,MERCI Motif: Gram-negative AMP motif
+RKFRNKI,MERCI Motif: Gram-negative AMP motif
+RKFRNKIK,MERCI Motif: Gram-negative AMP motif
+RKFRNKIKE,MERCI Motif: Gram-negative AMP motif
+RKFRNKIKEK,MERCI Motif: Gram-negative AMP motif
+RKRLR,MERCI Motif: Gram-negative AMP motif
+RKRLRK,MERCI Motif: Gram-negative AMP motif
+RKRLRKF,MERCI Motif: Gram-negative AMP motif
+RKRLRKFR,MERCI Motif: Gram-negative AMP motif
+RKRLRKFRN,MERCI Motif: Gram-negative AMP motif
+RKRLRKFRNK,MERCI Motif: Gram-negative AMP motif
+RKRP,MERCI Motif: Gram-negative AMP motif
+RKSK,MERCI Motif: Gram-negative AMP motif
+RKSKE,MERCI Motif: Gram-negative AMP motif
+RKSKEK,MERCI Motif: Gram-negative AMP motif
+RKVR,MERCI Motif: Gram-negative AMP motif
+RLPR,MERCI Motif: Gram-negative AMP motif
+RLPRP,MERCI Motif: Gram-negative AMP motif
+RLPRPR,MERCI Motif: Gram-negative AMP motif
+RLPRPRP,MERCI Motif: Gram-negative AMP motif
+RLRK,MERCI Motif: Gram-negative AMP motif
+RLRKF,MERCI Motif: Gram-negative AMP motif
+RLRKFR,MERCI Motif: Gram-negative AMP motif
+RLRKFRN,MERCI Motif: Gram-negative AMP motif
+RLRKFRNK,MERCI Motif: Gram-negative AMP motif
+RLRKFRNKI,MERCI Motif: Gram-negative AMP motif
+RLRKFRNKIK,MERCI Motif: Gram-negative AMP motif
+RNIRK,MERCI Motif: Gram-negative AMP motif
+RNIRKV,MERCI Motif: Gram-negative AMP motif
+RNIRKVR,MERCI Motif: Gram-negative AMP motif
+RNKI,MERCI Motif: Gram-negative AMP motif
+RNKIK,MERCI Motif: Gram-negative AMP motif
+RNKIKE,MERCI Motif: Gram-negative AMP motif
+RNKIKEK,MERCI Motif: Gram-negative AMP motif
+RNKIKEKL,MERCI Motif: Gram-negative AMP motif
+RPIR,MERCI Motif: Gram-negative AMP motif
+RPIRP,MERCI Motif: Gram-negative AMP motif
+RPIRPP,MERCI Motif: Gram-negative AMP motif
+RPPF,MERCI Motif: Gram-negative AMP motif
+RPPFY,MERCI Motif: Gram-negative AMP motif
+RPPI,MERCI Motif: Gram-negative AMP motif
+RPPIR,MERCI Motif: Gram-negative AMP motif
+RPPIRP,MERCI Motif: Gram-negative AMP motif
+RPPIRPP,MERCI Motif: Gram-negative AMP motif
+RPPIRPPF,MERCI Motif: Gram-negative AMP motif
+RPPIRPPFY,MERCI Motif: Gram-negative AMP motif
+RPPR,MERCI Motif: Gram-negative AMP motif
+RPPRL,MERCI Motif: Gram-negative AMP motif
+RPPRLP,MERCI Motif: Gram-negative AMP motif
+RPPRLPR,MERCI Motif: Gram-negative AMP motif
+RPPRLPRP,MERCI Motif: Gram-negative AMP motif
+RPPRLPRPR,MERCI Motif: Gram-negative AMP motif
+RPPRLPRPRP,MERCI Motif: Gram-negative AMP motif
+RPPRR,MERCI Motif: Gram-negative AMP motif
+RPPRRI,MERCI Motif: Gram-negative AMP motif
+RPPRRIY,MERCI Motif: Gram-negative AMP motif
+RPPRRIYN,MERCI Motif: Gram-negative AMP motif
+RPPRRIYNR,MERCI Motif: Gram-negative AMP motif
+RPRPP,MERCI Motif: Gram-negative AMP motif
+RPRPPR,MERCI Motif: Gram-negative AMP motif
+RPRPPRR,MERCI Motif: Gram-negative AMP motif
+RPRPPRRI,MERCI Motif: Gram-negative AMP motif
+RPRPPRRIY,MERCI Motif: Gram-negative AMP motif
+RPRPPRRIYN,MERCI Motif: Gram-negative AMP motif
+RPRPR,MERCI Motif: Gram-negative AMP motif
+RPVY,MERCI Motif: Gram-negative AMP motif
+RRIY,MERCI Motif: Gram-negative AMP motif
+RRIYN,MERCI Motif: Gram-negative AMP motif
+RRIYNR,MERCI Motif: Gram-negative AMP motif
+RRIYNRG,MERCI Motif: Gram-negative AMP motif
+RRPI,MERCI Motif: Gram-negative AMP motif
+RRPIR,MERCI Motif: Gram-negative AMP motif
+RRPIRP,MERCI Motif: Gram-negative AMP motif
+RRPIRPP,MERCI Motif: Gram-negative AMP motif
+RRPP,MERCI Motif: Gram-negative AMP motif
+RRPPI,MERCI Motif: Gram-negative AMP motif
+RRPPIR,MERCI Motif: Gram-negative AMP motif
+RRPPIRP,MERCI Motif: Gram-negative AMP motif
+RRPPIRPP,MERCI Motif: Gram-negative AMP motif
+RRPPIRPPF,MERCI Motif: Gram-negative AMP motif
+RRPPIRPPFY,MERCI Motif: Gram-negative AMP motif
+RRRFC,MERCI Motif: Gram-negative AMP motif
+RRRFCV,MERCI Motif: Gram-negative AMP motif
+RRRFCVC,MERCI Motif: Gram-negative AMP motif
+RRRP,MERCI Motif: Gram-negative AMP motif
+RRRPI,MERCI Motif: Gram-negative AMP motif
+RRRPIR,MERCI Motif: Gram-negative AMP motif
+RRRPIRP,MERCI Motif: Gram-negative AMP motif
+RRRPIRPP,MERCI Motif: Gram-negative AMP motif
+RRWK,MERCI Motif: Gram-negative AMP motif
+RRWKK,MERCI Motif: Gram-negative AMP motif
+RRWKKA,MERCI Motif: Gram-negative AMP motif
+RRWQ,MERCI Motif: Gram-negative AMP motif
+RTDY,MERCI Motif: Gram-negative AMP motif
+RWKK,MERCI Motif: Gram-negative AMP motif
+RWKKA,MERCI Motif: Gram-negative AMP motif
+RWKKAK,MERCI Motif: Gram-negative AMP motif
+RWQ,MERCI Motif: Gram-negative AMP motif
+RWQW,MERCI Motif: Gram-negative AMP motif
+RWRR,MERCI Motif: Gram-negative AMP motif
+SFIK,MERCI Motif: Gram-negative AMP motif
+SFIKK,MERCI Motif: Gram-negative AMP motif
+SFIKKL,MERCI Motif: Gram-negative AMP motif
+SFIKKLT,MERCI Motif: Gram-negative AMP motif
+SFIKKLTS,MERCI Motif: Gram-negative AMP motif
+SFIKKLTSK,MERCI Motif: Gram-negative AMP motif
+SFLK,MERCI Motif: Gram-negative AMP motif
+SFLKT,MERCI Motif: Gram-negative AMP motif
+SFLKTF,MERCI Motif: Gram-negative AMP motif
+SKEK,MERCI Motif: Gram-negative AMP motif
+SKFL,MERCI Motif: Gram-negative AMP motif
+SKFLH,MERCI Motif: Gram-negative AMP motif
+SKFLHS,MERCI Motif: Gram-negative AMP motif
+SKFLHSA,MERCI Motif: Gram-negative AMP motif
+SKFLHSAK,MERCI Motif: Gram-negative AMP motif
+SKFLHSAKK,MERCI Motif: Gram-negative AMP motif
+SKFLHSAKKF,MERCI Motif: Gram-negative AMP motif
+TALK,MERCI Motif: Gram-negative AMP motif
+TALKA,MERCI Motif: Gram-negative AMP motif
+TALKAI,MERCI Motif: Gram-negative AMP motif
+TALKAIS,MERCI Motif: Gram-negative AMP motif
+TFKS,MERCI Motif: Gram-negative AMP motif
+TLLK,MERCI Motif: Gram-negative AMP motif
+TLLKK,MERCI Motif: Gram-negative AMP motif
+TSKF,MERCI Motif: Gram-negative AMP motif
+TSKFL,MERCI Motif: Gram-negative AMP motif
+TSKFLH,MERCI Motif: Gram-negative AMP motif
+TSKFLHS,MERCI Motif: Gram-negative AMP motif
+TSKFLHSA,MERCI Motif: Gram-negative AMP motif
+TWL,MERCI Motif: Gram-negative AMP motif
+TWLK,MERCI Motif: Gram-negative AMP motif
+TWLKK,MERCI Motif: Gram-negative AMP motif
+VDKK,MERCI Motif: Gram-negative AMP motif
+VDKP,MERCI Motif: Gram-negative AMP motif
+VDKPP,MERCI Motif: Gram-negative AMP motif
+VDKPPY,MERCI Motif: Gram-negative AMP motif
+VDKPPYL,MERCI Motif: Gram-negative AMP motif
+VDKPPYLP,MERCI Motif: Gram-negative AMP motif
+VDKPPYLPR,MERCI Motif: Gram-negative AMP motif
+VDKPPYLPRP,MERCI Motif: Gram-negative AMP motif
+VDKR,MERCI Motif: Gram-negative AMP motif
+VKKLL,MERCI Motif: Gram-negative AMP motif
+VQRI,MERCI Motif: Gram-negative AMP motif
+VQRIK,MERCI Motif: Gram-negative AMP motif
+WGLK,MERCI Motif: Gram-negative AMP motif
+WKKA,MERCI Motif: Gram-negative AMP motif
+WKKAK,MERCI Motif: Gram-negative AMP motif
+WKKAKP,MERCI Motif: Gram-negative AMP motif
+WKKAKPP,MERCI Motif: Gram-negative AMP motif
+WKLF,MERCI Motif: Gram-negative AMP motif
+WKLFK,MERCI Motif: Gram-negative AMP motif
+WKLFKK,MERCI Motif: Gram-negative AMP motif
+WKS,MERCI Motif: Gram-negative AMP motif
+WKSF,MERCI Motif: Gram-negative AMP motif
+WKSFI,MERCI Motif: Gram-negative AMP motif
+WKSFIK,MERCI Motif: Gram-negative AMP motif
+WKSFIKK,MERCI Motif: Gram-negative AMP motif
+WKSFIKKL,MERCI Motif: Gram-negative AMP motif
+WKSFIKKLT,MERCI Motif: Gram-negative AMP motif
+WKSFIKKLTS,MERCI Motif: Gram-negative AMP motif
+WKSFL,MERCI Motif: Gram-negative AMP motif
+WKSFLK,MERCI Motif: Gram-negative AMP motif
+WKSFLKT,MERCI Motif: Gram-negative AMP motif
+WKSFLKTF,MERCI Motif: Gram-negative AMP motif
+WKW,MERCI Motif: Gram-negative AMP motif
+WLKKR,MERCI Motif: Gram-negative AMP motif
+WQR,MERCI Motif: Gram-negative AMP motif
+WQRN,MERCI Motif: Gram-negative AMP motif
+WQRNI,MERCI Motif: Gram-negative AMP motif
+WQRNIR,MERCI Motif: Gram-negative AMP motif
+WQRNIRK,MERCI Motif: Gram-negative AMP motif
+WQRNIRKV,MERCI Motif: Gram-negative AMP motif
+WQRNIRKVR,MERCI Motif: Gram-negative AMP motif
+WQW,MERCI Motif: Gram-negative AMP motif
+WRI,MERCI Motif: Gram-negative AMP motif
+WWK,MERCI Motif: Gram-negative AMP motif
+YCRR,MERCI Motif: Gram-negative AMP motif
+YCRRR,MERCI Motif: Gram-negative AMP motif
+YCRRRF,MERCI Motif: Gram-negative AMP motif
+YCRRRFC,MERCI Motif: Gram-negative AMP motif
+YCRRRFCV,MERCI Motif: Gram-negative AMP motif
+YCRRRFCVC,MERCI Motif: Gram-negative AMP motif
+YLAG,MERCI Motif: Gram-negative AMP motif
+YLAGP,MERCI Motif: Gram-negative AMP motif
+YLAGPA,MERCI Motif: Gram-negative AMP motif
+YLPR,MERCI Motif: Gram-negative AMP motif
+YLPRP,MERCI Motif: Gram-negative AMP motif
+YLPRPR,MERCI Motif: Gram-negative AMP motif
+YLPRPRP,MERCI Motif: Gram-negative AMP motif
+YLPRPRPP,MERCI Motif: Gram-negative AMP motif
+YLPRPRPPR,MERCI Motif: Gram-negative AMP motif
+YLPRPRPPRR,MERCI Motif: Gram-negative AMP motif
+YNRG,MERCI Motif: Gram-negative AMP motif
+IRW,MERCI Motif: Gram-negative AMP motif | Gram-positive AMP motif
+KLLKK,MERCI Motif: Gram-negative AMP motif | Gram-positive AMP motif
+LKKLL,MERCI Motif: Gram-negative AMP motif | Gram-positive AMP motif
+LLKKL,MERCI Motif: Gram-negative AMP motif | Gram-positive AMP motif
+AAHCIARR,MERCI Motif: Gram-positive AMP motif
+AAHCIARRY,MERCI Motif: Gram-positive AMP motif
+AAHCIARRYR,MERCI Motif: Gram-positive AMP motif
+AAN,MERCI Motif: Gram-positive AMP motif
+AGW,MERCI Motif: Gram-positive AMP motif
+AHCIARR,MERCI Motif: Gram-positive AMP motif
+AHCIARRY,MERCI Motif: Gram-positive AMP motif
+AHCIARRYR,MERCI Motif: Gram-positive AMP motif
+AHCIARRYRG,MERCI Motif: Gram-positive AMP motif
+AHCL,MERCI Motif: Gram-positive AMP motif
+ARRY,MERCI Motif: Gram-positive AMP motif
+ARRYR,MERCI Motif: Gram-positive AMP motif
+ARRYRG,MERCI Motif: Gram-positive AMP motif
+ARRYRGG,MERCI Motif: Gram-positive AMP motif
+ARRYRGGY,MERCI Motif: Gram-positive AMP motif
+ARRYRGGYC,MERCI Motif: Gram-positive AMP motif
+ARRYRGGYCN,MERCI Motif: Gram-positive AMP motif
+ATCDLA,MERCI Motif: Gram-positive AMP motif
+ATCDLAS,MERCI Motif: Gram-positive AMP motif
+AVCV,MERCI Motif: Gram-positive AMP motif
+AVCVC,MERCI Motif: Gram-positive AMP motif
+AVCVCR,MERCI Motif: Gram-positive AMP motif
+CAAHCIARR,MERCI Motif: Gram-positive AMP motif
+CAAHCIARRY,MERCI Motif: Gram-positive AMP motif
+CDLA,MERCI Motif: Gram-positive AMP motif
+CDLAS,MERCI Motif: Gram-positive AMP motif
+CGA,MERCI Motif: Gram-positive AMP motif
+CGKHS,MERCI Motif: Gram-positive AMP motif
+CGKHSC,MERCI Motif: Gram-positive AMP motif
+CIARR,MERCI Motif: Gram-positive AMP motif
+CIARRY,MERCI Motif: Gram-positive AMP motif
+CIARRYR,MERCI Motif: Gram-positive AMP motif
+CIARRYRG,MERCI Motif: Gram-positive AMP motif
+CIARRYRGG,MERCI Motif: Gram-positive AMP motif
+CIARRYRGGY,MERCI Motif: Gram-positive AMP motif
+CNSKA,MERCI Motif: Gram-positive AMP motif
+CNSKAV,MERCI Motif: Gram-positive AMP motif
+CNSKAVC,MERCI Motif: Gram-positive AMP motif
+CNSKAVCV,MERCI Motif: Gram-positive AMP motif
+CNSKAVCVC,MERCI Motif: Gram-positive AMP motif
+CNSKAVCVCR,MERCI Motif: Gram-positive AMP motif
+CRVY,MERCI Motif: Gram-positive AMP motif
+CRVYN,MERCI Motif: Gram-positive AMP motif
+CRVYNN,MERCI Motif: Gram-positive AMP motif
+CRVYNNG,MERCI Motif: Gram-positive AMP motif
+CRVYNNGL,MERCI Motif: Gram-positive AMP motif
+CRVYNNGLP,MERCI Motif: Gram-positive AMP motif
+CRVYNNGLPT,MERCI Motif: Gram-positive AMP motif
+CSVD,MERCI Motif: Gram-positive AMP motif
+CSVDW,MERCI Motif: Gram-positive AMP motif
+CTPGC,MERCI Motif: Gram-positive AMP motif
+CWVD,MERCI Motif: Gram-positive AMP motif
+CWVDW,MERCI Motif: Gram-positive AMP motif
+DLAS,MERCI Motif: Gram-positive AMP motif
+DWG,MERCI Motif: Gram-positive AMP motif
+FGC,MERCI Motif: Gram-positive AMP motif
+GFGC,MERCI Motif: Gram-positive AMP motif
+GGAA,MERCI Motif: Gram-positive AMP motif
+GGYCNSKA,MERCI Motif: Gram-positive AMP motif
+GGYCNSKAV,MERCI Motif: Gram-positive AMP motif
+GGYCNSKAVC,MERCI Motif: Gram-positive AMP motif
+GKHS,MERCI Motif: Gram-positive AMP motif
+GKHSC,MERCI Motif: Gram-positive AMP motif
+GLPT,MERCI Motif: Gram-positive AMP motif
+GLPTG,MERCI Motif: Gram-positive AMP motif
+GLPTGL,MERCI Motif: Gram-positive AMP motif
+GLPTGLY,MERCI Motif: Gram-positive AMP motif
+GLPTGLYR,MERCI Motif: Gram-positive AMP motif
+GLPTGLYRW,MERCI Motif: Gram-positive AMP motif
+GLPTGLYRWC,MERCI Motif: Gram-positive AMP motif
+GLYR,MERCI Motif: Gram-positive AMP motif
+GLYRW,MERCI Motif: Gram-positive AMP motif
+GLYRWC,MERCI Motif: Gram-positive AMP motif
+GNGVH,MERCI Motif: Gram-positive AMP motif
+GNGVHC,MERCI Motif: Gram-positive AMP motif
+GNGVY,MERCI Motif: Gram-positive AMP motif
+GNGVYC,MERCI Motif: Gram-positive AMP motif
+GNGVYCN,MERCI Motif: Gram-positive AMP motif
+GVH,MERCI Motif: Gram-positive AMP motif
+GVHC,MERCI Motif: Gram-positive AMP motif
+GVYC,MERCI Motif: Gram-positive AMP motif
+GVYCN,MERCI Motif: Gram-positive AMP motif
+GYCNSKA,MERCI Motif: Gram-positive AMP motif
+GYCNSKAV,MERCI Motif: Gram-positive AMP motif
+GYCNSKAVC,MERCI Motif: Gram-positive AMP motif
+GYCNSKAVCV,MERCI Motif: Gram-positive AMP motif
+HCIARR,MERCI Motif: Gram-positive AMP motif
+HCIARRY,MERCI Motif: Gram-positive AMP motif
+HCIARRYR,MERCI Motif: Gram-positive AMP motif
+HCIARRYRG,MERCI Motif: Gram-positive AMP motif
+HCIARRYRGG,MERCI Motif: Gram-positive AMP motif
+HCL,MERCI Motif: Gram-positive AMP motif
+HRC,MERCI Motif: Gram-positive AMP motif
+HRCR,MERCI Motif: Gram-positive AMP motif
+HRCRV,MERCI Motif: Gram-positive AMP motif
+HRCRVY,MERCI Motif: Gram-positive AMP motif
+HRCRVYN,MERCI Motif: Gram-positive AMP motif
+HRCRVYNN,MERCI Motif: Gram-positive AMP motif
+HRCRVYNNG,MERCI Motif: Gram-positive AMP motif
+HRCRVYNNGL,MERCI Motif: Gram-positive AMP motif
+HSC,MERCI Motif: Gram-positive AMP motif
+HTLC,MERCI Motif: Gram-positive AMP motif
+IARR,MERCI Motif: Gram-positive AMP motif
+IARRY,MERCI Motif: Gram-positive AMP motif
+IARRYR,MERCI Motif: Gram-positive AMP motif
+IARRYRG,MERCI Motif: Gram-positive AMP motif
+IARRYRGG,MERCI Motif: Gram-positive AMP motif
+IARRYRGGY,MERCI Motif: Gram-positive AMP motif
+IARRYRGGYC,MERCI Motif: Gram-positive AMP motif
+IGNN,MERCI Motif: Gram-positive AMP motif
+IRWL,MERCI Motif: Gram-positive AMP motif
+KAVC,MERCI Motif: Gram-positive AMP motif
+KAVCV,MERCI Motif: Gram-positive AMP motif
+KAVCVC,MERCI Motif: Gram-positive AMP motif
+KAVCVCR,MERCI Motif: Gram-positive AMP motif
+KCW,MERCI Motif: Gram-positive AMP motif
+KCWV,MERCI Motif: Gram-positive AMP motif
+KCWVD,MERCI Motif: Gram-positive AMP motif
+KCWVDW,MERCI Motif: Gram-positive AMP motif
+KHR,MERCI Motif: Gram-positive AMP motif
+KHRC,MERCI Motif: Gram-positive AMP motif
+KHRCR,MERCI Motif: Gram-positive AMP motif
+KHRCRV,MERCI Motif: Gram-positive AMP motif
+KHRCRVY,MERCI Motif: Gram-positive AMP motif
+KHRCRVYN,MERCI Motif: Gram-positive AMP motif
+KHRCRVYNN,MERCI Motif: Gram-positive AMP motif
+KHRCRVYNNG,MERCI Motif: Gram-positive AMP motif
+KHSC,MERCI Motif: Gram-positive AMP motif
+KKCW,MERCI Motif: Gram-positive AMP motif
+KKCWV,MERCI Motif: Gram-positive AMP motif
+KKHR,MERCI Motif: Gram-positive AMP motif
+KKHRC,MERCI Motif: Gram-positive AMP motif
+KKHRCR,MERCI Motif: Gram-positive AMP motif
+KKHRCRV,MERCI Motif: Gram-positive AMP motif
+KKHRCRVY,MERCI Motif: Gram-positive AMP motif
+KKHRCRVYN,MERCI Motif: Gram-positive AMP motif
+KKHRCRVYNN,MERCI Motif: Gram-positive AMP motif
+KKLLKK,MERCI Motif: Gram-positive AMP motif
+KRKKH,MERCI Motif: Gram-positive AMP motif
+KRKKHR,MERCI Motif: Gram-positive AMP motif
+KRKKHRC,MERCI Motif: Gram-positive AMP motif
+KRKKHRCR,MERCI Motif: Gram-positive AMP motif
+KRKKHRCRV,MERCI Motif: Gram-positive AMP motif
+KRKKHRCRVY,MERCI Motif: Gram-positive AMP motif
+KWR,MERCI Motif: Gram-positive AMP motif
+KWRR,MERCI Motif: Gram-positive AMP motif
+KYY,MERCI Motif: Gram-positive AMP motif
+KYYG,MERCI Motif: Gram-positive AMP motif
+KYYGN,MERCI Motif: Gram-positive AMP motif
+KYYGNG,MERCI Motif: Gram-positive AMP motif
+KYYGNGV,MERCI Motif: Gram-positive AMP motif
+LCA,MERCI Motif: Gram-positive AMP motif
+LCAA,MERCI Motif: Gram-positive AMP motif
+LCAAH,MERCI Motif: Gram-positive AMP motif
+LCAAHC,MERCI Motif: Gram-positive AMP motif
+LCAAHCI,MERCI Motif: Gram-positive AMP motif
+LCAAHCIA,MERCI Motif: Gram-positive AMP motif
+LCAAHCIAR,MERCI Motif: Gram-positive AMP motif
+LCAAHCIARR,MERCI Motif: Gram-positive AMP motif
+LCTP,MERCI Motif: Gram-positive AMP motif
+LCTPG,MERCI Motif: Gram-positive AMP motif
+LCTPGC,MERCI Motif: Gram-positive AMP motif
+LKKLLK,MERCI Motif: Gram-positive AMP motif
+LKKLLKK,MERCI Motif: Gram-positive AMP motif
+LLKKLL,MERCI Motif: Gram-positive AMP motif
+LLKKLLK,MERCI Motif: Gram-positive AMP motif
+LPTG,MERCI Motif: Gram-positive AMP motif
+LPTGL,MERCI Motif: Gram-positive AMP motif
+LPTGLY,MERCI Motif: Gram-positive AMP motif
+LPTGLYR,MERCI Motif: Gram-positive AMP motif
+LPTGLYRW,MERCI Motif: Gram-positive AMP motif
+LPTGLYRWC,MERCI Motif: Gram-positive AMP motif
+LRRL,MERCI Motif: Gram-positive AMP motif
+LRW,MERCI Motif: Gram-positive AMP motif
+LWKR,MERCI Motif: Gram-positive AMP motif
+LWW,MERCI Motif: Gram-positive AMP motif
+LWWL,MERCI Motif: Gram-positive AMP motif
+LYRW,MERCI Motif: Gram-positive AMP motif
+LYRWC,MERCI Motif: Gram-positive AMP motif
+NGLP,MERCI Motif: Gram-positive AMP motif
+NGLPT,MERCI Motif: Gram-positive AMP motif
+NGLPTG,MERCI Motif: Gram-positive AMP motif
+NGLPTGL,MERCI Motif: Gram-positive AMP motif
+NGLPTGLY,MERCI Motif: Gram-positive AMP motif
+NGLPTGLYR,MERCI Motif: Gram-positive AMP motif
+NGLPTGLYRW,MERCI Motif: Gram-positive AMP motif
+NGVH,MERCI Motif: Gram-positive AMP motif
+NGVHC,MERCI Motif: Gram-positive AMP motif
+NGVY,MERCI Motif: Gram-positive AMP motif
+NGVYC,MERCI Motif: Gram-positive AMP motif
+NGVYCN,MERCI Motif: Gram-positive AMP motif
+NNG,MERCI Motif: Gram-positive AMP motif
+NNGA,MERCI Motif: Gram-positive AMP motif
+NNGL,MERCI Motif: Gram-positive AMP motif
+NNGLP,MERCI Motif: Gram-positive AMP motif
+NNGLPT,MERCI Motif: Gram-positive AMP motif
+NNGLPTG,MERCI Motif: Gram-positive AMP motif
+NNGLPTGL,MERCI Motif: Gram-positive AMP motif
+NNGLPTGLY,MERCI Motif: Gram-positive AMP motif
+NNGLPTGLYR,MERCI Motif: Gram-positive AMP motif
+NSKAV,MERCI Motif: Gram-positive AMP motif
+NSKAVC,MERCI Motif: Gram-positive AMP motif
+NSKAVCV,MERCI Motif: Gram-positive AMP motif
+NSKAVCVC,MERCI Motif: Gram-positive AMP motif
+NSKAVCVCR,MERCI Motif: Gram-positive AMP motif
+PTGL,MERCI Motif: Gram-positive AMP motif
+PTGLY,MERCI Motif: Gram-positive AMP motif
+PTGLYR,MERCI Motif: Gram-positive AMP motif
+PTGLYRW,MERCI Motif: Gram-positive AMP motif
+PTGLYRWC,MERCI Motif: Gram-positive AMP motif
+RCRV,MERCI Motif: Gram-positive AMP motif
+RCRVY,MERCI Motif: Gram-positive AMP motif
+RCRVYN,MERCI Motif: Gram-positive AMP motif
+RCRVYNN,MERCI Motif: Gram-positive AMP motif
+RCRVYNNG,MERCI Motif: Gram-positive AMP motif
+RCRVYNNGL,MERCI Motif: Gram-positive AMP motif
+RCRVYNNGLP,MERCI Motif: Gram-positive AMP motif
+RGGYCNSKA,MERCI Motif: Gram-positive AMP motif
+RGGYCNSKAV,MERCI Motif: Gram-positive AMP motif
+RKKH,MERCI Motif: Gram-positive AMP motif
+RKKHR,MERCI Motif: Gram-positive AMP motif
+RKKHRC,MERCI Motif: Gram-positive AMP motif
+RKKHRCR,MERCI Motif: Gram-positive AMP motif
+RKKHRCRV,MERCI Motif: Gram-positive AMP motif
+RKKHRCRVY,MERCI Motif: Gram-positive AMP motif
+RKKHRCRVYN,MERCI Motif: Gram-positive AMP motif
+RRWI,MERCI Motif: Gram-positive AMP motif
+RRYR,MERCI Motif: Gram-positive AMP motif
+RRYRG,MERCI Motif: Gram-positive AMP motif
+RRYRGG,MERCI Motif: Gram-positive AMP motif
+RRYRGGY,MERCI Motif: Gram-positive AMP motif
+RRYRGGYC,MERCI Motif: Gram-positive AMP motif
+RRYRGGYCN,MERCI Motif: Gram-positive AMP motif
+RRYRGGYCNS,MERCI Motif: Gram-positive AMP motif
+RVYN,MERCI Motif: Gram-positive AMP motif
+RVYNN,MERCI Motif: Gram-positive AMP motif
+RVYNNG,MERCI Motif: Gram-positive AMP motif
+RVYNNGL,MERCI Motif: Gram-positive AMP motif
+RVYNNGLP,MERCI Motif: Gram-positive AMP motif
+RVYNNGLPT,MERCI Motif: Gram-positive AMP motif
+RVYNNGLPTG,MERCI Motif: Gram-positive AMP motif
+RWIR,MERCI Motif: Gram-positive AMP motif
+RWIRW,MERCI Motif: Gram-positive AMP motif
+RYRG,MERCI Motif: Gram-positive AMP motif
+RYRGG,MERCI Motif: Gram-positive AMP motif
+RYRGGY,MERCI Motif: Gram-positive AMP motif
+RYRGGYC,MERCI Motif: Gram-positive AMP motif
+RYRGGYCN,MERCI Motif: Gram-positive AMP motif
+RYRGGYCNS,MERCI Motif: Gram-positive AMP motif
+RYRGGYCNSK,MERCI Motif: Gram-positive AMP motif
+SKAV,MERCI Motif: Gram-positive AMP motif
+SKAVC,MERCI Motif: Gram-positive AMP motif
+SKAVCV,MERCI Motif: Gram-positive AMP motif
+SKAVCVC,MERCI Motif: Gram-positive AMP motif
+SKAVCVCR,MERCI Motif: Gram-positive AMP motif
+SLCT,MERCI Motif: Gram-positive AMP motif
+SLCTP,MERCI Motif: Gram-positive AMP motif
+SLCTPG,MERCI Motif: Gram-positive AMP motif
+SLCTPGC,MERCI Motif: Gram-positive AMP motif
+SVDW,MERCI Motif: Gram-positive AMP motif
+TCDLA,MERCI Motif: Gram-positive AMP motif
+TCDLAS,MERCI Motif: Gram-positive AMP motif
+TGLY,MERCI Motif: Gram-positive AMP motif
+TGLYR,MERCI Motif: Gram-positive AMP motif
+TGLYRW,MERCI Motif: Gram-positive AMP motif
+TGLYRWC,MERCI Motif: Gram-positive AMP motif
+TLC,MERCI Motif: Gram-positive AMP motif
+VDW,MERCI Motif: Gram-positive AMP motif
+VDWG,MERCI Motif: Gram-positive AMP motif
+VHC,MERCI Motif: Gram-positive AMP motif
+VNH,MERCI Motif: Gram-positive AMP motif
+VYCN,MERCI Motif: Gram-positive AMP motif
+VYNNG,MERCI Motif: Gram-positive AMP motif
+VYNNGL,MERCI Motif: Gram-positive AMP motif
+VYNNGLP,MERCI Motif: Gram-positive AMP motif
+VYNNGLPT,MERCI Motif: Gram-positive AMP motif
+VYNNGLPTG,MERCI Motif: Gram-positive AMP motif
+VYNNGLPTGL,MERCI Motif: Gram-positive AMP motif
+WAT,MERCI Motif: Gram-positive AMP motif
+WATG,MERCI Motif: Gram-positive AMP motif
+WATGG,MERCI Motif: Gram-positive AMP motif
+WIRW,MERCI Motif: Gram-positive AMP motif
+WKRL,MERCI Motif: Gram-positive AMP motif
+WLR,MERCI Motif: Gram-positive AMP motif
+WLRW,MERCI Motif: Gram-positive AMP motif
+WLW,MERCI Motif: Gram-positive AMP motif
+WLWW,MERCI Motif: Gram-positive AMP motif
+WLWWL,MERCI Motif: Gram-positive AMP motif
+WRRW,MERCI Motif: Gram-positive AMP motif
+WVD,MERCI Motif: Gram-positive AMP motif
+WVDW,MERCI Motif: Gram-positive AMP motif
+WWLW,MERCI Motif: Gram-positive AMP motif
+WWLWW,MERCI Motif: Gram-positive AMP motif
+YCNSKA,MERCI Motif: Gram-positive AMP motif
+YCNSKAV,MERCI Motif: Gram-positive AMP motif
+YCNSKAVC,MERCI Motif: Gram-positive AMP motif
+YCNSKAVCV,MERCI Motif: Gram-positive AMP motif
+YCNSKAVCVC,MERCI Motif: Gram-positive AMP motif
+YGN,MERCI Motif: Gram-positive AMP motif
+YGNG,MERCI Motif: Gram-positive AMP motif
+YGNGV,MERCI Motif: Gram-positive AMP motif
+YGNGVH,MERCI Motif: Gram-positive AMP motif
+YGNGVHC,MERCI Motif: Gram-positive AMP motif
+YGNGVY,MERCI Motif: Gram-positive AMP motif
+YGNGVYC,MERCI Motif: Gram-positive AMP motif
+YGNGVYCN,MERCI Motif: Gram-positive AMP motif
+YNNG,MERCI Motif: Gram-positive AMP motif
+YNNGL,MERCI Motif: Gram-positive AMP motif
+YNNGLP,MERCI Motif: Gram-positive AMP motif
+YNNGLPT,MERCI Motif: Gram-positive AMP motif
+YNNGLPTG,MERCI Motif: Gram-positive AMP motif
+YNNGLPTGL,MERCI Motif: Gram-positive AMP motif
+YNNGLPTGLY,MERCI Motif: Gram-positive AMP motif
+YRGGY,MERCI Motif: Gram-positive AMP motif
+YRGGYC,MERCI Motif: Gram-positive AMP motif
+YRGGYCN,MERCI Motif: Gram-positive AMP motif
+YRGGYCNS,MERCI Motif: Gram-positive AMP motif
+YRGGYCNSK,MERCI Motif: Gram-positive AMP motif
+YRGGYCNSKA,MERCI Motif: Gram-positive AMP motif
+YRW,MERCI Motif: Gram-positive AMP motif
+YRWC,MERCI Motif: Gram-positive AMP motif
+YYGN,MERCI Motif: Gram-positive AMP motif
+YYGNG,MERCI Motif: Gram-positive AMP motif
+YYGNGV,MERCI Motif: Gram-positive AMP motif
+"CX{1,10}CX{1,3}CX{3}CX{4,20}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (5Cp1)
+"CX{1,3}CX{3}CX{4,20}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (5C)
+"CX{2,45}CX{4,53}CX{3}CX{4,20}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (4Cp2)
+"CX{3}CX{3}CX{4,20}CX{3}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (6C)
+"CX{3}CX{4,20}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (4C)
+"CX{4,34}CX{3}CX{4,20}CX{3}C",Cysteine Regex Pattern: α-Hairpinin (4Cp1)

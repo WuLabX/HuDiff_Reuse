@@ -1,0 +1,1017 @@
+{
+  "generated_at_utc": "2026-06-19T15:13:44.855419+00:00",
+  "root": "F:\\wcy\\实验室\\AmpDiff\\数据\\迁移\\数据库",
+  "output_dir": "F:\\wcy\\实验室\\AmpDiff\\数据\\迁移\\数据库\\merged_amp_deduplicated_no_AMPSphere",
+  "excluded_databases": [
+    "AMPSphere"
+  ],
+  "excluded_sequence_keys": 863498,
+  "input_specs": 107,
+  "files_parsed": 107,
+  "files_error": 0,
+  "files_missing": 0,
+  "evidence_rows": 622961,
+  "unique_sequences": 118888,
+  "standard_sequence_rows": 112215,
+  "evidence_group_counts": {
+    "confirmed": 338285,
+    "predicted": 283663,
+    "unclassified": 1013
+  },
+  "database_evidence_counts": {
+    "APD6": 6581,
+    "DBAASP": 47851,
+    "BaAMPs": 1016,
+    "BACTIBASE": 10,
+    "CAMP": 23019,
+    "CyBase": 972,
+    "dbAMP": 87185,
+    "GRAMPA": 51335,
+    "Hemolytik": 3140,
+    "Hemolytik2": 25789,
+    "HemoPI2": 1925,
+    "InverPep": 422,
+    "RNN-Hem_MLpeptide": 21349,
+    "AmpLyze_HC50": 19216,
+    "AMPDB": 77386,
+    "DRAMP": 74151,
+    "AMPDeep": 181614
+  },
+  "combo_counts": [
+    {
+      "activity_class": "positive",
+      "hemolysis_class": "hemolytic",
+      "unique_sequences": 1585
+    },
+    {
+      "activity_class": "positive",
+      "hemolysis_class": "non_hemolytic",
+      "unique_sequences": 2
+    },
+    {
+      "activity_class": "positive",
+      "hemolysis_class": "continuous",
+      "unique_sequences": 1613
+    },
+    {
+      "activity_class": "negative",
+      "hemolysis_class": "hemolytic",
+      "unique_sequences": 0
+    },
+    {
+      "activity_class": "negative",
+      "hemolysis_class": "non_hemolytic",
+      "unique_sequences": 3146
+    },
+    {
+      "activity_class": "negative",
+      "hemolysis_class": "continuous",
+      "unique_sequences": 0
+    },
+    {
+      "activity_class": "continuous",
+      "hemolysis_class": "hemolytic",
+      "unique_sequences": 294
+    },
+    {
+      "activity_class": "continuous",
+      "hemolysis_class": "non_hemolytic",
+      "unique_sequences": 0
+    },
+    {
+      "activity_class": "continuous",
+      "hemolysis_class": "continuous",
+      "unique_sequences": 10998
+    },
+    {
+      "activity_class": "continuous",
+      "hemolysis_class": "mixed",
+      "unique_sequences": 2359
+    },
+    {
+      "activity_class": "continuous",
+      "hemolysis_class": "unknown",
+      "unique_sequences": 6208
+    },
+    {
+      "activity_class": "mixed",
+      "hemolysis_class": "continuous",
+      "unique_sequences": 9
+    },
+    {
+      "activity_class": "mixed",
+      "hemolysis_class": "hemolytic",
+      "unique_sequences": 204
+    },
+    {
+      "activity_class": "mixed",
+      "hemolysis_class": "mixed",
+      "unique_sequences": 266
+    },
+    {
+      "activity_class": "mixed",
+      "hemolysis_class": "unknown",
+      "unique_sequences": 4443
+    },
+    {
+      "activity_class": "negative",
+      "hemolysis_class": "mixed",
+      "unique_sequences": 110
+    },
+    {
+      "activity_class": "negative",
+      "hemolysis_class": "unknown",
+      "unique_sequences": 2890
+    },
+    {
+      "activity_class": "positive",
+      "hemolysis_class": "mixed",
+      "unique_sequences": 3134
+    },
+    {
+      "activity_class": "positive",
+      "hemolysis_class": "unknown",
+      "unique_sequences": 80947
+    },
+    {
+      "activity_class": "unknown",
+      "hemolysis_class": "hemolytic",
+      "unique_sequences": 14
+    },
+    {
+      "activity_class": "unknown",
+      "hemolysis_class": "mixed",
+      "unique_sequences": 2
+    },
+    {
+      "activity_class": "unknown",
+      "hemolysis_class": "unknown",
+      "unique_sequences": 664
+    }
+  ],
+  "file_report": [
+    {
+      "database": "APD6",
+      "source_file": "APD6/apd_peptides.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 6583,
+      "status": "parsed"
+    },
+    {
+      "database": "DBAASP",
+      "source_file": "DBAASP/peptides-combined.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 25069,
+      "status": "parsed"
+    },
+    {
+      "database": "DBAASP",
+      "source_file": "DBAASP/hemolytic-and-cytotoxic-activities--combined.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 22793,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPSphere",
+      "source_file": "AMPSphere/AMP.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 863498,
+      "status": "parsed"
+    },
+    {
+      "database": "BaAMPs",
+      "source_file": "BaAMPs/filtered/experimental/baamps_experiment_activity.csv",
+      "evidence_group": "confirmed",
+      "category": "antibiofilm",
+      "parsed_evidence_rows": 1016,
+      "status": "parsed"
+    },
+    {
+      "database": "BACTIBASE",
+      "source_file": "BACTIBASE/raw/BACTIBASE.fasta",
+      "evidence_group": "confirmed",
+      "category": "bacteriocin",
+      "parsed_evidence_rows": 10,
+      "status": "parsed"
+    },
+    {
+      "database": "BACTIBASE",
+      "source_file": "BACTIBASE/filtered/experimental/bactibase_bacteriocins.csv",
+      "evidence_group": "confirmed",
+      "category": "bacteriocin",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "CAMP",
+      "source_file": "CAMP/filtered/experimental/CAMP_target_activity.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 15806,
+      "status": "parsed"
+    },
+    {
+      "database": "CAMP",
+      "source_file": "CAMP/filtered/predicted/CAMP_target_activity.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 7218,
+      "status": "parsed"
+    },
+    {
+      "database": "CAMP",
+      "source_file": "CAMP/filtered/unclassified/CAMP_target_activity.csv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "CyBase",
+      "source_file": "CyBase/bacteriocin.fa",
+      "evidence_group": "confirmed",
+      "category": "bacteriocin",
+      "parsed_evidence_rows": 11,
+      "status": "parsed"
+    },
+    {
+      "database": "CyBase",
+      "source_file": "CyBase/Cyclotide.fa",
+      "evidence_group": "unclassified",
+      "category": "cyclotide",
+      "parsed_evidence_rows": 952,
+      "status": "parsed"
+    },
+    {
+      "database": "CyBase",
+      "source_file": "CyBase/Primate.fa",
+      "evidence_group": "unclassified",
+      "category": "peptide",
+      "parsed_evidence_rows": 9,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/extracted_data/dbAMP2024/dbAMP2024/dbAMP3_pepinfo.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 35600,
+      "status": "parsed"
+    },
+    {
+      "database": "GRAMPA",
+      "source_file": "GRAMPA/filtered/experimental/grampa.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 51345,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik",
+      "source_file": "Hemolytik/filtered/extracted_data/Hemolytik-main/Hemolytik-main/hemolytik/main_mysql.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 3142,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik2",
+      "source_file": "Hemolytik2/filtered/extracted_data/Hemolytik2-main/Hemolytik2-main/Hemolytik2_complete_data.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 13215,
+      "status": "parsed"
+    },
+    {
+      "database": "HemoPI2",
+      "source_file": "HemoPI2/filtered/extracted_data/HemoPI2-main/hemopi2-main/Dataset/cross_val_dataset.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1540,
+      "status": "parsed"
+    },
+    {
+      "database": "HemoPI2",
+      "source_file": "HemoPI2/filtered/extracted_data/HemoPI2-main/hemopi2-main/Dataset/independent_dataset.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 386,
+      "status": "parsed"
+    },
+    {
+      "database": "InverPep",
+      "source_file": "InverPep/filtered/experimental/inverpep_antibacterial_details.csv",
+      "evidence_group": "confirmed",
+      "category": "antibacterial",
+      "parsed_evidence_rows": 422,
+      "status": "parsed"
+    },
+    {
+      "database": "RNN-Hem_MLpeptide",
+      "source_file": "RNN-Hem_MLpeptide/filtered/extracted_data/MLpeptide-master/MLpeptide-master/data/DAASP_RNN_dataset.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 9548,
+      "status": "parsed"
+    },
+    {
+      "database": "RNN-Hem_MLpeptide",
+      "source_file": "RNN-Hem_MLpeptide/filtered/extracted_data/MLpeptide-master/MLpeptide-master/data/DBAASP_nointrabond.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 11803,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/regression/Hemo_regression.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1355,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Anti-biofilm_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 32,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Anti-candida_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 380,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Anti-gram-negative_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1111,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Anti-gram-positive_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1083,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Anti-MRSA_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 59,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Antimicrobial_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 5226,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Bacteriocin_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 165,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Defensin_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 10,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Fungicide_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 997,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/experimental/Hemolytic_dataset.tsv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 696,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Anti-biofilm_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 19,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Anti-candida_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 40,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Anti-gram-negative_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 4689,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Anti-gram-positive_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1155,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Anti-MRSA_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 21,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Antimicrobial_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 53868,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Bacteriocin_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 4246,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Defensin_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Fungicide_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 3370,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/predicted_or_inferred/Hemolytic_dataset.tsv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 171,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Anti-biofilm_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Anti-candida_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Anti-gram-negative_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Anti-gram-positive_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Anti-MRSA_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Antimicrobial_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 28,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Bacteriocin_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Defensin_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Fungicide_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 24,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDB",
+      "source_file": "AMPDB/filtered/unclassified/Hemolytic_dataset.tsv",
+      "evidence_group": "unclassified",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 0,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_Antibacterial.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 7625,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_Antibiofilm.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 40,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_Antifungal.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 5708,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_AntiGram_n.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 12191,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_AntiGram_p.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 11779,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_Antimicrobial.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 14050,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_AntiMRSA.fasta",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 114,
+      "status": "parsed"
+    },
+    {
+      "database": "dbAMP",
+      "source_file": "dbAMP/filtered/mixed/dbAMP_Hemolytic.fasta",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 98,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Activity/Anti-Gram-negative_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 2562,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Activity/Anti-Gram-positive_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 2733,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Activity/Antibacterial_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 4159,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Activity/Antifungal_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1836,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Activity/Antimicrobial_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 5625,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/clinical_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 79,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/expanded_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 179,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/general_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 11612,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/patent_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 17886,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/specific_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 6286,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Dataset/stability_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 110,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Subclass/candidate_amps.xlsx",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 5909,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Subclass/natural_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 5774,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Subclass/plant_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 826,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Subclass/stapled_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 188,
+      "status": "parsed"
+    },
+    {
+      "database": "DRAMP",
+      "source_file": "DRAMP/Subclass/synthetic_amps.xlsx",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 8438,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/combined/combined.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 7179,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/combined/combined_test.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 100,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/combined/combined_train.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1802,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hemolytic/hemolythic.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1104,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hemolytic/hemolythic_test.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 220,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hemolytic/hemolythic_train.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 884,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hemolytic/HemoPI-1_validation_class0.fasta",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 110,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hemolytic/HemoPI-1_validation_class1.fasta",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 110,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hlppredfuse/hlppredfuse.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 3518,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hlppredfuse/hlppredfuse_test.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 2662,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/hlppredfuse/hlppredfuse_train.csv",
+      "evidence_group": "predicted",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 856,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/rnnamp/DAASP_RNN_dataset.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 9548,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/rnnamp/peptides_complete.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 148454,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/rnnamp/rnnamp.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 2557,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/rnnamp/rnnamp_test.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 619,
+      "status": "parsed"
+    },
+    {
+      "database": "AMPDeep",
+      "source_file": "AMPDeep/filtered/extracted_data/AMPDeep-main/AMPDeep-main/data/rnnamp/rnnamp_train.csv",
+      "evidence_group": "predicted",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1938,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/regression/regression.xlsx",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1500,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S1/S_1.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1104,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S1/test.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 220,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S1/train.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 884,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S2/S_2.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 2557,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S2/test.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 619,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S2/train.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1938,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S3/S_3.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 7179,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S3/test.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 92,
+      "status": "parsed"
+    },
+    {
+      "database": "AmpLyze_HC50",
+      "source_file": "AmpLyze_HC50/filtered/extracted_data/ConsAMPHemo-main/ConsAMPHemo-main/Dataset/S3/train.csv",
+      "evidence_group": "confirmed",
+      "category": "hemolysis",
+      "parsed_evidence_rows": 1777,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik2",
+      "source_file": "Hemolytik2/filtered/extracted_data/Hemolytik2-main/Hemolytik2-main/function/antibacterial.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 4190,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik2",
+      "source_file": "Hemolytik2/filtered/extracted_data/Hemolytik2-main/Hemolytik2-main/function/antibiofilm.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 686,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik2",
+      "source_file": "Hemolytik2/filtered/extracted_data/Hemolytik2-main/Hemolytik2-main/function/antifungal.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 1056,
+      "status": "parsed"
+    },
+    {
+      "database": "Hemolytik2",
+      "source_file": "Hemolytik2/filtered/extracted_data/Hemolytik2-main/Hemolytik2-main/function/antimicrobial.csv",
+      "evidence_group": "confirmed",
+      "category": "antimicrobial",
+      "parsed_evidence_rows": 6670,
+      "status": "parsed"
+    }
+  ],
+  "skipped": [],
+  "rules": {
+    "dedupe_key": "uppercased whitespace-stripped normalized sequence; multichain separators are retained",
+    "unit_policy": "continuous values, units, comparators and metrics are kept as raw strings; no unit conversion",
+    "toxicity_policy": "hemolysis/toxicity is separate from AMP activity labels",
+    "conflict_policy": "conflicting labels are kept in evidence rows and summarized as mixed in the master table"
+  }
+}
