@@ -1,14 +1,9 @@
 # Deduplicated AMP Merge
-
-Generated: 2026-06-19T15:13:44.855419+00:00
-
 This directory contains a sequence-deduplicated merge of AMP records from the
 database collection. Original database folders were not modified.
 
-Excluded databases: AMPSphere
-Excluded sequence keys: 863498
-
 ## Files
+The following files can be downloaded from Zenodo:
 
 - `amp_peptide_master.csv`: one row per normalized sequence.
 - `amp_evidence_long.csv`: all parsed source rows and experiment/model evidence.
