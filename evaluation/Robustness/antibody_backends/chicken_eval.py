@@ -20,7 +20,7 @@ current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'
 if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
-from antibody_scripts.HuAb348_eval import (
+from evaluation.Robustness.antibody_backends.HuAb348_eval import (
     ABNATIV_DIR,
     BIOPHI_DIR,
     OASIS_DB_PATH,

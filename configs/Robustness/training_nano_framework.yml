@@ -34,6 +34,6 @@ finetune:
     multiplier: 10
     total_epoch: 20
   model:
-    abnativ_humanness_ckpt_fpath: checkpoints/Robustness/checkpoints/Robustness/abnativ/vh_model.ckpt
+    abnativ_humanness_ckpt_fpath: checkpoints/Robustness/abnativ/vh_model.ckpt
     abnativ_vhh_ckpt_fpath: checkpoints/Robustness/abnativ/vhh_model.ckpt
     infilling_ckpt_fpath: checkpoints/Robustness/nanobody/pretrained.pt

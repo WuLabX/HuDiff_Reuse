@@ -16,7 +16,7 @@ from anarci import number
 
 
 # from utils.Robustness.anti_numbering import get_regions
-from patent_eval import cal_all_preservation
+from evaluation.Robustness.antibody_backends.patent_eval import cal_all_preservation
 from utils.Robustness.tokenizer import Tokenizer
 from utils.Robustness.train_utils import model_selected
 from utils.Robustness.misc import get_new_log_dir, get_logger, seed_all

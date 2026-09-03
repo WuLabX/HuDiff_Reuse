@@ -12,8 +12,8 @@ import sys
 import pandas as pd
 
 from utils.Robustness.misc import get_logger
-from antibody_scripts.HuAb348_eval import ABNATIV_DIR, OASIS_DB_PATH
-from antibody_scripts.chicken_eval import (
+from evaluation.Robustness.antibody_backends.HuAb348_eval import ABNATIV_DIR, OASIS_DB_PATH
+from evaluation.Robustness.antibody_backends.chicken_eval import (
     _get_abnativ_exec,
     _score_abnativ_group,
     _score_t20_group,
