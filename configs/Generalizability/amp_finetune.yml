@@ -1,0 +1,50 @@
+name: nano
+model:
+  n_tokens: 23
+  d_embedding: 256
+  d_model: 256
+  n_encoder_layers: 6
+  aa_kernel_size: 7
+  r: 128
+  n_region: 3
+  r_embedding: 4
+  r_model: 256
+  n_pos_model: 256
+  max_len: 100
+  sum_d_model: 512
+  dual_layers: 6
+  att_model: 512
+  dim_feedforward: 256
+  nhead: 8
+  cs_layers: 5
+  dropout: 0.3
+  activation: gelu
+
+finetune:
+  seed: 2023
+  max_iter: 100000
+  batch_acc: 32
+  valid_step: 10
+  batch_size: 128
+  num_workers: 4
+  clip_norm: 10
+  lambda_activity: 1.0    # weight for the selected activity guidance predictor
+  lambda_hemolysis: 1.0   # weight for HemoPI2 guidance loss (inp mode only)
+  optimizer:
+    type: Adam
+    lr: 1.e-5
+    weight_decay: 0.
+    beta1: 0.95
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.6
+    patience: 10
+    min_lr: 1.e-6
+  model:
+    pretrain_ckpt_fpath: checkpoints/Generalizability/pretrain/amp_pretrain.pt
+
+amp:
+  motif_active_file: data/Generalizability/motif/AMP_act_Motifs.csv
+  motif_hemolytic_file: data/Generalizability/motif/AMP_hom_negMotifs.csv
+  mode: de
