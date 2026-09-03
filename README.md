@@ -54,7 +54,17 @@ Install these predictors under the same parent directory as `AmpDiff`:
 
 ## Generalizability
 
-Prepare AMP data:
+Resources:
+
+- [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112)
+- [Generalizability raw_data file list](dataset/Generalizability/raw_data/README.md)
+- [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112)
+- [Generalizability checkpoint README](checkpoints/Generalizability/README.md)
+
+Raw-data retraining path:
+
+1. Download [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112) and place the files under `dataset/Generalizability/raw_data/`.
+2. Build the processed AMP train/test datasets:
 
 ```bash
 python dataset/Generalizability/processing/prepare_ampdiff_datasets.py \
@@ -64,11 +74,25 @@ python dataset/Generalizability/processing/prepare_ampdiff_datasets.py \
   --motif-dir data/Generalizability/motif
 ```
 
-Train and sample:
+3. Train and finetune the Generalizability checkpoints:
 
 ```bash
 bash scripts/Generalizability/run_pretrain_stage1_all.sh
 bash scripts/Generalizability/run_pretrain_stage2_motif.sh
+python scripts/Generalizability/amp_finetune.py \
+  --data_path data/Generalizability/finetune/ampdiff_finetune_de.csv \
+  --config_path configs/Generalizability/amp_finetune.yml \
+  --mode de
+```
+
+Warm-start path:
+
+1. Download [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112).
+2. Place the checkpoint files under `checkpoints/Generalizability/`.
+
+After either path, sample AMP variants:
+
+```bash
 bash scripts/Generalizability/run_main_generation.sh
 ```
 
@@ -98,6 +122,32 @@ train.py
 finetune.py
 sample_for_anti_cdr.py
 ```
+
+Resources:
+
+- [Robustness raw data](https://huggingface.co/cloud77/HuDiff)
+- [Robustness raw_data file list](dataset/Robustness/raw_data/README.md)
+- [Robustness checkpoints](https://huggingface.co/cloud77/HuDiff)
+- [Robustness checkpoint README](checkpoints/Robustness/README.md)
+
+Raw-data retraining path:
+
+1. Download [Robustness raw data](https://huggingface.co/cloud77/HuDiff) and place the release-data files under `dataset/Robustness/raw_data/`.
+2. Train and finetune the HuDiff robustness models:
+
+```bash
+bash scripts/Robustness/antibody/train.sh
+bash scripts/Robustness/antibody/finetune.sh
+bash scripts/Robustness/nanobody/train.sh
+bash scripts/Robustness/nanobody/finetune.sh
+```
+
+Warm-start path:
+
+1. Download [Robustness checkpoints](https://huggingface.co/cloud77/HuDiff).
+2. Place the checkpoint files under `checkpoints/Robustness/`.
+
+After either path, run robustness sampling and evaluation.
 
 Antibody 3 seed x 3 temperature sampling and evaluation:
 
