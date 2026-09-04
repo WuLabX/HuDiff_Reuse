@@ -10,7 +10,7 @@ The study is organized into three complementary stages:
    Evaluate whether the HuDiff architecture can be reused beyond its original antibody-humanization setting. In particular, we migrate the HuDiff-Nb framework to antimicrobial peptide generation, resulting in **AmpDiff**, to investigate the extent to which the core diffusion architecture can support a biologically distinct sequence-design task.
 
 The repository contains the code, experimental configurations, evaluation pipelines, and analysis scripts used to support the corresponding results and figures in the Reusability Report.
-![pipeline](doc/process.svg)
+
 
 ## Contents
 - [Experimental Setup](#experimental-setup)
