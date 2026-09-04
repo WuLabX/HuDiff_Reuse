@@ -2,13 +2,10 @@
 **HuDiff_Reuse** is the companion repository for our Reusability Report on **HuDiff**, an adaptive autoregressive diffusion framework for antibody and nanobody humanization. Rather than serving solely as a reimplementation of the original method, this repository provides the computational evidence supporting a systematic evaluation of HuDiff's reusability.
 
 The study is organized into three complementary stages:
-
 1. **Reproduction**  
    Reproduce representative results reported in the original HuDiff study under documented computational environments and evaluation protocols, establishing a reliable reference baseline for subsequent analyses.
-
 2. **Robustness**  
    Stress-test HuDiff under variations in sampling conditions, input characteristics, and application settings to examine the stability of its reported performance and identify practical limitations that may emerge beyond the standard benchmark setting.
-
 3. **Generalization**  
    Evaluate whether the HuDiff architecture can be reused beyond its original antibody-humanization setting. In particular, we migrate the HuDiff-Nb framework to antimicrobial peptide generation, resulting in **AmpDiff**, to investigate the extent to which the core diffusion architecture can support a biologically distinct sequence-design task.
 
@@ -22,7 +19,7 @@ The repository contains the code, experimental configurations, evaluation pipeli
 - [Robustness](#robustness)
 - [Generalizability](#generalizability)
 - [Citation](#citation)
-
+- [Contact](#contact)
 
 ## Experimental Setup
 
@@ -72,10 +69,12 @@ Resources:
 - [Robustness checkpoints](https://huggingface.co/cloud77/HuDiff)
 - [Robustness checkpoint README](checkpoints/Robustness/README.md)
 
-Raw-data retraining path:
+### Path A: Raw-data retraining
+
+Use this path when you want to rebuild robustness checkpoints from the released HuDiff training data.
 
 1. Download [Robustness raw data](https://huggingface.co/cloud77/HuDiff) and place the release-data files under `dataset/Robustness/raw_data/`.
-2. Train and finetune the HuDiff robustness models:
+2. Train and finetune the HuDiff robustness models.
 
 ```bash
 bash scripts/Robustness/antibody/train.sh
@@ -84,28 +83,41 @@ bash scripts/Robustness/nanobody/train.sh
 bash scripts/Robustness/nanobody/finetune.sh
 ```
 
-Warm-start path:
+### Path B: Warm-start from checkpoints
+
+Use this path when you want to skip retraining and directly run sampling/evaluation from released weights.
 
 1. Download [Robustness checkpoints](https://huggingface.co/cloud77/HuDiff).
 2. Place the checkpoint files under `checkpoints/Robustness/`.
 
-After either path, run antibody robustness sampling and evaluation with three seeds and three temperatures:
+### Sampling
+
+After completing either Path A or Path B, run sampling with three seeds and three temperatures.
+
+Antibody:
 
 ```bash
 bash scripts/Robustness/antibody/sample_3seed_3temp.sh chicken
-bash scripts/Robustness/antibody/eval_3seed_3temp.sh chicken
 ```
 
 Supported antibody datasets are `chicken`, `rabbit`, `BH1`, and `Emicizumab`.
 
-Run nanobody or heavy-chain robustness sampling and evaluation with the same seed-temperature grid:
+Nanobody or heavy-chain:
 
 ```bash
 bash scripts/Robustness/nanobody/sample_3seed_3temp.sh shark349
-bash scripts/Robustness/nanobody/eval_3seed_3temp.sh shark349
 ```
 
 Supported nanobody/heavy-chain datasets include `shark349`, `HuAb348_H`, and `Humab25_H`.
+
+### Evaluation
+
+Evaluate the generated robustness samples with the matching 3 seed x 3 temperature grid.
+
+```bash
+bash scripts/Robustness/antibody/eval_3seed_3temp.sh chicken
+bash scripts/Robustness/nanobody/eval_3seed_3temp.sh shark349
+```
 
 Robustness benchmark inputs are stored under `data/Robustness/`. Generated robustness outputs are stored under `results/Robustness/`; HuDiff `My_Data` outputs are not copied into this repository.
 
@@ -118,7 +130,9 @@ Resources:
 - [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112)
 - [Generalizability checkpoint README](checkpoints/Generalizability/README.md)
 
-Raw-data retraining path:
+### Path A: Raw-data retraining
+
+Use this path when you want to rebuild the AMP datasets and train AmpDiff checkpoints from raw merged AMP records.
 
 1. Download [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112) and place the files under `dataset/Generalizability/raw_data/`.
 2. Build the processed AMP datasets:
@@ -131,7 +145,7 @@ python dataset/Generalizability/processing/prepare_ampdiff_datasets.py \
   --motif-dir data/Generalizability/motif
 ```
 
-3. Train and finetune the AMP checkpoints:
+3. Train and finetune the AMP checkpoints.
 
 ```bash
 bash scripts/Generalizability/run_pretrain_stage1_all.sh
@@ -142,16 +156,22 @@ python scripts/Generalizability/amp_finetune.py \
   --mode de
 ```
 
-Warm-start path:
+### Path B: Warm-start from checkpoints
+
+Use this path when you want to skip AMP training and directly sample from released checkpoints.
 
 1. Download [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112).
 2. Place the checkpoint files under `checkpoints/Generalizability/`.
 
-After either path, sample AMP variants:
+### Sampling
+
+After completing either Path A or Path B, sample AMP variants:
 
 ```bash
 bash scripts/Generalizability/run_main_generation.sh
 ```
+
+### Evaluation
 
 Evaluate AMP outputs:
 
