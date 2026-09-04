@@ -200,5 +200,6 @@ python evaluation/Generalizability/amp_metrics_eval.py \
 ```
 ## Contact <a name="contact"></a>
 If you have any questions or suggestions regarding this work, please feel free to contact us:
-- Chuya Wu: [wuchuya@stu.ahau.edu.cn](mailto:wuchuya@stu.ahau.edu.cn)  
 - Zhenyu Yue: [zhenyuyue@ahau.edu.cn](mailto:zhenyuyue@ahau.edu.cn)
+- Chuya Wu: [wuchuya@stu.ahau.edu.cn](mailto:wuchuya@stu.ahau.edu.cn)  
+
