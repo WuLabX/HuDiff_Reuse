@@ -135,7 +135,9 @@ Resources:
 Use this path when you want to rebuild the AMP datasets and train AmpDiff checkpoints from raw merged AMP records.
 
 1. Download [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112) and place the files under `dataset/Generalizability/raw_data/`.
-2. Build the processed AMP datasets:
+2. Build the processed AMP datasets. The script keeps the test split fixed,
+   applies CD-HIT 90% internal deduplication to `pretrain` / `finetune`, and
+   filters those training sets against the fixed test set at CD-HIT-2D 60%.
 
 ```bash
 python dataset/Generalizability/processing/prepare_ampdiff_datasets.py \
@@ -154,12 +156,6 @@ python scripts/Generalizability/amp_finetune.py \
   --data_path data/Generalizability/finetune/finetune_de.csv \
   --config_path configs/Generalizability/amp_finetune.yml \
   --mode de
-```
-
-To regenerate the 90% internal / 60% vs-test CD-HIT filtered training files:
-
-```bash
-python dataset/Generalizability/processing/make_cdhit60_train_sets.py
 ```
 
 ### Path B: Warm-start from checkpoints

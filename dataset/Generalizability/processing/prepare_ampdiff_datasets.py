@@ -5,8 +5,9 @@ Prepare AmpDiff pretrain / finetune / test datasets from the merged raw AMP data
 Design notes:
 - Pretraining uses unsupervised sequence denoising data: sequence only.
 - Finetuning uses high-confidence experimental activity records aggregated per sequence.
-- Test sequences are held out at a CD-HIT cluster level to reduce similarity leakage.
-- Outputs are written into the AmpDiff data directory.
+- Test sequences are selected first and kept fixed.
+- Pretrain/finetune sets are CD-HIT deduplicated internally, then filtered
+  against the fixed test sets with CD-HIT-2D to reduce similarity leakage.
 """
 
 from __future__ import annotations
@@ -207,6 +208,20 @@ def write_fasta(seqs: Sequence[str], path: Path) -> None:
             handle.write(f">seq_{i}|len={len(seq)}\n{seq}\n")
 
 
+def cdhit_word_size(identity: float) -> str:
+    if identity >= 0.7:
+        return "5"
+    if identity >= 0.6:
+        return "4"
+    if identity >= 0.5:
+        return "3"
+    return "2"
+
+
+def run_command(cmd: Sequence[str]) -> None:
+    subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+
+
 def run_cdhit(seqs: Sequence[str], identity: float, work_dir: Path) -> Optional[Path]:
     cdhit = shutil.which("cd-hit")
     inp = work_dir / "all_valid_sequences.fasta"
@@ -217,19 +232,114 @@ def run_cdhit(seqs: Sequence[str], identity: float, work_dir: Path) -> Optional[
             return existing_clstr
         return None
     write_fasta(seqs, inp)
-    word_size = 5 if identity >= 0.7 else 4
     cmd = [
         cdhit,
         "-i", str(inp),
         "-o", str(out),
         "-c", str(identity),
-        "-n", str(word_size),
+        "-n", cdhit_word_size(identity),
         "-d", "0",
         "-M", "0",
         "-T", "0",
     ]
-    subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    run_command(cmd)
     return out.with_suffix(out.suffix + ".clstr")
+
+
+def read_fasta_sequences(path: Path) -> List[str]:
+    seqs: List[str] = []
+    chunks: List[str] = []
+    with path.open(encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith(">"):
+                if chunks:
+                    seqs.append("".join(chunks))
+                    chunks = []
+            else:
+                chunks.append(line)
+    if chunks:
+        seqs.append("".join(chunks))
+    return seqs
+
+
+def cdhit_representatives(
+    seqs: Sequence[str],
+    identity: float,
+    work_dir: Path,
+    name: str,
+) -> List[str]:
+    if not seqs:
+        return []
+    cdhit = shutil.which("cd-hit")
+    if not cdhit:
+        raise RuntimeError("cd-hit is required for internal training-set deduplication")
+    inp = work_dir / f"{name}.fasta"
+    out = work_dir / f"{name}.cdhit{int(identity * 100)}.fasta"
+    write_fasta(seqs, inp)
+    run_command([
+        cdhit,
+        "-i", str(inp),
+        "-o", str(out),
+        "-c", str(identity),
+        "-n", cdhit_word_size(identity),
+        "-d", "0",
+        "-M", "0",
+        "-T", "0",
+    ])
+    return read_fasta_sequences(out)
+
+
+def cdhit_2d_filter_against_test(
+    train_seqs: Sequence[str],
+    test_seqs: Sequence[str],
+    identity: float,
+    work_dir: Path,
+    name: str,
+) -> List[str]:
+    if not train_seqs:
+        return []
+    cdhit_2d = shutil.which("cd-hit-2d")
+    if not cdhit_2d:
+        raise RuntimeError("cd-hit-2d is required for train-vs-test filtering")
+    test_fasta = work_dir / "test_union.fasta"
+    train_fasta = work_dir / f"{name}.internal.fasta"
+    out = work_dir / f"{name}.internal_vs_test{int(identity * 100)}.fasta"
+    write_fasta(test_seqs, test_fasta)
+    write_fasta(train_seqs, train_fasta)
+    run_command([
+        cdhit_2d,
+        "-i", str(test_fasta),
+        "-i2", str(train_fasta),
+        "-o", str(out),
+        "-c", str(identity),
+        "-n", cdhit_word_size(identity),
+        "-d", "0",
+        "-M", "0",
+        "-T", "0",
+    ])
+    return read_fasta_sequences(out)
+
+
+def filter_training_set(
+    seqs: Sequence[str],
+    test_seqs: Sequence[str],
+    internal_identity: float,
+    train_test_identity: float,
+    work_dir: Path,
+    name: str,
+) -> Tuple[List[str], Dict[str, int]]:
+    internal = cdhit_representatives(seqs, internal_identity, work_dir, name)
+    filtered = cdhit_2d_filter_against_test(
+        internal, test_seqs, train_test_identity, work_dir, name
+    )
+    return filtered, {
+        "before": len(seqs),
+        "after_internal": len(internal),
+        "after_train_vs_test": len(filtered),
+    }
 
 
 def parse_cdhit_clusters(clstr_path: Optional[Path], seqs: Sequence[str]) -> Dict[str, int]:
@@ -518,6 +628,8 @@ def main() -> None:
     parser.add_argument("--min-len", type=int, default=5)
     parser.add_argument("--max-len", type=int, default=100)
     parser.add_argument("--identity", type=float, default=0.8)
+    parser.add_argument("--internal-identity", type=float, default=0.9)
+    parser.add_argument("--train-test-identity", type=float, default=0.6)
     parser.add_argument("--test-frac", type=float, default=0.10)
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--motif-dir", default=str(root / "data" / "Generalizability" / "motif"))
@@ -602,6 +714,42 @@ def main() -> None:
             and profile["optimizable_de_positions"] >= 1
         )
     ]
+    test_union = sorted(set(test_de) | set(test_inp), key=lambda s: (len(s), stable_sort_key(s)))
+    filter_work_dir = work_dir / "cdhit_train_filters"
+    filter_work_dir.mkdir(parents=True, exist_ok=True)
+    cdhit_filter_summary: Dict[str, Dict[str, int]] = {}
+    pretrain_all, cdhit_filter_summary["pretrain"] = filter_training_set(
+        pretrain_all,
+        test_union,
+        args.internal_identity,
+        args.train_test_identity,
+        filter_work_dir,
+        "pretrain",
+    )
+    pretrain_motif, cdhit_filter_summary["pretrain_motif"] = filter_training_set(
+        pretrain_motif,
+        test_union,
+        args.internal_identity,
+        args.train_test_identity,
+        filter_work_dir,
+        "pretrain_motif",
+    )
+    finetune_de, cdhit_filter_summary["finetune_de"] = filter_training_set(
+        finetune_de,
+        test_union,
+        args.internal_identity,
+        args.train_test_identity,
+        filter_work_dir,
+        "finetune_de",
+    )
+    finetune_inp, cdhit_filter_summary["finetune_inp"] = filter_training_set(
+        finetune_inp,
+        test_union,
+        args.internal_identity,
+        args.train_test_identity,
+        filter_work_dir,
+        "finetune_inp",
+    )
 
     finetune_fields = list(asdict(next(iter(activity.values()))).keys()) if activity else ["sequence", "value"]
     outputs = {
@@ -611,7 +759,9 @@ def main() -> None:
         "pretrain_motif": out_dir / "pretrain" / "pretrain_motif.csv",
         "pretrain_motif_fasta": out_dir / "pretrain" / "pretrain_motif.fasta",
         "finetune_de": out_dir / "finetune" / "finetune_de.csv",
+        "finetune_de_fasta": out_dir / "finetune" / "finetune_de.fasta",
         "finetune_inp": out_dir / "finetune" / "finetune_inp.csv",
+        "finetune_inp_fasta": out_dir / "finetune" / "finetune_inp.fasta",
         "test_de": out_dir / "test" / "ampdiff_test_de.csv",
         "test_de_fasta": out_dir / "test" / "ampdiff_test_de.fasta",
         "test_inp": out_dir / "test" / "ampdiff_test_inp.csv",
@@ -626,7 +776,9 @@ def main() -> None:
     write_csv(outputs["pretrain_motif"], ({"sequence": seq} for seq in pretrain_motif), ["sequence"])
     write_fasta(pretrain_motif, outputs["pretrain_motif_fasta"])
     write_csv(outputs["finetune_de"], (asdict(activity[seq]) for seq in finetune_de), finetune_fields)
+    write_fasta(finetune_de, outputs["finetune_de_fasta"])
     write_csv(outputs["finetune_inp"], (asdict(activity[seq]) for seq in finetune_inp), finetune_fields)
+    write_fasta(finetune_inp, outputs["finetune_inp_fasta"])
     write_csv(outputs["test_de"], (asdict(activity[seq]) for seq in test_de), finetune_fields)
     write_fasta(test_de, outputs["test_de_fasta"])
     write_csv(outputs["test_inp"], (asdict(activity[seq]) for seq in test_inp), finetune_fields)
@@ -647,8 +799,9 @@ def main() -> None:
             "pretrain_motif": "active motif hit and >=1 optimizable residue",
             "finetune_de": "activity-supervised; active motif hit and >=1 optimizable residue",
             "finetune_inp": "activity-supervised; active motif + hom_neg motif hits; known hemolysis; >=1 optimizable residue",
-            "test_de": "held-out de-valid clusters",
-            "test_inp": "held-out inp-valid clusters",
+            "test_de": "held-out de-valid clusters; fixed before train filtering",
+            "test_inp": "held-out inp-valid clusters; fixed before train filtering",
+            "train_filter": "pretrain/finetune are CD-HIT deduplicated internally and then filtered against the fixed test union",
         },
         "motifs": {
             "enabled_types": sorted(enabled_motif_types),
@@ -681,6 +834,9 @@ def main() -> None:
             "test_de_clusters": len(test_de_clusters),
             "test_inp_clusters": len(test_inp_clusters),
             "heldout_cluster_union": len(heldout_clusters),
+            "internal_train_identity": args.internal_identity,
+            "train_vs_test_identity": args.train_test_identity,
+            "train_filter_summary": cdhit_filter_summary,
         },
     }
     outputs["report_json"].write_text(
@@ -697,7 +853,9 @@ def main() -> None:
         "- Pretrain motif stage requires active motif hits and at least one optimizable residue.",
         "- finetune_de/test_de require active motif hits and at least one optimizable residue.",
         "- finetune_inp/test_inp require active motif + hom_neg motif hits, known hemolysis labels, and at least one optimizable residue.",
-        f"- CD-HIT cluster holdout identity: {args.identity}.",
+        f"- Initial CD-HIT cluster holdout identity: {args.identity}.",
+        f"- Pretrain/finetune internal CD-HIT identity: {args.internal_identity}.",
+        f"- Pretrain/finetune vs fixed test CD-HIT-2D identity: {args.train_test_identity}.",
         "",
         "## Counts",
         f"- Raw valid master sequences: {len(master)}",
