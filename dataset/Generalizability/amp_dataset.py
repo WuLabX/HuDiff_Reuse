@@ -18,8 +18,8 @@ import pandas as pd
 import torch
 from torch.utils.data import Dataset
 
-current_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.insert(0, current_dir)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, PROJECT_ROOT)
 
 from utils.Generalizability.tokenizer import Tokenizer
 from utils.Generalizability.amp_motifs import (

@@ -12,7 +12,7 @@ from typing import List, Sequence, Tuple
 import pandas as pd
 from Bio import SeqIO
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from utils.Generalizability.amp_scorers import ACTIVITY_SCORERS, build_scorer_from_args  # noqa: E402

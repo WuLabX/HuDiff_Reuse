@@ -28,7 +28,7 @@ from matplotlib.textpath import TextPath
 from matplotlib.transforms import Affine2D
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from utils.Generalizability.amp_motifs import load_active_motifs  # noqa: E402

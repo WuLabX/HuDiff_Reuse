@@ -4,7 +4,7 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 python scripts/Generalizability/amp_train.py \
-  --data_path data/Generalizability/pretrain/ampdiff_pretrain_all.csv \
+  --data_path data/Generalizability/pretrain/pretrain.csv \
   --config_path configs/Generalizability/amp_pretrain_stage1_all.yml \
   --log_path logs/amp_pretrain \
   --train_loss fr \

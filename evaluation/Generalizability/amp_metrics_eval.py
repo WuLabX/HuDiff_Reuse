@@ -15,7 +15,7 @@ from Bio import SeqIO
 from Bio.Align import PairwiseAligner
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 

@@ -1,15 +1,15 @@
 {
   "parameters": {
-    "raw_dir": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/raw_data",
-    "out_dir": "/mnt/wucy/WUCHUYA/AmpDiff/data",
-    "work_dir": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/work",
-    "v1_script": "/mnt/wucy/WUCHUYA/AmpDiff/dataset/processing/prepare_ampdiff_datasets.py",
+    "raw_dir": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/dataset/Generalizability/raw_data",
+    "out_dir": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability",
+    "work_dir": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/dataset/Generalizability/work",
+    "v1_script": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/dataset/Generalizability/processing/prepare_ampdiff_datasets.py",
     "min_len": 5,
     "max_len": 100,
     "identity": 0.8,
     "test_frac": 0.1,
     "seed": 2026,
-    "motif_dir": "/mnt/wucy/WUCHUYA/AmpDiff/data/motif",
+    "motif_dir": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/motif",
     "motif_type": "prosite,regular,merci"
   },
   "policy": {
@@ -38,19 +38,19 @@
     "inp": 236
   },
   "outputs": {
-    "pretrain_all": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_all.csv",
-    "pretrain": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain.csv",
-    "pretrain_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain.fasta",
-    "pretrain_motif": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_motif.csv",
-    "pretrain_motif_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/pretrain/ampdiff_pretrain_motif.fasta",
-    "finetune_de": "/mnt/wucy/WUCHUYA/AmpDiff/data/finetune/ampdiff_finetune_de.csv",
-    "finetune_inp": "/mnt/wucy/WUCHUYA/AmpDiff/data/finetune/ampdiff_finetune_inp.csv",
-    "test_de": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_de.csv",
-    "test_de_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_de.fasta",
-    "test_inp": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_inp.csv",
-    "test_inp_fasta": "/mnt/wucy/WUCHUYA/AmpDiff/data/test/ampdiff_test_inp.fasta",
-    "report_json": "/mnt/wucy/WUCHUYA/AmpDiff/data/dataset_report.json",
-    "report_md": "/mnt/wucy/WUCHUYA/AmpDiff/data/dataset_report.md"
+    "pretrain_all": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/pretrain/pretrain.csv",
+    "pretrain": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/pretrain/pretrain.csv",
+    "pretrain_fasta": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/pretrain/pretrain.fasta",
+    "pretrain_motif": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/pretrain/pretrain_motif.csv",
+    "pretrain_motif_fasta": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/pretrain/pretrain_motif.fasta",
+    "finetune_de": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/finetune/finetune_de.csv",
+    "finetune_inp": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/finetune/finetune_inp.csv",
+    "test_de": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/test/ampdiff_test_de.csv",
+    "test_de_fasta": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/test/ampdiff_test_de.fasta",
+    "test_inp": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/test/ampdiff_test_inp.csv",
+    "test_inp_fasta": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/test/ampdiff_test_inp.fasta",
+    "report_json": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/dataset_report.json",
+    "report_md": "/mnt/wucy/WUCHUYA/HuDiff_Reuse/data/Generalizability/dataset_report.md"
   },
   "splits": {
     "pretrain_all": {

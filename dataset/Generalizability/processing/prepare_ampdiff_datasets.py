@@ -511,15 +511,16 @@ def summarize_task(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--raw-dir", default="/mnt/wucy/WUCHUYA/AmpDiff/dataset/raw_data")
-    parser.add_argument("--out-dir", default="/mnt/wucy/WUCHUYA/AmpDiff/data")
-    parser.add_argument("--work-dir", default="/mnt/wucy/WUCHUYA/AmpDiff/dataset/work")
+    root = Path(__file__).resolve().parents[3]
+    parser.add_argument("--raw-dir", default=str(root / "dataset" / "Generalizability" / "raw_data"))
+    parser.add_argument("--out-dir", default=str(root / "data" / "Generalizability"))
+    parser.add_argument("--work-dir", default=str(root / "dataset" / "Generalizability" / "work"))
     parser.add_argument("--min-len", type=int, default=5)
     parser.add_argument("--max-len", type=int, default=100)
     parser.add_argument("--identity", type=float, default=0.8)
     parser.add_argument("--test-frac", type=float, default=0.10)
     parser.add_argument("--seed", type=int, default=2026)
-    parser.add_argument("--motif-dir", default="/mnt/wucy/WUCHUYA/AmpDiff/data/motif")
+    parser.add_argument("--motif-dir", default=str(root / "data" / "Generalizability" / "motif"))
     parser.add_argument("--motif-type", default="prosite,regular,merci")
     args = parser.parse_args()
 
@@ -604,13 +605,13 @@ def main() -> None:
 
     finetune_fields = list(asdict(next(iter(activity.values()))).keys()) if activity else ["sequence", "value"]
     outputs = {
-        "pretrain_all": out_dir / "pretrain" / "ampdiff_pretrain_all.csv",
-        "pretrain": out_dir / "pretrain" / "ampdiff_pretrain.csv",
-        "pretrain_fasta": out_dir / "pretrain" / "ampdiff_pretrain.fasta",
-        "pretrain_motif": out_dir / "pretrain" / "ampdiff_pretrain_motif.csv",
-        "pretrain_motif_fasta": out_dir / "pretrain" / "ampdiff_pretrain_motif.fasta",
-        "finetune_de": out_dir / "finetune" / "ampdiff_finetune_de.csv",
-        "finetune_inp": out_dir / "finetune" / "ampdiff_finetune_inp.csv",
+        "pretrain_all": out_dir / "pretrain" / "pretrain.csv",
+        "pretrain": out_dir / "pretrain" / "pretrain.csv",
+        "pretrain_fasta": out_dir / "pretrain" / "pretrain.fasta",
+        "pretrain_motif": out_dir / "pretrain" / "pretrain_motif.csv",
+        "pretrain_motif_fasta": out_dir / "pretrain" / "pretrain_motif.fasta",
+        "finetune_de": out_dir / "finetune" / "finetune_de.csv",
+        "finetune_inp": out_dir / "finetune" / "finetune_inp.csv",
         "test_de": out_dir / "test" / "ampdiff_test_de.csv",
         "test_de_fasta": out_dir / "test" / "ampdiff_test_de.fasta",
         "test_inp": out_dir / "test" / "ampdiff_test_inp.csv",

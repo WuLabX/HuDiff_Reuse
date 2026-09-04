@@ -16,8 +16,8 @@ import sys
 import yaml
 from easydict import EasyDict
 
-current_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.insert(0, current_dir)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, PROJECT_ROOT)
 
 import torch
 import torch.utils.tensorboard
@@ -440,7 +440,7 @@ if __name__ == "__main__":
         start_iter = int(ckpt.get("iteration", -1)) + 1
 
     # Resolve motif file paths relative to script or absolute
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base_dir = PROJECT_ROOT
     motif_active = os.path.join(base_dir, config.amp.motif_active_file)
     motif_hem = os.path.join(base_dir, config.amp.motif_hemolytic_file)
 
@@ -535,7 +535,7 @@ if __name__ == "__main__":
     best_iter = 0
     train_window = reset_train_window()
     canonical_subdir = args.ckpt_subdir or args.mode
-    canonical_dir = os.path.join(base_dir, "checkpoints", canonical_subdir)
+    canonical_dir = os.path.join(base_dir, "checkpoints", "Generalizability", canonical_subdir)
     os.makedirs(canonical_dir, exist_ok=True)
     canonical_path = os.path.join(canonical_dir, args.ckpt_name)
 

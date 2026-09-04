@@ -15,8 +15,8 @@ import sys
 import yaml
 from easydict import EasyDict
 
-current_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.insert(0, current_dir)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, PROJECT_ROOT)
 
 import torch
 import torch.utils.tensorboard
@@ -212,7 +212,7 @@ if __name__ == "__main__":
     parser.add_argument("--iamp_root", type=str, default="/mnt/wucy/WUCHUYA/iAMP-Attenpred")
     parser.add_argument("--unidl_root", type=str, default="/mnt/wucy/WUCHUYA/UniDL4BioPep")
     parser.add_argument("--pretrain_ckpt", type=str, default="",
-                        help="Path to pretrained checkpoint. Defaults to checkpoints/Generalizability/<mode>/pretrain.pt")
+                        help="Path to pretrained checkpoint. Defaults to checkpoints/Generalizability/pretrain/stage2_motif.pt")
     parser.add_argument("--resume", type=eval, default=False)
     parser.add_argument("--checkpoint", type=str, default=None)
     args = parser.parse_args()
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     lam_act = getattr(config.finetune, "lambda_activity", 1.0)
     lam_hem = getattr(config.finetune, "lambda_hemolysis", 1.0)
 
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base_dir = PROJECT_ROOT
     motif_active = os.path.join(base_dir, config.amp.motif_active_file)
     motif_hem_path = os.path.join(base_dir, config.amp.motif_hemolytic_file)
 
@@ -291,7 +291,7 @@ if __name__ == "__main__":
         pretrain_ckpt_path = args.pretrain_ckpt
     else:
         pretrain_ckpt_path = os.path.join(
-            base_dir, "checkpoints", args.mode, "pretrain.pt"
+            base_dir, "checkpoints", "Generalizability", "pretrain", "stage2_motif.pt"
         )
     pretrain_ckpt = torch.load(pretrain_ckpt_path, map_location="cpu", weights_only=False)
     model = model_selected(pretrain_ckpt["config"]).to(device)
@@ -348,7 +348,7 @@ if __name__ == "__main__":
                     "scheduler": scheduler.state_dict(),
                     "iteration": it,
                 }, iter_ckpt)
-                canonical_dir = os.path.join(base_dir, "checkpoints", args.mode)
+                canonical_dir = os.path.join(base_dir, "checkpoints", "Generalizability", args.mode)
                 os.makedirs(canonical_dir, exist_ok=True)
                 canonical_path = os.path.join(canonical_dir, f"{args.mode}.pt")
                 shutil.copyfile(iter_ckpt, canonical_path)

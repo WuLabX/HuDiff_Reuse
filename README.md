@@ -151,9 +151,15 @@ python dataset/Generalizability/processing/prepare_ampdiff_datasets.py \
 bash scripts/Generalizability/run_pretrain_stage1_all.sh
 bash scripts/Generalizability/run_pretrain_stage2_motif.sh
 python scripts/Generalizability/amp_finetune.py \
-  --data_path data/Generalizability/finetune/ampdiff_finetune_de.csv \
+  --data_path data/Generalizability/finetune/finetune_de.csv \
   --config_path configs/Generalizability/amp_finetune.yml \
   --mode de
+```
+
+To regenerate the 90% internal / 60% vs-test CD-HIT filtered training files:
+
+```bash
+python dataset/Generalizability/processing/make_cdhit60_train_sets.py
 ```
 
 ### Path B: Warm-start from checkpoints
@@ -185,7 +191,7 @@ python evaluation/Generalizability/amp_metrics_eval.py \
   --input results/Generalizability/ampdiff_test_de/de_de_variants.tsv \
   --seq-col variant_sequence \
   --id-col variant_name \
-  --train data/Generalizability/pretrain/ampdiff_pretrain.csv
+  --train data/Generalizability/pretrain/pretrain.csv
 ```
 
 ## Citation
@@ -202,4 +208,3 @@ python evaluation/Generalizability/amp_metrics_eval.py \
 If you have any questions or suggestions regarding this work, please feel free to contact us:
 - Zhenyu Yue: [zhenyuyue@ahau.edu.cn](mailto:zhenyuyue@ahau.edu.cn)
 - Chuya Wu: [wuchuya@stu.ahau.edu.cn](mailto:wuchuya@stu.ahau.edu.cn)  
-

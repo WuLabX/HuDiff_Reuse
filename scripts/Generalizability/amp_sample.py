@@ -23,8 +23,8 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 
-current_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.insert(0, current_dir)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, PROJECT_ROOT)
 
 from utils.Generalizability.tokenizer import Tokenizer
 from utils.Generalizability.train_utils import model_selected
@@ -186,7 +186,7 @@ if __name__ == "__main__":
     max_len = config.model.max_len
 
     # Resolve motif files
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    base_dir = PROJECT_ROOT
     motif_active_path = os.path.join(base_dir, config.amp.motif_active_file)
     motif_hem_path = os.path.join(base_dir, config.amp.motif_hemolytic_file)
 
