@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="/mnt/wucy/WUCHUYA/AmpDiff"
-PYTHON_BIN="${PYTHON_BIN:-/mnt/wucy/miniconda3/envs/Hudiff/bin/python}"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
+PYTHON_BIN="${PYTHON_BIN:-python}"
 DATASET="${1:-shark349}"
 SAMPLE_METHOD="${SAMPLE_METHOD:-gen}"
 

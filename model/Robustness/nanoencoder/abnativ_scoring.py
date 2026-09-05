@@ -16,6 +16,7 @@ from typing import Tuple
 from Bio import SeqIO
 from collections import defaultdict
 from tqdm import tqdm
+from pathlib import Path
 import math
 import numpy as np
 import pandas as pd
@@ -24,6 +25,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import torch
 import sklearn 
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 
 
@@ -239,8 +242,10 @@ def abnativ_scoring(model_type: str, fp_fa_or_seq: str, batch_size: int=128, mea
     
     device = torch.device(device_type)
 
-    # model_dir = resource_filename(__name__, "trained_models")
-    model_dir = '/data/home/waitma/antibody_proj/abnativ/abnativ/model/trained_models/'
+    model_dir = os.environ.get(
+        'ABNATIV_MODEL_DIR',
+        str(PROJECT_ROOT / 'external' / 'AbNatiV' / 'abnativ' / 'model' / 'trained_models'),
+    )
 
     fr_trained_models = {'VH': os.path.join(model_dir, 'vh_model.ckpt'), 'VHH': os.path.join(model_dir, 'vhh_model.ckpt'),
                          'VKappa': os.path.join(model_dir, 'vkappa_model.ckpt'), 'VLambda': os.path.join(model_dir, 'vlambda_model.ckpt')}
@@ -473,4 +478,3 @@ def abnativ_embeddings_extraction(model_type: str, fp_fa_or_seq: str, batch_size
             os.rmdir(output_dir)
 
     return data_dict_embs
-

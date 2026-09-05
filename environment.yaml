@@ -1,4 +1,4 @@
-name: AmpDiff
+name: HuDiff_Reuse
 channels:
   - pytorch
   - nvidia
@@ -12,6 +12,12 @@ dependencies:
   - pytorch-cuda=11.6
   - python-lmdb
   - abnumber
+  - anarci
+  - biopython
+  - beautifulsoup4
+  - cd-hit
+  - matplotlib-venn
+  - requests
   - pip:
     - pandas
     - scipy
@@ -24,3 +30,5 @@ dependencies:
     - einops
     - matplotlib
     - seaborn
+    - fair-esm
+    - transformers==4.30.2

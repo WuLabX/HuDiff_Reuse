@@ -64,9 +64,9 @@ def _standardize_pair_df(df):
 
 
 def _get_abnativ_exec(logger):
-    abnativ_exec = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/bin/abnativ')
+    abnativ_exec = os.environ.get('ABNATIV_BIN', '')
     if os.path.isfile(abnativ_exec):
-        logger.info(f'Using Conda AbNatiV: {abnativ_exec}')
+        logger.info(f'Using configured AbNatiV: {abnativ_exec}')
         return abnativ_exec
     abnativ_exec = shutil.which('abnativ')
     if abnativ_exec:
@@ -378,19 +378,8 @@ def main(sample_path):
 
 
 if __name__ == '__main__':
-    current_path = os.getenv('PATH', '')
-    current_pythonpath = os.getenv('PYTHONPATH', '')
-    abnativ_lib = '/mnt/wucy/miniconda3/envs/abnativ/lib'
-    abnativ_bin = '/mnt/wucy/miniconda3/envs/abnativ/bin'
-    biophi_bin = '/mnt/wucy/miniconda3/envs/biophi/bin'
-    if os.path.exists(abnativ_lib):
-        os.environ['LD_LIBRARY_PATH'] = f"{abnativ_lib}:{os.environ.get('LD_LIBRARY_PATH', '')}"
-    if os.path.exists(abnativ_bin):
-        os.environ['PATH'] = f"{abnativ_bin}:{current_path}"
-    if os.path.exists(biophi_bin):
-        os.environ['PATH'] = f"{biophi_bin}:{os.environ.get('PATH', '')}"
-    if os.path.exists(ABNATIV_DIR):
-        os.environ['PYTHONPATH'] = f"{ABNATIV_DIR}:{current_pythonpath}"
+    from evaluation.Robustness.antibody_backends.HuAb348_eval import configure_external_tool_environment
+    configure_external_tool_environment()
     if len(sys.argv) < 2:
         print('Usage: python scripts/Robustness/antibody/chicken_eval.py <sample_humanization_result.csv>')
         sys.exit(1)

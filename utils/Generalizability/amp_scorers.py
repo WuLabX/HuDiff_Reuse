@@ -19,6 +19,7 @@ import json
 import os
 import pickle
 import sys
+from pathlib import Path
 from typing import Iterable, List, Optional, Sequence, Set
 
 import numpy as np
@@ -44,6 +45,19 @@ SCORER_ALIASES = {
     "unidl": "unidl4biopep",
 }
 _PERM_TENSOR = None
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_PEPNET_ROOT = os.environ.get("PEPNET_ROOT", "external/PepNet")
+DEFAULT_HEMOPI2_ROOT = os.environ.get("HEMOPI2_ROOT", "external/hemopi2")
+DEFAULT_AMPPRED_ROOT = os.environ.get("AMPPRED_ROOT", "external/AMPpred-MFA")
+DEFAULT_IAMP_ROOT = os.environ.get("IAMP_ROOT", "external/iAMP-Attenpred")
+DEFAULT_UNIDL_ROOT = os.environ.get("UNIDL_ROOT", "external/UniDL4BioPep")
+
+
+def _project_path(path: str) -> str:
+    resolved = Path(path).expanduser()
+    if not resolved.is_absolute():
+        resolved = PROJECT_ROOT / resolved
+    return str(resolved)
 
 
 def normalize_scorer_name(name: str) -> str:
@@ -142,11 +156,11 @@ class AMPScorerInterface:
         guidance_activity: Optional[str] = None,
         use_pepnet: Optional[bool] = None,
         use_hemopi2: bool = False,
-        pepnet_root: str = "/mnt/wucy/WUCHUYA/PepNet",
-        hemopi2_root: str = "/mnt/wucy/WUCHUYA/hemopi2",
-        amppred_root: str = "/mnt/wucy/WUCHUYA/AMPpred-MFA",
-        iamp_root: str = "/mnt/wucy/WUCHUYA/iAMP-Attenpred",
-        unidl_root: str = "/mnt/wucy/WUCHUYA/UniDL4BioPep",
+        pepnet_root: str = DEFAULT_PEPNET_ROOT,
+        hemopi2_root: str = DEFAULT_HEMOPI2_ROOT,
+        amppred_root: str = DEFAULT_AMPPRED_ROOT,
+        iamp_root: str = DEFAULT_IAMP_ROOT,
+        unidl_root: str = DEFAULT_UNIDL_ROOT,
         pepnet_ckpt: str = None,
         device=None,
     ):
@@ -163,6 +177,12 @@ class AMPScorerInterface:
         )
         if self.guidance_activity and self.guidance_activity not in self.activity_scorers:
             raise ValueError("guidance_activity must be included in activity_scorers")
+
+        pepnet_root = _project_path(pepnet_root)
+        hemopi2_root = _project_path(hemopi2_root)
+        amppred_root = _project_path(amppred_root)
+        iamp_root = _project_path(iamp_root)
+        unidl_root = _project_path(unidl_root)
 
         self.pepnet_model = None
         self.props_mat = None

@@ -6,6 +6,7 @@ import os
 import subprocess
 import shutil
 import tempfile
+from pathlib import Path
 from tqdm import tqdm
 from abnumber import Chain
 import numpy as np
@@ -16,9 +17,35 @@ from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+
+def _external_path(env_name, relative_path):
+    return os.environ.get(env_name, str(PROJECT_ROOT / "external" / relative_path))
+
+
+def _tool_path(env_name, executable):
+    return os.environ.get(env_name) or shutil.which(executable) or executable
+
+
+def configure_external_tool_environment():
+    current_path = os.getenv("PATH", "")
+    current_pythonpath = os.getenv("PYTHONPATH", "")
+    abnativ_lib = os.environ.get("ABNATIV_LIB", "")
+    abnativ_bin = os.environ.get("ABNATIV_BIN_DIR", "")
+    biophi_bin = os.environ.get("BIOPHI_BIN_DIR", "")
+    if abnativ_lib and os.path.exists(abnativ_lib):
+        os.environ["LD_LIBRARY_PATH"] = abnativ_lib + os.pathsep + os.environ.get("LD_LIBRARY_PATH", "")
+    extra_paths = [path for path in (abnativ_bin, biophi_bin) if path and os.path.exists(path)]
+    if extra_paths:
+        os.environ["PATH"] = os.pathsep.join(extra_paths + [current_path])
+    if os.path.exists(ABNATIV_DIR):
+        os.environ["PYTHONPATH"] = ABNATIV_DIR + os.pathsep + current_pythonpath
+
+
 # ============ 路径配置 ============
 # 添加 ABLSTM 目录到 Python 路径
-ABLSTM_DIR = '/mnt/wucy/WUCHUYA/ABLSTM'
+ABLSTM_DIR = _external_path("ABLSTM_DIR", "ABLSTM")
 if ABLSTM_DIR not in sys.path:
     sys.path.insert(0, ABLSTM_DIR)
 
@@ -29,9 +56,9 @@ from evaluation.Robustness.T20_eval import main as t20_main
 from utils.Robustness.misc import get_logger
 
 # 工具路径
-BIOPHI_DIR = '/mnt/wucy/WUCHUYA/BioPhi'
+BIOPHI_DIR = _external_path("BIOPHI_DIR", "BioPhi")
 OASIS_DB_PATH = os.path.join(BIOPHI_DIR, 'OASis_9mers_v1.db')
-ABNATIV_DIR = '/mnt/wucy/WUCHUYA/AbNatiV'
+ABNATIV_DIR = _external_path("ABNATIV_DIR", "AbNatiV")
 
 # 数据路径
 LAB_MOUSE_FPATH = 'data/antibody_eval_data/HuAb348_data/sample_t20_mouse_score.csv'
@@ -132,8 +159,6 @@ def run_ablstm_eval(sequences):
         try:
             # 3. 加载模型 (使用 humab25_eval.py 中的路径)
             model_data_path = os.path.join(ABLSTM_DIR, 'saved_models/tmp/model_tmp.npy')
-            # model_data_path = '/mnt/wucy/WUCHUYA/ABLSTM/saved_models/tmp/model_tmp.npy'
-            
             pred_model = ModelLSTM(embedding_dim=64, hidden_dim=64, device='cpu', gapped=True, fixed_len=True)
             
             if not os.path.exists(model_data_path):
@@ -440,7 +465,7 @@ def main(sample_path):
     os.makedirs(abnativ_sample_dir, exist_ok=True)
 
     # 查找 AbNatiV 可执行文件
-    abnativ_conda = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/bin/abnativ')
+    abnativ_conda = os.environ.get("ABNATIV_BIN", "")
     abnativ_exec = None
     if os.path.isfile(abnativ_conda):
         abnativ_exec = abnativ_conda
@@ -642,7 +667,7 @@ def main(sample_path):
     
     biophi_exec = shutil.which("biophi")
     if biophi_exec is None:
-        biophi_exec = os.path.join(os.path.expanduser('/mnt/wucy/miniconda3/envs/biophi/bin'), 'biophi')
+        biophi_exec = os.environ.get("BIOPHI_BIN", "biophi")
     
     # 定义通用的 OASis 处理函数
     def process_oasis(name, df, h_col, l_col, out_dir):
@@ -917,25 +942,8 @@ def main(sample_path):
 
 
 if __name__ == '__main__':
-    # 设置环境变量
-    current_path = os.getenv("PATH", "")
-    current_ld_path = os.getenv("LD_LIBRARY_PATH", "")
-    
-    # AbNatiV 环境配置
-    abnativ_lib = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/lib')
-    abnativ_bin = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/bin')
-    if os.path.exists(abnativ_lib):
-        os.environ['LD_LIBRARY_PATH'] = abnativ_lib + ':' + current_ld_path
-    if os.path.exists(abnativ_bin):
-        os.environ['PATH'] = abnativ_bin + ':' + current_path
-        print(f"AbNatiV env configured: {abnativ_lib}")
-    
-    # BioPhi 环境配置
-    biophi_bin = os.path.expanduser('/mnt/wucy/miniconda3/envs/biophi/bin')
-    if os.path.exists(biophi_bin):
-        os.environ['PATH'] = biophi_bin + ':' + current_path
-        print(f"BioPhi added to PATH: {biophi_bin}")
-    
+    configure_external_tool_environment()
+
     import argparse
     parser = argparse.ArgumentParser(description='HuAb348 antibody humanization evaluation')
     parser.add_argument('sample_path', type=str, help='Path to sample_humanization_result.csv')

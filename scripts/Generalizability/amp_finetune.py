@@ -204,13 +204,13 @@ if __name__ == "__main__":
     )
     parser.add_argument("--motif_type", type=str, default="prosite,regular,merci",
                         help="Comma-separated motif types: prosite,regular,merci,none")
-    parser.add_argument("--pepnet_root", type=str, default="/mnt/wucy/WUCHUYA/PepNet")
+    parser.add_argument("--pepnet_root", type=str, default=os.environ.get("PEPNET_ROOT", "external/PepNet"))
     parser.add_argument("--pepnet_ckpt", type=str, default=None,
                         help="Override PepNet checkpoint path")
-    parser.add_argument("--hemopi2_root", type=str, default="/mnt/wucy/WUCHUYA/hemopi2")
-    parser.add_argument("--amppred_root", type=str, default="/mnt/wucy/WUCHUYA/AMPpred-MFA")
-    parser.add_argument("--iamp_root", type=str, default="/mnt/wucy/WUCHUYA/iAMP-Attenpred")
-    parser.add_argument("--unidl_root", type=str, default="/mnt/wucy/WUCHUYA/UniDL4BioPep")
+    parser.add_argument("--hemopi2_root", type=str, default=os.environ.get("HEMOPI2_ROOT", "external/hemopi2"))
+    parser.add_argument("--amppred_root", type=str, default=os.environ.get("AMPPRED_ROOT", "external/AMPpred-MFA"))
+    parser.add_argument("--iamp_root", type=str, default=os.environ.get("IAMP_ROOT", "external/iAMP-Attenpred"))
+    parser.add_argument("--unidl_root", type=str, default=os.environ.get("UNIDL_ROOT", "external/UniDL4BioPep"))
     parser.add_argument("--pretrain_ckpt", type=str, default="",
                         help="Path to pretrained checkpoint. Defaults to checkpoints/Generalizability/pretrain/stage2_motif.pt")
     parser.add_argument("--resume", type=eval, default=False)

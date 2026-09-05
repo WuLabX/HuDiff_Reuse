@@ -36,16 +36,20 @@ conda activate HuDiff_Reuse
 ```
 The environment file installs the main conda and pip dependencies.
 
-Install the AMP external predictors alongside `HuDiff_Reuse`.:
+Install optional external predictors under `external/` when using predictor-guided AMP evaluation or robustness scoring:
 ```text
-<workspace>/
-  HuDiff_Reuse/
-  PepNet/
-  AMPpred-MFA/
-  iAMP-Attenpred/
-  UniDL4BioPep/
-  hemopi2/
+HuDiff_Reuse/
+  external/
+    PepNet/
+    AMPpred-MFA/
+    iAMP-Attenpred/
+    UniDL4BioPep/
+    hemopi2/
+    ABLSTM/
+    AbNatiV/
+    BioPhi/
 ```
+Alternatively, set `PEPNET_ROOT`, `HEMOPI2_ROOT`, `AMPPRED_ROOT`, `IAMP_ROOT`, `UNIDL_ROOT`, `ABNATIV_DIR`, `BIOPHI_DIR`, `ABLSTM_DIR`, `ABNATIV_BIN`, or `BIOPHI_BIN` before running the corresponding scripts.
 Predictor links:
 - [PepNet](https://github.com/Harkool/PepNet)
 - [AMPpred-MFA](https://github.com/Jiangle525/AMPpred-MFA)

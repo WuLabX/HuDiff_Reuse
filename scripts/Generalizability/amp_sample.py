@@ -155,11 +155,11 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=2024)
     parser.add_argument("--output", type=str, default=None,
                         help="Output directory (default: auto-generated)")
-    parser.add_argument("--pepnet_root", type=str, default="/mnt/wucy/WUCHUYA/PepNet")
-    parser.add_argument("--hemopi2_root", type=str, default="/mnt/wucy/WUCHUYA/hemopi2")
-    parser.add_argument("--amppred_root", type=str, default="/mnt/wucy/WUCHUYA/AMPpred-MFA")
-    parser.add_argument("--iamp_root", type=str, default="/mnt/wucy/WUCHUYA/iAMP-Attenpred")
-    parser.add_argument("--unidl_root", type=str, default="/mnt/wucy/WUCHUYA/UniDL4BioPep")
+    parser.add_argument("--pepnet_root", type=str, default=os.environ.get("PEPNET_ROOT", "external/PepNet"))
+    parser.add_argument("--hemopi2_root", type=str, default=os.environ.get("HEMOPI2_ROOT", "external/hemopi2"))
+    parser.add_argument("--amppred_root", type=str, default=os.environ.get("AMPPRED_ROOT", "external/AMPpred-MFA"))
+    parser.add_argument("--iamp_root", type=str, default=os.environ.get("IAMP_ROOT", "external/iAMP-Attenpred"))
+    parser.add_argument("--unidl_root", type=str, default=os.environ.get("UNIDL_ROOT", "external/UniDL4BioPep"))
     parser.add_argument("--guidance_scale", type=float, default=1.0,
                         help="Scale factor for gradient guidance signal")
     args = parser.parse_args()

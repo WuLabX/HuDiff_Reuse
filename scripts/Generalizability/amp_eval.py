@@ -34,11 +34,11 @@ def evaluate(
     fasta_path: str,
     scorer_arg: str,
     output_dir: str = None,
-    pepnet_root: str = "/mnt/wucy/WUCHUYA/PepNet",
-    hemopi2_root: str = "/mnt/wucy/WUCHUYA/hemopi2",
-    amppred_root: str = "/mnt/wucy/WUCHUYA/AMPpred-MFA",
-    iamp_root: str = "/mnt/wucy/WUCHUYA/iAMP-Attenpred",
-    unidl_root: str = "/mnt/wucy/WUCHUYA/UniDL4BioPep",
+    pepnet_root: str = os.environ.get("PEPNET_ROOT", "external/PepNet"),
+    hemopi2_root: str = os.environ.get("HEMOPI2_ROOT", "external/hemopi2"),
+    amppred_root: str = os.environ.get("AMPPRED_ROOT", "external/AMPpred-MFA"),
+    iamp_root: str = os.environ.get("IAMP_ROOT", "external/iAMP-Attenpred"),
+    unidl_root: str = os.environ.get("UNIDL_ROOT", "external/UniDL4BioPep"),
 ):
     """Evaluate sequences in a FASTA file.
 
@@ -101,11 +101,11 @@ if __name__ == "__main__":
     )
     parser.add_argument("--output_dir", type=str, default=None,
                         help="Output directory (default: same as FASTA)")
-    parser.add_argument("--pepnet_root", type=str, default="/mnt/wucy/WUCHUYA/PepNet")
-    parser.add_argument("--hemopi2_root", type=str, default="/mnt/wucy/WUCHUYA/hemopi2")
-    parser.add_argument("--amppred_root", type=str, default="/mnt/wucy/WUCHUYA/AMPpred-MFA")
-    parser.add_argument("--iamp_root", type=str, default="/mnt/wucy/WUCHUYA/iAMP-Attenpred")
-    parser.add_argument("--unidl_root", type=str, default="/mnt/wucy/WUCHUYA/UniDL4BioPep")
+    parser.add_argument("--pepnet_root", type=str, default=os.environ.get("PEPNET_ROOT", "external/PepNet"))
+    parser.add_argument("--hemopi2_root", type=str, default=os.environ.get("HEMOPI2_ROOT", "external/hemopi2"))
+    parser.add_argument("--amppred_root", type=str, default=os.environ.get("AMPPRED_ROOT", "external/AMPpred-MFA"))
+    parser.add_argument("--iamp_root", type=str, default=os.environ.get("IAMP_ROOT", "external/iAMP-Attenpred"))
+    parser.add_argument("--unidl_root", type=str, default=os.environ.get("UNIDL_ROOT", "external/UniDL4BioPep"))
     args = parser.parse_args()
 
     evaluate(

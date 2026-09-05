@@ -23,9 +23,31 @@ import numpy as np
 import pandas as pd
 import sys
 import pickle
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+
+def _external_path(env_name, relative_path):
+    return os.environ.get(env_name, str(PROJECT_ROOT / "external" / relative_path))
+
+
+def configure_external_tool_environment():
+    current_path = os.getenv("PATH", "")
+    current_pythonpath = os.getenv("PYTHONPATH", "")
+    abnativ_lib = os.environ.get("ABNATIV_LIB", "")
+    abnativ_bin = os.environ.get("ABNATIV_BIN_DIR", "")
+    biophi_bin = os.environ.get("BIOPHI_BIN_DIR", "")
+    if abnativ_lib and os.path.exists(abnativ_lib):
+        os.environ["LD_LIBRARY_PATH"] = abnativ_lib + os.pathsep + os.environ.get("LD_LIBRARY_PATH", "")
+    extra_paths = [path for path in (abnativ_bin, biophi_bin) if path and os.path.exists(path)]
+    if extra_paths:
+        os.environ["PATH"] = os.pathsep.join(extra_paths + [current_path])
+    if os.path.exists(ABNATIV_DIR):
+        os.environ["PYTHONPATH"] = ABNATIV_DIR + os.pathsep + current_pythonpath
 
 # 添加 ABLSTM 目录到 Python 路径（用于导入 ablstm 模块）
-ABLSTM_DIR = '/mnt/wucy/WUCHUYA/ABLSTM'
+ABLSTM_DIR = _external_path("ABLSTM_DIR", "ABLSTM")
 if ABLSTM_DIR not in sys.path:
     sys.path.insert(0, ABLSTM_DIR)
 
@@ -37,9 +59,9 @@ from Bio import SeqIO
 from evaluation.Robustness.T20_eval import main as t20_main
 from utils.Robustness.misc import get_logger
 
-BIOPHI_DIR = '/mnt/wucy/WUCHUYA/BioPhi'
+BIOPHI_DIR = _external_path("BIOPHI_DIR", "BioPhi")
 OASIS_DB_PATH = os.path.join(BIOPHI_DIR, 'OASis_9mers_v1.db')
-ABNATIV_DIR = '/mnt/wucy/WUCHUYA/AbNatiV'
+ABNATIV_DIR = _external_path("ABNATIV_DIR", "AbNatiV")
 
 # ============ 辅助函数 ============
 
@@ -252,7 +274,7 @@ def run_ablstm_eval(sequences):
             tmp.write(seq + '\n')
     
     try:
-        model_data_path = '/mnt/wucy/WUCHUYA/ABLSTM/saved_models/tmp/model_tmp.npy'
+        model_data_path = os.path.join(ABLSTM_DIR, 'saved_models/tmp/model_tmp.npy')
         pred_model = ModelLSTM(embedding_dim=64, hidden_dim=64, device='cpu', gapped=True, fixed_len=True)
         pred_model.load(fn=model_data_path)
         h_score = pred_model.eval(tmp_fpath)
@@ -272,7 +294,7 @@ def main(root_path):
     logger.info('Humab25 Antibody Humanization Evaluation')
     logger.info('=' * 60)
     
-    abnativ_conda = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/bin/abnativ')
+    abnativ_conda = os.environ.get("ABNATIV_BIN", "")
     abnativ_exec = abnativ_conda if os.path.isfile(abnativ_conda) else shutil.which("abnativ")
     abnativ_local = os.path.join(ABNATIV_DIR, 'bin', 'abnativ')
     if abnativ_exec is None and os.path.isfile(abnativ_local):
@@ -855,24 +877,7 @@ def main(root_path):
     logger.info('Evaluation completed!')
 
 if __name__ == '__main__':
-    # 设置环境变量
-    current_path = os.getenv("PATH", "")
-    current_ld_path = os.getenv("LD_LIBRARY_PATH", "")
-
-    # AbNatiV 环境
-    abnativ_lib = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/lib')
-    abnativ_bin = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/bin')
-    if os.path.exists(abnativ_lib):
-        os.environ['LD_LIBRARY_PATH'] = abnativ_lib + ':' + current_ld_path
-    if os.path.exists(abnativ_bin):
-        os.environ['PATH'] = abnativ_bin + ':' + current_path
-        print(f"AbNatiV env configured: {abnativ_lib}")
-
-    # BioPhi 环境
-    biophi_bin = os.path.expanduser('/mnt/wucy/miniconda3/envs/biophi/bin')
-    if os.path.exists(biophi_bin):
-        os.environ['PATH'] = biophi_bin + ':' + current_path
-        print(f"BioPhi added to PATH: {biophi_bin}")
+    configure_external_tool_environment()
 
     import argparse
     parser = argparse.ArgumentParser(description='Humab25 antibody humanization evaluation')

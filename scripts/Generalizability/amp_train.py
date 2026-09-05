@@ -409,8 +409,8 @@ if __name__ == "__main__":
         help="One activity guidance scorer: pepnet, amppred_mfa, "
              "iamp_attenpred, unidl4biopep; optional hemopi2 in inp mode",
     )
-    parser.add_argument("--pepnet_root", type=str, default="/mnt/wucy/WUCHUYA/PepNet")
-    parser.add_argument("--hemopi2_root", type=str, default="/mnt/wucy/WUCHUYA/hemopi2")
+    parser.add_argument("--pepnet_root", type=str, default=os.environ.get("PEPNET_ROOT", "external/PepNet"))
+    parser.add_argument("--hemopi2_root", type=str, default=os.environ.get("HEMOPI2_ROOT", "external/hemopi2"))
     parser.add_argument("--lam_act", type=float, default=1.0,
                         help="Weight for scorer guidance loss")
     parser.add_argument("--require_active_motif", type=eval, default=False,

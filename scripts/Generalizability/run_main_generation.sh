@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd "$(dirname "$0")/../.."
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+cd "$ROOT_DIR"
 
 export CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-0}"
 export TORCH_DISABLE_DYNAMO=1
 
-PY=/mnt/wucy/miniconda3/envs/Hudiff/bin/python
+PY="${PYTHON_BIN:-python}"
 SAMPLE=scripts/Generalizability/amp_sample.py
 
 DE_FASTA=data/Generalizability/test/ampdiff_test_de.fasta

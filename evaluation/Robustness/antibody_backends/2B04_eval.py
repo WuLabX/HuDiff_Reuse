@@ -19,6 +19,7 @@ import numpy as np
 import shutil
 import pandas as pd
 import sys
+from pathlib import Path
 
 current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
 sys.path.insert(0, current_dir)
@@ -31,7 +32,8 @@ from utils.Robustness.misc import get_logger
 
 
 # ============ 路径配置 ============
-BIOPHI_DIR = '/mnt/wucy/WUCHUYA/BioPhi'
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+BIOPHI_DIR = os.environ.get("BIOPHI_DIR", str(PROJECT_ROOT / "external" / "BioPhi"))
 OASIS_DB_PATH = os.path.join(BIOPHI_DIR, 'OASis_9mers_v1.db')
 
 
@@ -536,7 +538,7 @@ def main(root_path):
 if __name__ == '__main__':
     # 设置 LD_LIBRARY_PATH
     current_ld_library_path = os.getenv("LD_LIBRARY_PATH", "")
-    conda_lib = os.path.expanduser('/mnt/wucy/miniconda3/envs/abnativ/lib')
+    conda_lib = os.environ.get("ABNATIV_LIB", "")
     if os.path.exists(conda_lib):
         os.environ['LD_LIBRARY_PATH'] = conda_lib + ':' + current_ld_library_path
 

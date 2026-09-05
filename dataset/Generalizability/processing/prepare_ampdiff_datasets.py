@@ -640,6 +640,17 @@ def main() -> None:
     out_dir = Path(args.out_dir)
     work_dir = Path(args.work_dir)
     motif_dir = Path(args.motif_dir)
+
+    def report_value(value):
+        if isinstance(value, (str, os.PathLike)):
+            path = Path(value)
+            if path.is_absolute():
+                try:
+                    return str(path.relative_to(root))
+                except ValueError:
+                    return str(path)
+        return value
+
     work_dir.mkdir(parents=True, exist_ok=True)
     for sub in ["pretrain", "finetune", "test"]:
         (out_dir / sub).mkdir(parents=True, exist_ok=True)
@@ -793,7 +804,7 @@ def main() -> None:
         "test_inp": {seq_to_cluster[s] for s in test_inp},
     }
     report = {
-        "parameters": vars(args),
+        "parameters": {key: report_value(value) for key, value in vars(args).items()},
         "policy": {
             "pretrain": "broad AMP-like sequence-only pool; no active-motif requirement",
             "pretrain_motif": "active motif hit and >=1 optimizable residue",
@@ -816,7 +827,7 @@ def main() -> None:
             "de_test_known_hemolysis": len(de_test_candidates),
             "inp": len(inp_candidates),
         },
-        "outputs": {key: str(value) for key, value in outputs.items()},
+        "outputs": {key: report_value(value) for key, value in outputs.items()},
         "splits": {
             "pretrain_all": summarize_task(pretrain_all, activity, active_exact, active_prosite, hom_neg_motifs),
             "pretrain_motif": summarize_task(pretrain_motif, activity, active_exact, active_prosite, hom_neg_motifs),
@@ -889,7 +900,7 @@ def main() -> None:
         "finetune_inp": len(finetune_inp),
         "test_de": len(test_de),
         "test_inp": len(test_inp),
-        "report": str(outputs["report_md"]),
+        "report": report_value(outputs["report_md"]),
     }, ensure_ascii=False, indent=2))
 
 
