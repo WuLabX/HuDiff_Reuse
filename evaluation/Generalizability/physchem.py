@@ -5,9 +5,8 @@ from __future__ import annotations
 
 import argparse
 import math
-import sys
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+from typing import Dict, List, Optional, Sequence
 
 import numpy as np
 import pandas as pd
@@ -15,23 +14,52 @@ from Bio import SeqIO
 from Bio.Align import PairwiseAligner
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT))
-
 
 AA_ORDER = list("ACDEFGHIKLMNPQRSTVWY")
 AA_SET = set(AA_ORDER)
-ALIGNER = PairwiseAligner()
-ALIGNER.mode = "global"
-ALIGNER.match_score = 1.0
-ALIGNER.mismatch_score = 0.0
-ALIGNER.open_gap_score = 0.0
-ALIGNER.extend_gap_score = 0.0
 KYTE_DOOLITTLE = {
-    "A": 1.8, "C": 2.5, "D": -3.5, "E": -3.5, "F": 2.8,
-    "G": -0.4, "H": -3.2, "I": 4.5, "K": -3.9, "L": 3.8,
-    "M": 1.9, "N": -3.5, "P": -1.6, "Q": -3.5, "R": -4.5,
-    "S": -0.8, "T": -0.7, "V": 4.2, "W": -0.9, "Y": -1.3,
+    "A": 1.8,
+    "C": 2.5,
+    "D": -3.5,
+    "E": -3.5,
+    "F": 2.8,
+    "G": -0.4,
+    "H": -3.2,
+    "I": 4.5,
+    "K": -3.9,
+    "L": 3.8,
+    "M": 1.9,
+    "N": -3.5,
+    "P": -1.6,
+    "Q": -3.5,
+    "R": -4.5,
+    "S": -0.8,
+    "T": -0.7,
+    "V": 4.2,
+    "W": -0.9,
+    "Y": -1.3,
+}
+AGGRESCAN_A4V = {
+    "I": 1.822,
+    "F": 1.754,
+    "V": 1.594,
+    "L": 1.38,
+    "Y": 1.159,
+    "W": 1.037,
+    "M": 0.91,
+    "C": 0.604,
+    "A": -0.036,
+    "T": -0.159,
+    "S": -0.294,
+    "P": -0.334,
+    "G": -0.535,
+    "K": -0.931,
+    "H": -1.033,
+    "Q": -1.231,
+    "R": -1.24,
+    "N": -1.302,
+    "E": -1.412,
+    "D": -1.836,
 }
 DEFAULT_SEQUENCE_COLUMNS = (
     "variant_sequence",
@@ -46,13 +74,15 @@ DEFAULT_ID_COLUMNS = (
     "name",
     "id",
 )
-ACTIVITY_SCORE_COLUMNS = (
-    "activity_mean_score",
-    "pepnet_score",
-    "amppred_mfa_score",
-    "iamp_attenpred_score",
-    "unidl4biopep_score",
-)
+
+ALIGNER = PairwiseAligner()
+ALIGNER.mode = "global"
+ALIGNER.match_score = 1.0
+ALIGNER.mismatch_score = 0.0
+ALIGNER.open_gap_score = 0.0
+ALIGNER.extend_gap_score = 0.0
+
+_AGADIR_MODEL = None
 
 
 def clean_sequence(value: object) -> str:
@@ -61,6 +91,55 @@ def clean_sequence(value: object) -> str:
 
 def standard_sequence(value: object) -> str:
     return "".join(ch for ch in clean_sequence(value) if ch in AA_SET)
+
+
+def invalid_residues(value: object) -> str:
+    return "".join(sorted(set(clean_sequence(value)) - AA_SET))
+
+
+def hydrophobic_moment(seq: str, angle_degrees: float = 100.0) -> float:
+    std = standard_sequence(seq)
+    if not std:
+        return float("nan")
+    theta = math.radians(angle_degrees)
+    x_sum = 0.0
+    y_sum = 0.0
+    for idx, aa in enumerate(std):
+        h = KYTE_DOOLITTLE[aa]
+        x_sum += h * math.cos(idx * theta)
+        y_sum += h * math.sin(idx * theta)
+    return math.sqrt(x_sum * x_sum + y_sum * y_sum) / len(std)
+
+
+def na4vss(seq: str) -> float:
+    """Return AGGRESCAN normalized a4v sequence sum."""
+    std = standard_sequence(seq)
+    if not std:
+        return float("nan")
+    return 100.0 * sum(AGGRESCAN_A4V[aa] for aa in std) / len(std)
+
+
+def _get_agadir_model():
+    global _AGADIR_MODEL
+    if _AGADIR_MODEL is None:
+        try:
+            from pyagadir.models import AGADIR
+        except ImportError as exc:
+            raise RuntimeError(
+                "pyagadir is required to compute helicity. Install the project "
+                "environment from environment.yaml or run `pip install pyagadir==1.0.0`."
+            ) from exc
+        _AGADIR_MODEL = AGADIR()
+    return _AGADIR_MODEL
+
+
+def helicity(seq: str) -> float:
+    """Return AGADIR mean alpha-helical probability for the standard residues."""
+    std = standard_sequence(seq)
+    if not std:
+        return float("nan")
+    result = _get_agadir_model().predict(std)
+    return float(result.percent_helix)
 
 
 def read_table_or_fasta(path: Path, seq_col: Optional[str], id_col: Optional[str]) -> pd.DataFrame:
@@ -93,24 +172,10 @@ def read_table_or_fasta(path: Path, seq_col: Optional[str], id_col: Optional[str
     return out
 
 
-def hydrophobic_moment(seq: str, angle_degrees: float = 100.0) -> float:
-    std = standard_sequence(seq)
-    if not std:
-        return float("nan")
-    theta = math.radians(angle_degrees)
-    x_sum = 0.0
-    y_sum = 0.0
-    for idx, aa in enumerate(std):
-        h = KYTE_DOOLITTLE[aa]
-        x_sum += h * math.cos(idx * theta)
-        y_sum += h * math.sin(idx * theta)
-    return math.sqrt(x_sum * x_sum + y_sum * y_sum) / len(std)
-
-
 def physicochemical_metrics(sequence_id: str, sequence: str) -> Dict[str, object]:
     clean = clean_sequence(sequence)
     std = standard_sequence(clean)
-    invalid = "".join(sorted(set(clean) - AA_SET))
+    invalid = invalid_residues(clean)
     if not std:
         return {
             "sequence_id": sequence_id,
@@ -134,8 +199,8 @@ def physicochemical_metrics(sequence_id: str, sequence: str) -> Dict[str, object
         "net_charge_pH7_4": analysis.charge_at_pH(7.4),
         "gravy_kyte_doolittle": analysis.gravy(),
         "hydrophobic_moment_100deg": hydrophobic_moment(std),
-        "helicity": np.nan,
-        "aggregation_na4vss": np.nan,
+        "helicity": helicity(std),
+        "aggregation_na4vss": na4vss(std),
     }
 
 
@@ -163,27 +228,7 @@ def novelty_scores(sequences: Sequence[str], train_sequences: Sequence[str]) -> 
     return scores
 
 
-def add_external_columns(metrics: pd.DataFrame, source: pd.DataFrame) -> pd.DataFrame:
-    for source_col, dest_col in (
-        ("helicity", "helicity"),
-        ("aggregation_na4vss", "aggregation_na4vss"),
-        ("Na4vSS", "aggregation_na4vss"),
-        ("na4vss", "aggregation_na4vss"),
-    ):
-        if source_col in source.columns:
-            metrics[dest_col] = pd.to_numeric(source[source_col], errors="coerce")
-    for col in list(ACTIVITY_SCORE_COLUMNS) + ["hemolysis_score"]:
-        if col in source.columns and col not in metrics.columns:
-            metrics[col] = pd.to_numeric(source[col], errors="coerce")
-    return metrics
-
-
-def add_composite_metrics(
-    metrics: pd.DataFrame,
-    activity_threshold: float,
-    hemolysis_threshold: float,
-    ref: Optional[pd.DataFrame],
-) -> pd.DataFrame:
+def add_composite_metrics(metrics: pd.DataFrame, ref: Optional[pd.DataFrame]) -> pd.DataFrame:
     charge = metrics["net_charge_pH7_4"]
     gravy = metrics["gravy_kyte_doolittle"]
     charge_std = charge.std(ddof=0)
@@ -194,15 +239,6 @@ def add_composite_metrics(
         metrics["chbi"] = 1.0 / (1.0 + np.exp(-(z_charge - z_gravy)))
     else:
         metrics["chbi"] = np.nan
-
-    activity_col = next((col for col in ACTIVITY_SCORE_COLUMNS if col in metrics.columns), None)
-    if activity_col and "hemolysis_score" in metrics.columns:
-        metrics["dual_hit"] = (
-            (metrics[activity_col] >= activity_threshold)
-            & (metrics["hemolysis_score"] < hemolysis_threshold)
-        )
-    else:
-        metrics["dual_hit"] = np.nan
 
     if ref is None or ref.empty:
         phys_cols = [
@@ -230,22 +266,9 @@ def add_composite_metrics(
             continue
         components.append(np.exp(-0.5 * ((metrics[col] - mu) / sigma) ** 2))
     if components:
-        phys = np.prod(components, axis=0) ** (1.0 / len(components))
-        metrics["physicochemical_desirability"] = phys
+        metrics["physicochemical_desirability"] = np.prod(components, axis=0) ** (1.0 / len(components))
     else:
         metrics["physicochemical_desirability"] = np.nan
-
-    required = [activity_col, "hemolysis_score", "novelty", "physicochemical_desirability"]
-    if activity_col and all(col in metrics.columns for col in required):
-        product = (
-            metrics[activity_col]
-            * (1.0 - metrics["hemolysis_score"])
-            * metrics["novelty"]
-            * metrics["physicochemical_desirability"]
-        )
-        metrics["overall_desirability"] = product.clip(lower=0) ** 0.25
-    else:
-        metrics["overall_desirability"] = np.nan
     return metrics
 
 
@@ -260,7 +283,17 @@ def summarize(metrics: pd.DataFrame) -> pd.DataFrame:
             values = pd.to_numeric(metrics[col], errors="coerce")
         values = values.dropna()
         if values.empty:
-            rows.append({"metric": col, "n": 0, "mean": np.nan, "std": np.nan, "median": np.nan, "min": np.nan, "max": np.nan})
+            rows.append(
+                {
+                    "metric": col,
+                    "n": 0,
+                    "mean": np.nan,
+                    "std": np.nan,
+                    "median": np.nan,
+                    "min": np.nan,
+                    "max": np.nan,
+                }
+            )
             continue
         rows.append(
             {
@@ -279,7 +312,7 @@ def summarize(metrics: pd.DataFrame) -> pd.DataFrame:
 def write_notes(path: Path, metrics: pd.DataFrame) -> None:
     missing = [
         col
-        for col in ["helicity", "aggregation_na4vss", "novelty", "hemolysis_score"]
+        for col in ["helicity", "aggregation_na4vss", "novelty"]
         if col in metrics.columns and metrics[col].isna().all()
     ]
     lines = [
@@ -288,8 +321,9 @@ def write_notes(path: Path, metrics: pd.DataFrame) -> None:
         "- Net charge is calculated at pH 7.4 with Biopython ProteinAnalysis.",
         "- Hydrophobicity is Kyte-Doolittle GRAVY.",
         "- Amphipathicity is the alpha-helical hydrophobic moment with 100-degree residue spacing.",
+        "- Helicity is the AGADIR/pyAGADIR mean per-residue alpha-helical probability.",
+        "- Aggregation propensity is AGGRESCAN Na4vSS: 100/L times the sum of residue a4v values.",
         "- CHBI uses the evaluated set as the default standardization reference.",
-        "- Dual hit uses activity >= 0.80 and hemolysis < 0.40 unless overridden by CLI flags.",
     ]
     if missing:
         lines.append(f"- Not computed because required input/reference columns were unavailable: {', '.join(missing)}.")
@@ -297,7 +331,7 @@ def write_notes(path: Path, metrics: pd.DataFrame) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Compute AmpDiff paper AMP metrics.")
+    parser = argparse.ArgumentParser(description="Compute AmpDiff AMP physicochemical metrics.")
     parser.add_argument("--input", required=True, help="Input FASTA, CSV, or TSV.")
     parser.add_argument("--seq-col", default=None)
     parser.add_argument("--id-col", default=None)
@@ -305,12 +339,10 @@ def main() -> None:
     parser.add_argument("--train-seq-col", default=None)
     parser.add_argument("--reference", default=None, help="Optional CSV/TSV reference distribution for desirability.")
     parser.add_argument("--output-dir", default=None)
-    parser.add_argument("--activity-threshold", type=float, default=0.80)
-    parser.add_argument("--hemolysis-threshold", type=float, default=0.40)
     args = parser.parse_args()
 
     input_path = Path(args.input)
-    out_dir = Path(args.output_dir) if args.output_dir else input_path.resolve().parent / "amp_metrics_eval"
+    out_dir = Path(args.output_dir) if args.output_dir else input_path.resolve().parent / "physchem_eval"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     source = read_table_or_fasta(input_path, args.seq_col, args.id_col)
@@ -319,7 +351,6 @@ def main() -> None:
         for row in source.itertuples(index=False)
     ]
     metrics = pd.DataFrame(rows)
-    metrics = add_external_columns(metrics, source)
     train_sequences = read_training_sequences(args.train, args.train_seq_col)
     metrics["novelty"] = novelty_scores(metrics["sequence"].tolist(), train_sequences)
 
@@ -328,7 +359,7 @@ def main() -> None:
         ref_path = Path(args.reference)
         ref_sep = "\t" if ref_path.suffix.lower() == ".tsv" else ","
         ref = pd.read_csv(ref_path, sep=ref_sep)
-    metrics = add_composite_metrics(metrics, args.activity_threshold, args.hemolysis_threshold, ref)
+    metrics = add_composite_metrics(metrics, ref)
 
     metrics.to_csv(out_dir / "amp_metrics.csv", index=False)
     summarize(metrics).to_csv(out_dir / "amp_metrics_summary.csv", index=False)

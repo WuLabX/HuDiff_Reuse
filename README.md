@@ -179,15 +179,20 @@ bash scripts/Generalizability/run_main_generation.sh
 
 ### Evaluation
 
-Evaluate AMP outputs:
+Evaluate AMP activity and hemolysis with the external predictor repositories
+(PepNet, AMPpred-MFA, iAMP-Attenpred, UniDL4BioPep, and HemoPI2):
 
 ```bash
 python evaluation/Generalizability/activity_hemolysis_eval.py \
   --input results/Generalizability/ampdiff_test_de/de_de_variants.tsv \
   --seq-col variant_sequence \
   --id-col variant_name
+```
 
-python evaluation/Generalizability/amp_metrics_eval.py \
+Evaluate AMP physicochemical and sequence-design metrics:
+
+```bash
+python evaluation/Generalizability/physchem.py \
   --input results/Generalizability/ampdiff_test_de/de_de_variants.tsv \
   --seq-col variant_sequence \
   --id-col variant_name \
