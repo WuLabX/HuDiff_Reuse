@@ -138,7 +138,7 @@ Resources:
 
 Use this path when you want to rebuild the AMP datasets and train AmpDiff checkpoints from raw merged AMP records.
 
-1. Download [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112) and place the files under `dataset/Generalizability/raw_data/`.
+1. Download [Generalizability raw data](https://zenodo.org/records/22940515) and place the files under `dataset/Generalizability/raw_data/`.
 2. Build the processed AMP datasets. The script keeps the test split fixed,
    applies CD-HIT 90% internal deduplication to `pretrain` / `finetune`, and
    filters those training sets against the fixed test set at CD-HIT-2D 60%.
@@ -166,7 +166,7 @@ python scripts/Generalizability/amp_finetune.py \
 
 Use this path when you want to skip AMP training and directly sample from released checkpoints.
 
-1. Download [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112).
+1. Download [Generalizability checkpoints](https://zenodo.org/records/22940515).
 2. Place the checkpoint files under `checkpoints/Generalizability/`.
 
 ### Sampling
