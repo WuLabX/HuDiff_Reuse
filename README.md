@@ -129,9 +129,9 @@ Robustness benchmark inputs are stored under `data/Robustness/`. Generated robus
 
 Resources:
 
-- [Generalizability raw data](https://doi.org/10.5281/zenodo.22231112)
+- [Generalizability raw data](https://doi.org/10.5281/zenodo.22940515)
 - [Generalizability raw data README](dataset/Generalizability/raw_data/README.md)
-- [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22231112)
+- [Generalizability checkpoints](https://doi.org/10.5281/zenodo.22940515)
 - [Generalizability checkpoint README](checkpoints/Generalizability/README.md)
 
 ### Path A: Raw-data retraining
