@@ -202,7 +202,7 @@ python evaluation/Generalizability/physchem.py \
 ## Citation
 
 ```bibtex
-@article{hudiff_reuse,
+@article{Hudiff_reuse,
   title = {Pushing adaptive autoregressive diffusion to its limits from antibody humanization to antimicrobial peptide design},
   author = {Wu, Chuya},
   journal = {Nat. Mach. Intell.},
